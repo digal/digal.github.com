@@ -4,12 +4,21 @@
   <title>Лошоть и байты.</title>
   <link href="http://digal.github.com/atom.xml" rel="self"/>
   <link href="http://digal.github.com/"/>
-  <updated>2011-08-15T11:06:55+04:00</updated>
+  <updated>2011-08-15T11:15:57+04:00</updated>
   <id>http://digal.github.com/</id>
   <author>
     <name>Yuri Buyanov</name>
     
   </author>
 
+  
+  <entry>
+    <title>Hello?</title>
+    <link href="http://digal.github.com/blog/2011/08/15/hello/"/>
+    <updated>2011-08-15T11:15:00+04:00</updated>
+    <id>http://digal.github.com/blog/2011/08/15/hello</id>
+    <content type="html">&lt;p&gt;Привет? Рас-рас!&lt;/p&gt;
+</content>
+  </entry>
   
 </feed>
