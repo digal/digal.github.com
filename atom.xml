@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title>Лошоть и байты.</title>
+  <link href="http://digal.github.com/atom.xml" rel="self"/>
+  <link href="http://digal.github.com/"/>
+  <updated>2011-08-15T10:39:10+04:00</updated>
+  <id>http://digal.github.com/</id>
+  <author>
+    <name>Yuri Buyanov</name>
+    
+  </author>
+
+  
+</feed>
