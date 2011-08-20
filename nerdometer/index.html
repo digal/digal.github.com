@@ -1,0 +1,76 @@
+<!--
+/* This program is free software. It comes without any warranty, to
+ * the extent permitted by applicable law. You can redistribute it
+ * and/or modify it under the terms of the Do What The Fuck You Want
+ * To Public License, Version 2, as published by Sam Hocevar. See
+ * http://sam.zoy.org/wtfpl/COPYING for more details. */
+-->
+
+<html>
+    <head>
+        <title>Nerd-o-meter</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="styles/style.css" />
+        <script type="text/javascript" src="scripts/underscore.js"></script>
+        <script type="text/javascript" src="scripts/zepto.js"></script>
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <!--Google analytics stuff-->
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-23457426-1']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+        </script>
+    </head>
+    <body>
+        <div id="container">
+            <!--Github ribbon-->
+            <a href="http://github.com/digal/nerdometer"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://d3nwyuy0nl342s.cloudfront.net/img/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub"></a>
+            <h3>Nerd-o-meter<sup>&nbsp;alpha</sup></h3>
+
+            <div id="chart">
+                <div id="chartInner">
+                </div>
+                <div id="loader">
+                    <img src="images/loader.gif" alt="Loading">
+                </div>
+            </div>
+
+            <div id="controls">
+                <div class="left">
+                    Show client stats for <span id="type" onclick="swapType();">twitter search query</span>
+                </div>
+                <div class="right">
+                    <input id="term" name="term"></input>
+                    <button id="btnSearch" onclick="onYarr('search')();">YARR!</button>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="left">
+                Nerd-o-meter shows client statistics for specified search query.<br/>
+                Ingridients:
+                <li><a href="http://search.twitter.com/api/">Twitter search API</a> for data</li>
+                <li><a href="http://zeptojs.com/">zepto.js</a> for handy stuff</li>
+                <li><a href="http://documentcloud.github.com/underscore/">underscore.js</a> for functional programming stuff</li>
+                <li><a href="https://github.com/hij1nx/SugarSkull">SugarSkull</a> for client-side routing</li>
+                <li><a href="http://code.google.com/apis/chart/">Google chart Tools</a> for neat piecharts</li>
+            </div>
+            <div class="right">
+                By <a href="http://twitter.com/digal">@digal</a>,
+                <a href="http://twitter.com/dmedvinsky">@dmedvinsky</a><br/>
+                2011
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="scripts/search.js"></script>
+    <script type="text/javascript" src="scripts/ss.js" charset="utf-8"></script>
+    <script type="text/javascript" src="scripts/routes.js"></script>
+    <script>binds();</script>
+</html>
