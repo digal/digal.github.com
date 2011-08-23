@@ -1,0 +1,9 @@
+---
+layout: post
+title: "Hello?"
+date: 2011-08-15 11:15
+comments: true
+categories: 
+---
+
+Привет? Рас-рас!
