@@ -2,30 +2,34 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://digal.github.com/blog/2011/08/15/hello/</loc>
-        <lastmod>2011-08-15T11:15:31+04:00</lastmod>
+        <lastmod>2011-08-30T16:50:15+04:00</lastmod>
     </url>
     <url>
         <loc>http://digal.github.com/blog/2011/08/15/</loc>
-        <lastmod>2011-08-15T11:40:53+04:00</lastmod>
+        <lastmod>2011-08-30T16:50:15+04:00</lastmod>
     </url>
     <url>
         <loc>http://digal.github.com/blog/2011/08/20/types-of-programmers/</loc>
-        <lastmod>2011-08-20T12:08:28+04:00</lastmod>
+        <lastmod>2011-08-30T16:50:15+04:00</lastmod>
     </url>
     <url>
         <loc>http://digal.github.com/blog/2011/08/23/scala-irl-1-configs/</loc>
-        <lastmod>2011-08-24T12:35:58+04:00</lastmod>
+        <lastmod>2011-08-30T16:50:15+04:00</lastmod>
     </url>
     <url>
         <loc>http://digal.github.com/blog/2011/08/29/scala-irl-2-ostrich/</loc>
-        <lastmod>2011-08-30T15:31:40+04:00</lastmod>
+        <lastmod>2011-08-30T16:50:15+04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://digal.github.com/blog/2011/09/05/no-newsletters/</loc>
+        <lastmod>2011-09-05T12:40:39+04:00</lastmod>
     </url>
     <url>
         <loc>http://digal.github.com/blog/archives/</loc>
-        <lastmod>2011-08-30T15:31:40+04:00</lastmod>
+        <lastmod>2011-09-05T12:40:39+04:00</lastmod>
     </url>
     <url>
         <loc>http://digal.github.com/</loc>
-        <lastmod>2011-08-30T15:31:40+04:00</lastmod>
+        <lastmod>2011-09-05T12:40:39+04:00</lastmod>
     </url>
 </urlset>
