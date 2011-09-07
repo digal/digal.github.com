@@ -1,0 +1,358 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Лошоть и байты: Fixtures</title>
+  <meta name="author" content="Yuri Buyanov">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="canonical" href="http://digal.github.com/blog/2011/09/07/fixtures/"/>
+  <link href="/favicon.png" rel="shortcut icon" />
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="http://s3.amazonaws.com/ender-js/jeesh.min.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Лошоть и байты" type="application/atom+xml"/>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-25244055-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+  <!--Fonts from Google's Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body  >
+  <header><hgroup>
+  <h1><a href="/">Лошоть и байты</a></h1>
+  
+    <h2>The blog</h2>
+  
+</hgroup>
+
+</header>
+  <nav role=navigation><ul role=subscription data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+<form action="http://google.com/search" method="get">
+  <fieldset role="site-search">
+    <input type="hidden" name="q" value="site:digal.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+<ul role=main-navigation>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry">
+  
+  <header>
+    
+      <h1 class="entry-title">Fixtures</h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2011-09-07 09:46:00 +0400" pubdate  updated >Sep 7<span>th</span>, 2011</time>
+
+
+</p>
+    
+  </header>
+
+
+<div class="entry-content"><p>В предыдущем посте я рассказывал об исполняемых конфигах ostrich и не упомянул особых их достоинств, кроме type safety и удобства работы с настройками со стороны приложения. На прошлой неделе я наткнулся на ещё один хороший юзкейс для таких конфигов.</p>
+
+<p>Предположим, мы развёртываем наше приложение в разных окружениях (dev, test, prod), и в некоторых из них было бы здорово иметь в базе некоторые начальные данные для упрощения, например, процесса тестирования. Есть несколько достаточно тривиальных, но не очень удобных способов решения этой проблемы, особенно если загрузка этих начальных данных - часть автоматического развёртывания через CI-сервер. В скриптовых языках, где исполняемые файлы настроек - норма, такие данные (называемые fixtures) часто делаются частью конфига.</p>
+
+<p>С ostrich реализация такой штуки становится делом буквально нескольких строк кода:</p>
+
+<!--more-->
+
+
+<p>Итак, для начала добавим соответствующее поле в наш базовый конфиг, он же конфиг по умолчанию. Мы воспользуемся тем, что scala - функциональный язык, а конфиг в свою очередь - это обычный scala-класс.</p>
+
+<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+<span class='line'>2</span>
+<span class='line'>3</span>
+<span class='line'>4</span>
+<span class='line'>5</span>
+<span class='line'>6</span>
+<span class='line'>7</span>
+<span class='line'>8</span>
+<span class='line'>9</span>
+<span class='line'>10</span>
+</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="k">class</span> <span class="nc">DBConfig</span> <span class="o">{</span>
+</div><div class='line'>
+</div><div class='line'>  <span class="o">...</span>
+</div><div class='line'>
+</div><div class='line'>  <span class="cm">/** Нужно ли сбросить и пересоздать базу? */</span>
+</div><div class='line'>  <span class="k">var</span> <span class="n">doReset</span> <span class="k">=</span> <span class="kc">false</span>
+</div><div class='line'>
+</div><div class='line'>  <span class="cm">/** Код, который нужно исполнить, если doReset == true */</span>
+</div><div class='line'>  <span class="k">var</span> <span class="n">fixtures</span><span class="k">:</span> <span class="o">(</span><span class="kt">DB</span> <span class="o">=&gt;</span> <span class="kt">Unit</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span><span class="n">db</span> <span class="k">=&gt;</span> <span class="o">()}</span>
+</div><div class='line'><span class="o">}</span>
+</div></code></pre></td></tr></table></div>
+
+<p>По умолчанию, поле fixtures - это ничего не делающая функция. Теперь добавим в код, отвечающий за инициализацию базы, обработку новых полей:</p>
+
+<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+<span class='line'>2</span>
+<span class='line'>3</span>
+<span class='line'>4</span>
+<span class='line'>5</span>
+<span class='line'>6</span>
+<span class='line'>7</span>
+<span class='line'>8</span>
+<span class='line'>9</span>
+<span class='line'>10</span>
+<span class='line'>11</span>
+<span class='line'>12</span>
+<span class='line'>13</span>
+<span class='line'>14</span>
+<span class='line'>15</span>
+<span class='line'>16</span>
+<span class='line'>17</span>
+<span class='line'>18</span>
+</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="k">class</span> <span class="nc">DB</span><span class="o">(</span><span class="k">val</span> <span class="n">config</span><span class="k">:</span> <span class="kt">DBConfig</span><span class="o">)</span> <span class="o">{</span>
+</div><div class='line'>
+</div><div class='line'>  <span class="nc">Class</span><span class="o">.</span><span class="n">forName</span><span class="o">(</span><span class="n">config</span><span class="o">.</span><span class="n">driver</span><span class="o">)</span>
+</div><div class='line'>
+</div><div class='line'>  <span class="o">...</span>
+</div><div class='line'>
+</div><div class='line'>  <span class="n">transaction</span> <span class="o">{</span>
+</div><div class='line'>    <span class="k">if</span> <span class="o">(</span><span class="n">config</span><span class="o">.</span><span class="n">doReset</span><span class="o">)</span> <span class="o">{</span>
+</div><div class='line'>      <span class="c1">//drop and create tables</span>
+</div><div class='line'>      <span class="nc">MySchema</span><span class="o">.</span><span class="n">drop</span>
+</div><div class='line'>      <span class="nc">MySchema</span><span class="o">.</span><span class="n">create</span>
+</div><div class='line'>
+</div><div class='line'>      <span class="c1">//Run fixtures</span>
+</div><div class='line'>      <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="o">(</span><span class="s">&quot;Running fixtures&quot;</span><span class="o">)</span>
+</div><div class='line'>      <span class="n">config</span><span class="o">.</span><span class="n">fixtures</span><span class="o">(</span><span class="k">this</span><span class="o">)</span>
+</div><div class='line'>    <span class="o">}</span>
+</div><div class='line'>  <span class="o">}</span>
+</div><div class='line'><span class="o">}</span>
+</div></code></pre></td></tr></table></div>
+
+<p>Ну и наконец выставим необходимое значение в поле fixtures в нужных конфигах</p>
+
+<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+<span class='line'>2</span>
+<span class='line'>3</span>
+<span class='line'>4</span>
+<span class='line'>5</span>
+<span class='line'>6</span>
+<span class='line'>7</span>
+<span class='line'>8</span>
+<span class='line'>9</span>
+<span class='line'>10</span>
+<span class='line'>11</span>
+<span class='line'>12</span>
+<span class='line'>13</span>
+<span class='line'>14</span>
+<span class='line'>15</span>
+</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="c1">//myserver-test.scala</span>
+</div><div class='line'><span class="k">new</span> <span class="nc">MyServerConfig</span> <span class="o">{</span>
+</div><div class='line'>
+</div><div class='line'>  <span class="o">...</span>
+</div><div class='line'>
+</div><div class='line'>  <span class="n">dbConfig</span><span class="o">.</span><span class="n">doReset</span> <span class="k">=</span> <span class="kc">true</span>
+</div><div class='line'>  <span class="n">dbConfig</span><span class="o">.</span><span class="n">fixtures</span> <span class="k">=</span> <span class="o">{</span> <span class="n">db</span> <span class="k">=&gt;</span>
+</div><div class='line'>    <span class="c1">//create test user</span>
+</div><div class='line'>    <span class="k">val</span> <span class="n">usr</span> <span class="k">=</span> <span class="n">db</span><span class="o">.</span><span class="n">createUser</span><span class="o">(</span><span class="s">&quot;user@example.com&quot;</span><span class="o">,</span> <span class="s">&quot;password&quot;</span><span class="o">,</span> <span class="s">&quot;ru_RU&quot;</span><span class="o">)</span>
+</div><div class='line'>
+</div><div class='line'>    <span class="c1">//set user roles</span>
+</div><div class='line'>    <span class="n">db</span><span class="o">.</span><span class="n">assignRoleForUser</span><span class="o">(</span><span class="n">usr</span><span class="o">.</span><span class="n">id</span><span class="o">,</span> <span class="nc">Role</span><span class="o">.</span><span class="nc">ADMIN</span><span class="o">)</span>
+</div><div class='line'>    <span class="n">db</span><span class="o">.</span><span class="n">assignRoleForUser</span><span class="o">(</span><span class="n">usr</span><span class="o">.</span><span class="n">id</span><span class="o">,</span> <span class="nc">Role</span><span class="o">.</span><span class="nc">STAFF</span><span class="o">)</span>
+</div><div class='line'>  <span class="o">}</span>
+</div><div class='line'><span class="o">}</span>
+</div></code></pre></td></tr></table></div>
+
+<p>Вот, собственно, и всё: никаких самописных форматов для начальных данных, никаких SQL-файлов, которые нужно чинить при каждом изменении схемы. Мы описываем данные самым естественным для нас способом - в виде высокоуровневого кода, работающего с базой и использующего все возможности нашего приложения (и выбранного persistence-фреймворка). Более того, принцип используемый здесь можно легко применить не только к работе с базой, но и к любым другим частям приложения. Нужен тестовый файл в хитром формате, с которым работает наше приложение? Cоздаём его используя соответствующий API и он будет всегда актуален, даже если формат ещё не устаканился и разрабатывается параллельно с приложением.</p>
+
+<p>В общем, с ostrich гибкость настройки приложения ограничена только фантазией разработчика. Я практически уверен, что это не последний пост, посвящённый этой библиотеке.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Yuri Buyanov</span></span>
+
+      
+
+
+
+
+<time datetime="2011-09-07 09:46:00 +0400" pubdate  updated >Sep 7<span>th</span>, 2011</time>
+
+
+
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/libraries/'>libraries</a>, <a class='category' href='/blog/categories/ostrich/'>ostrich</a>, <a class='category' href='/blog/categories/scala/'>scala</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://digal.github.com/blog/2011/09/07/fixtures/" data-via="digal" data-counturl="http://digal.github.com/blog/2011/09/07/fixtures/" >Tweet</a>
+  
+  
+  <g:plusone size="medium"></g:plusone>
+  
+</div>
+
+    
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread"><div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'digal';
+  var disqus_identifier = 'http://digal.github.com/blog/2011/09/07/fixtures/';
+  var disqus_url = 'http://digal.github.com/blog/2011/09/07/fixtures/';
+  //var disqus_developer = 1;
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside role=sidebar>
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/09/07/fixtures/">Fixtures</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/09/05/no-newsletters/">Пример хорошего UX</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/08/29/scala-irl-2-ostrich/">Scala IRL. Часть 2: Готовим Домашнего Страуса</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/08/23/scala-irl-1-configs/">Scala IRL. Часть 1: конфиги.</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/08/20/types-of-programmers/">Очередная классификация программистов</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("digal", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/digal" class="twitter-follow-button" data-width="208px" data-show-count="false">Follow @digal</a>
+  
+</section>
+
+
+
+<section>
+  <h1>Pet projects:</h1>
+  <li><a href="http://digal.github.com/nerdometer">Nerd-o-meter</a> - статистика твиттер-клиентов.
+
+  <h1>Work</h1>
+  <li><a href="https://github.com/elegion/jdbc-mongo-migrator">SQL-MongoDB migration tool</a></li> - использовался для миграции базы goozy с MySQL в MongoDB и отлично справился с этим. 
+  <li><a href="https://github.com/elegion/Scala-ZMQ-RPC">Scala-ØMQ-RPC</a> - простой ØMQ-RPC сервер (+ ещё более простой клиент) на Scala. База для одного из рабочих проектов, пока ни разу не production ready.
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer><p>
+  Copyright &copy; 2011 - Yuri Buyanov -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+</body>
+</html>
