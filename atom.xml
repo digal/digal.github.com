@@ -4,13 +4,261 @@
   <title>Лошоть и байты</title>
   <link href="http://digal.github.com/atom.xml" rel="self"/>
   <link href="http://digal.github.com/"/>
-  <updated>2011-09-28T21:58:17+04:00</updated>
+  <updated>2011-10-17T23:50:04+04:00</updated>
   <id>http://digal.github.com/</id>
   <author>
     <name>Yuri Buyanov</name>
     
   </author>
 
+  
+  <entry>
+    <title>Squeryl: Двигаемся дальше</title>
+    <link href="http://digal.github.com/blog/2011/10/03/squeryl-advanced/"/>
+    <updated>2011-10-03T22:38:00+04:00</updated>
+    <id>http://digal.github.com/blog/2011/10/03/squeryl-advanced</id>
+    <content type="html">&lt;p&gt;Итак, продолжаем наше знакомство со &lt;a href=&quot;http://squeryl.org/&quot;&gt;Sueryl&lt;/a&gt; (начало &lt;a href=&quot;https://digal.github.com/blog/2011/09/25/squeryl/&quot;&gt;тут&lt;/a&gt;). Для начала, вернёмся к селектам и рассмотрим одну из интереснейших фич Squeryl.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+
+&lt;h2&gt;Составные селекты&lt;/h2&gt;
+
+&lt;p&gt;Итак, &lt;code&gt;select&lt;/code&gt; в любой его форме возвращает нам объект класса &lt;code&gt;Query&lt;/code&gt; (кроме &lt;code&gt;lookup&lt;/code&gt;, возвращающего &lt;code&gt;Option&lt;/code&gt;). Этот класс играет сразу две роли. Во-первых, из него можно просто получить результат выборки, используя его в качестве обычной коллекции (он расширяет трейт &lt;code&gt;Iterable&lt;/code&gt;). А во-вторых (и это самое интересное) - его можно использовать для построения более сложных запросов к базе. Например, подсунуть его в &lt;code&gt;from&lt;/code&gt; вместо таблицы:&lt;/p&gt;
+
+&lt;p&gt;``` scala&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;val rated = 
+  users.where( _.rating.~ &amp;gt;= 0)
+
+val vasyasRated =
+  from(rated) ( u =&amp;gt;
+    select(u)
+    where(u.name like &quot;%Vasya%&quot;) 
+  )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;p&gt;В этом примере мы использовали запрос &lt;code&gt;rated&lt;/code&gt; для построения второго запроса. (Кстати, в первом посте я не упомянул о маленьком но полезном кусочке синтаксического сахара: упрощённом синтаксисе для &lt;code&gt;select&lt;/code&gt;. Пример его использования можно увидеть в первом запросе.)&lt;/p&gt;
+
+&lt;p&gt;Можно и использовать результат одного селекта внутри блока &lt;code&gt;where&lt;/code&gt; второго:&lt;/p&gt;
+
+&lt;p&gt;``` scala&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;val vasyasRated =
+  from(users) ( u =&amp;gt;
+    select(u)
+    where(u.id in 
+      from(rated) (r =&amp;gt; select(r.id))
+    ) 
+)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;p&gt;Ну и, в конце концов можно добавить к &lt;code&gt;Query&lt;/code&gt; разные полезные модификаторы. Для постраничной выборки:&lt;/p&gt;
+
+&lt;p&gt;``` scala&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;from(users) ( u =&amp;gt; ... ).page(offset, pageLength)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;p&gt;для выборки уникальных строк:&lt;/p&gt;
+
+&lt;p&gt;``` scala&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;from(users) ( u =&amp;gt; ... ).distinct
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;p&gt;или для выборки элементов для обновления (директива FOR UPDATE в SQL):&lt;/p&gt;
+
+&lt;p&gt;``` scala&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;from(users) ( u =&amp;gt; ... ).forUpdate    
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;p&gt;Всё это, при желании, даёт возможность писать код максимально соответствующий принципу DRY (&quot;don't repeat yourself&quot;, если вдруг кто не знает).&lt;/p&gt;
+
+&lt;h2&gt;Агрегация&lt;/h2&gt;
+
+&lt;p&gt;Агрегация - это, наверное, единственная часть DSL, где Squeryl отходит от SQL: вместо использования &lt;code&gt;select&lt;/code&gt;, агрегирующие функции описываются в конструкии &lt;code&gt;compute&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;``` scala&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;val ratingDistribution =
+  from(users) ( u =&amp;gt;
+    groupBy(u.rating)
+    compute(count(u.id))
+  )
+
+ratingDistribution foreach { r=&amp;gt;
+  println(&quot;%s: %s&quot; format (r.key, r.measures))
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;p&gt;Результатом такого кода становится объект вида &lt;code&gt;Query[ GroupWithMeasures[Int, Int] ]&lt;/code&gt;, который можно использовать явно, обращаясь к полям &lt;code&gt;key&lt;/code&gt; и &lt;code&gt;measures&lt;/code&gt;, либо приведя его к коллекции типа &lt;code&gt;Map&lt;/code&gt;, вызовом метода &lt;code&gt;toMap&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Join&lt;/h2&gt;
+
+&lt;p&gt;С джойнами тоже всё довольно просто. Обычный INNER JOIN так же как и в SQL можно делать неявно, просто сделав &lt;code&gt;select&lt;/code&gt; из двух таблиц и добавив условие в &lt;code&gt;where&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;``` scala&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;from(users, posts) ( (u,p) =&amp;gt;
+  select(u.name, p)
+  where(u.id === p.userId)
+)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;p&gt;Можно использовать OUTER JOIN и всё, к чему вы привыкли в SQL:&lt;/p&gt;
+
+&lt;p&gt;``` scala&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;from(users, avatars.leftOuter) ( (u,a) =&amp;gt;
+  select(u, a.url)
+  on(u.id === a.map(_.userId))
+)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;p&gt;В случае использования внешнего джойна, для юзера не всегда находится соответствующая аватарка, поэтому &lt;code&gt;a&lt;/code&gt; в этом примере имеет тип Option.&lt;/p&gt;
+
+&lt;h2&gt;Relations&lt;/h2&gt;
+
+&lt;p&gt;Зачастую, одна из самых сложных для понимания и использования вещей в обычных ORM - отношения one-to-many и many-to-many между таблицами. Именно там кроется большая часть граблей, на которые наступают неопытные разработчики.&lt;/p&gt;
+
+&lt;p&gt;Подобно scala collections, имеющим две ипостаси: immutable и mutable, отношения в Squeryl делятся на &lt;strong&gt;stateless&lt;/strong&gt;, являющиеся, по-сути, заранее подготовленными запросами (&lt;code&gt;Query&lt;/code&gt;) и &lt;strong&gt;stateful&lt;/strong&gt; хранящими все связанные записи в памяти в виде коллекции (&lt;code&gt;Iterable&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;Для использования любого из этих вариантов, мы должны описать связь между таблицами в нашей схеме.&lt;/p&gt;
+
+&lt;p&gt;``` scala&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;object MySchema extends Schema {
+  val users = table[User]
+  val posts = table[Post]
+
+  val userPosts = 
+    oneToManyRelation(users, posts) via ( (u,p) =&amp;gt;
+      u.id === p.userId
+    )
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;p&gt;В этом посте я возьму для примера отношения one-to-many. DSL для описания many-to-many не сильно от него отличается и хорошо описан в &lt;a href=&quot;http://squeryl.org/relations.html&quot;&gt;документации&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;``` scala&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;case class User (....) extends KeyedEntity[Long] {
+  //OneToMany[Post] &amp;lt; Query
+  lazy val posts = MySchema.userPosts.left(this)
+}
+
+case class User (....) extends KeyedEntity[Long] {
+  //ManyToOne[User] &amp;lt; Query
+  lazy val user = MySchema.userPosts.right(this)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;p&gt;Теперь мы можем использовать наш релейшен так же как и обычный &lt;code&gt;select&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;``` scala&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;for (p &amp;lt;- user.posts) 
+  println(p.title)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;p&gt;Кроме этого, stateless relations имеют несколько полезных методов для манипулирования дочерними элементами:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;assign&lt;/code&gt; - привязывает дочерний элемент родительскому, выставляя значение foreign key (имеет смысл только если foreign key - изменяемое поле)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;associate&lt;/code&gt; - делает &lt;code&gt;assign&lt;/code&gt; + сохраняет эту связь в базе&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;deleteAll&lt;/code&gt; - удаляет все дочерние элементы из базы&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;Объявление stateful relation не сильно сложнее:&lt;/p&gt;
+
+&lt;p&gt;``` scala&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;case class User (....) extends KeyedEntity[Long] {
+
+  //StatefulOneToMany[Post] &amp;lt; Iterable[Post]
+  lazy val posts = MySchema.userPosts.leftStateful(this)
+
+}
+
+case User (....) extends KeyedEntity[Long] {
+
+  //StetefulManyToOne[User]
+  lazy val user = MySchema.userPosts.rightStateful(this)
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;p&gt;По сути, stateful relations являются простыми врапперами вокруг stateless, добавляющими кеширование данных в памяти, что избавляет Squeryl от необходимость делать запрос к базе при каждом обращении к коллекции.&lt;/p&gt;
+
+&lt;h2&gt;Недостатки&lt;/h2&gt;
+
+&lt;p&gt;Трудно сказать, является это недостатком Squeryl или моим, однако не все механизмы работы этого DSL мне до конца ясны. В частности, я так и не понял, с применением какой магии обычные поля классов модели конвертируются в метаданные столбцов в базе. Ведь это делается не только при создании таблицы, но и во время компиляции (или уже в рантайме) замыканий внутри запросов (например, &lt;code&gt;where&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;Один раз, когда мне надо было вынести один из часто используемых паттернов для апдейтов в отдельный метод, магия DSL отказалась работать и мне пришлось расковырять библиотеку и извлечь на свет страннейший артефакт чёрной магии под названием (осторожно): &lt;code&gt;createEqualityExpressionWithLastAccessedFieldReferenceAndConstant&lt;/code&gt;. Вам страшно? Мне тоже. Хорошо что такой случай был пока один, и у вас есть все шансы не напороться даже на него (уж больно он специфический).&lt;/p&gt;
+
+&lt;p&gt;А вот с казалось бы элементарными, но не всегда работающими implicit conversions, являющимися неотъемлемой частью любого скаловского DSL, дело обстоит хуже. Приведу один только пример. В этом кусочке условия в &lt;code&gt;where&lt;/code&gt; я пытаюсь использовать ещё одну замечательную фичу - динамический запрос (то есть запрос, части которого включаются по условию, обычно при заполнении &lt;code&gt;Option&lt;/code&gt;, подробнее &lt;a href=&quot;http://squeryl.org/dynamic-queries.html&quot;&gt;тут&lt;/a&gt;):&lt;/p&gt;
+
+&lt;p&gt;``` scala&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;where ( u.flag === boolOpt.? ) 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;p&gt;Очевидно, здесь DSL вступает в конфликт с синтаксическим сахаром для булевских условий (поскольку для строковых полей всё работает). Перепробовав несколько вариантов, я пришёл к вот такому вот монструозному решению:&lt;/p&gt;
+
+&lt;p&gt;``` scala&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;not(not(u.flag)).inhibitWhen(boolOpt != Some(true))  
+and 
+not(u.flag).inhibitWhen(boolOpt != Some(false))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;p&gt;Обратите внимание на изящный двойной &lt;code&gt;not&lt;/code&gt;, который пришлось использовать в качестве подсказки компилятору. Судя по всему, я оказался не единственным, кто столкнулся с этой проблемой: на StackOveflow мне &lt;a href=&quot;http://stackoverflow.com/questions/7607449/booleans-in-squeryl-dynamic-queries/7640585#7640585&quot;&gt;сообщили&lt;/a&gt; что в следующей версии этот сахар будет выключен и посоветовали более изящное решение с применением уже знакомого нам оператора &lt;code&gt;~&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;``` scala&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;where ( u.flag === boolOpt.~.? )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;h2&gt;Заключение&lt;/h2&gt;
+
+&lt;p&gt;Несмотря на некоторые недостатки, умолчать о которых было бы просто нечестно, Squeryl - замечательная библиотека, позволяющая решить кучу типичных проблем при использовании реляционных БД, не увеличивая сложность и размер кода. Лично я буду использовать её и дальше, что и вам советую делать.&lt;/p&gt;
+
+&lt;p&gt;Эти два поста, посвящённые squeryl были в некотором роде заготовкой для выступления на нашем Scala-евенте (хотя это ещё вопрос, что вышло полуфабрикатом, а что полноценным туториалом). Видео моего (и не только) выступления можно найти в небольшом &lt;a href=&quot;http://habrahabr.ru/company/e-Legion/blog/130545/#comments&quot;&gt;отчёте с него&lt;/a&gt;, а слайды у меня на &lt;a href=&quot;http://dl.dropbox.com/u/12823109/squeryl.pdf&quot;&gt;дропбоксе&lt;/a&gt; (кавайные белочки инсайде). Удачи и до встреч.&lt;/p&gt;
+</content>
+  </entry>
   
   <entry>
     <title>Squeryl: основы</title>

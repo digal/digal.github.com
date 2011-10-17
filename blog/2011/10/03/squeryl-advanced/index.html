@@ -1,0 +1,495 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Лошоть и байты: Squeryl: Двигаемся дальше</title>
+  <meta name="author" content="Yuri Buyanov">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="canonical" href="http://digal.github.com/blog/2011/10/03/squeryl-advanced/"/>
+  <link href="/favicon.png" rel="shortcut icon" />
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="http://s3.amazonaws.com/ender-js/jeesh.min.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Лошоть и байты" type="application/atom+xml"/>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-25244055-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+  <!--Fonts from Google's Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body  >
+  <header><hgroup>
+  <h1><a href="/">Лошоть и байты</a></h1>
+  
+    <h2>The blog</h2>
+  
+</hgroup>
+
+</header>
+  <nav role=navigation><ul role=subscription data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+<form action="http://google.com/search" method="get">
+  <fieldset role="site-search">
+    <input type="hidden" name="q" value="site:digal.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+<ul role=main-navigation>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry">
+  
+  <header>
+    
+      <h1 class="entry-title">Squeryl: Двигаемся дальше</h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2011-10-03 22:38:00 +0400" pubdate  updated >Oct 3<span>rd</span>, 2011</time>
+
+
+</p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Итак, продолжаем наше знакомство со <a href="http://squeryl.org/">Sueryl</a> (начало <a href="https://digal.github.com/blog/2011/09/25/squeryl/">тут</a>). Для начала, вернёмся к селектам и рассмотрим одну из интереснейших фич Squeryl.</p>
+
+<!--more-->
+
+
+<h2>Составные селекты</h2>
+
+<p>Итак, <code>select</code> в любой его форме возвращает нам объект класса <code>Query</code> (кроме <code>lookup</code>, возвращающего <code>Option</code>). Этот класс играет сразу две роли. Во-первых, из него можно просто получить результат выборки, используя его в качестве обычной коллекции (он расширяет трейт <code>Iterable</code>). А во-вторых (и это самое интересное) - его можно использовать для построения более сложных запросов к базе. Например, подсунуть его в <code>from</code> вместо таблицы:</p>
+
+<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+<span class='line'>2</span>
+<span class='line'>3</span>
+<span class='line'>4</span>
+<span class='line'>5</span>
+<span class='line'>6</span>
+<span class='line'>7</span>
+<span class='line'>8</span>
+</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="k">val</span> <span class="n">rated</span> <span class="k">=</span>
+</div><div class='line'>  <span class="n">users</span><span class="o">.</span><span class="n">where</span><span class="o">(</span> <span class="n">_</span><span class="o">.</span><span class="n">rating</span><span class="o">.~</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">)</span>
+</div><div class='line'>
+</div><div class='line'><span class="k">val</span> <span class="n">vasyasRated</span> <span class="k">=</span>
+</div><div class='line'>  <span class="n">from</span><span class="o">(</span><span class="n">rated</span><span class="o">)</span> <span class="o">(</span> <span class="n">u</span> <span class="k">=&gt;</span>
+</div><div class='line'>    <span class="n">select</span><span class="o">(</span><span class="n">u</span><span class="o">)</span>
+</div><div class='line'>    <span class="n">where</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">name</span> <span class="n">like</span> <span class="s">&quot;%Vasya%&quot;</span><span class="o">)</span>
+</div><div class='line'>  <span class="o">)</span>
+</div></code></pre></td></tr></table></div>
+
+<p>В этом примере мы использовали запрос <code>rated</code> для построения второго запроса. (Кстати, в первом посте я не упомянул о маленьком но полезном кусочке синтаксического сахара: упрощённом синтаксисе для <code>select</code>. Пример его использования можно увидеть в первом запросе.)</p>
+
+<p>Можно и использовать результат одного селекта внутри блока <code>where</code> второго:</p>
+
+<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+<span class='line'>2</span>
+<span class='line'>3</span>
+<span class='line'>4</span>
+<span class='line'>5</span>
+<span class='line'>6</span>
+<span class='line'>7</span>
+</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="k">val</span> <span class="n">vasyasRated</span> <span class="k">=</span>
+</div><div class='line'>  <span class="n">from</span><span class="o">(</span><span class="n">users</span><span class="o">)</span> <span class="o">(</span> <span class="n">u</span> <span class="k">=&gt;</span>
+</div><div class='line'>    <span class="n">select</span><span class="o">(</span><span class="n">u</span><span class="o">)</span>
+</div><div class='line'>    <span class="n">where</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">id</span> <span class="n">in</span>
+</div><div class='line'>      <span class="n">from</span><span class="o">(</span><span class="n">rated</span><span class="o">)</span> <span class="o">(</span><span class="n">r</span> <span class="k">=&gt;</span> <span class="n">select</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="n">id</span><span class="o">))</span>
+</div><div class='line'>    <span class="o">)</span>
+</div><div class='line'><span class="o">)</span>
+</div></code></pre></td></tr></table></div>
+
+<p>Ну и, в конце концов можно добавить к <code>Query</code> разные полезные модификаторы. Для постраничной выборки:</p>
+
+<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="n">from</span><span class="o">(</span><span class="n">users</span><span class="o">)</span> <span class="o">(</span> <span class="n">u</span> <span class="k">=&gt;</span> <span class="o">...</span> <span class="o">).</span><span class="n">page</span><span class="o">(</span><span class="n">offset</span><span class="o">,</span> <span class="n">pageLength</span><span class="o">)</span>
+</div></code></pre></td></tr></table></div>
+
+<p>для выборки уникальных строк:</p>
+
+<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="n">from</span><span class="o">(</span><span class="n">users</span><span class="o">)</span> <span class="o">(</span> <span class="n">u</span> <span class="k">=&gt;</span> <span class="o">...</span> <span class="o">).</span><span class="n">distinct</span>
+</div></code></pre></td></tr></table></div>
+
+<p>или для выборки элементов для обновления (директива FOR UPDATE в SQL):</p>
+
+<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="n">from</span><span class="o">(</span><span class="n">users</span><span class="o">)</span> <span class="o">(</span> <span class="n">u</span> <span class="k">=&gt;</span> <span class="o">...</span> <span class="o">).</span><span class="n">forUpdate</span>
+</div></code></pre></td></tr></table></div>
+
+<p>Всё это, при желании, даёт возможность писать код максимально соответствующий принципу DRY (&#8220;don&#8217;t repeat yourself&#8221;, если вдруг кто не знает).</p>
+
+<h2>Агрегация</h2>
+
+<p>Агрегация - это, наверное, единственная часть DSL, где Squeryl отходит от SQL: вместо использования <code>select</code>, агрегирующие функции описываются в конструкии <code>compute</code>.</p>
+
+<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+<span class='line'>2</span>
+<span class='line'>3</span>
+<span class='line'>4</span>
+<span class='line'>5</span>
+<span class='line'>6</span>
+<span class='line'>7</span>
+<span class='line'>8</span>
+<span class='line'>9</span>
+</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="k">val</span> <span class="n">ratingDistribution</span> <span class="k">=</span>
+</div><div class='line'>  <span class="n">from</span><span class="o">(</span><span class="n">users</span><span class="o">)</span> <span class="o">(</span> <span class="n">u</span> <span class="k">=&gt;</span>
+</div><div class='line'>    <span class="n">groupBy</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">rating</span><span class="o">)</span>
+</div><div class='line'>    <span class="n">compute</span><span class="o">(</span><span class="n">count</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">id</span><span class="o">))</span>
+</div><div class='line'>  <span class="o">)</span>
+</div><div class='line'>
+</div><div class='line'><span class="n">ratingDistribution</span> <span class="n">foreach</span> <span class="o">{</span> <span class="n">r</span><span class="k">=&gt;</span>
+</div><div class='line'>  <span class="n">println</span><span class="o">(</span><span class="s">&quot;%s: %s&quot;</span> <span class="n">format</span> <span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="n">key</span><span class="o">,</span> <span class="n">r</span><span class="o">.</span><span class="n">measures</span><span class="o">))</span>
+</div><div class='line'><span class="o">}</span>
+</div></code></pre></td></tr></table></div>
+
+<p>Результатом такого кода становится объект вида <code>Query[ GroupWithMeasures[Int, Int] ]</code>, который можно использовать явно, обращаясь к полям <code>key</code> и <code>measures</code>, либо приведя его к коллекции типа <code>Map</code>, вызовом метода <code>toMap</code>.</p>
+
+<h2>Join</h2>
+
+<p>С джойнами тоже всё довольно просто. Обычный INNER JOIN так же как и в SQL можно делать неявно, просто сделав <code>select</code> из двух таблиц и добавив условие в <code>where</code>:</p>
+
+<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+<span class='line'>2</span>
+<span class='line'>3</span>
+<span class='line'>4</span>
+</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="n">from</span><span class="o">(</span><span class="n">users</span><span class="o">,</span> <span class="n">posts</span><span class="o">)</span> <span class="o">(</span> <span class="o">(</span><span class="n">u</span><span class="o">,</span><span class="n">p</span><span class="o">)</span> <span class="k">=&gt;</span>
+</div><div class='line'>  <span class="n">select</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">name</span><span class="o">,</span> <span class="n">p</span><span class="o">)</span>
+</div><div class='line'>  <span class="n">where</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">id</span> <span class="o">===</span> <span class="n">p</span><span class="o">.</span><span class="n">userId</span><span class="o">)</span>
+</div><div class='line'><span class="o">)</span>
+</div></code></pre></td></tr></table></div>
+
+<p>Можно использовать OUTER JOIN и всё, к чему вы привыкли в SQL:</p>
+
+<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+<span class='line'>2</span>
+<span class='line'>3</span>
+<span class='line'>4</span>
+</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="n">from</span><span class="o">(</span><span class="n">users</span><span class="o">,</span> <span class="n">avatars</span><span class="o">.</span><span class="n">leftOuter</span><span class="o">)</span> <span class="o">(</span> <span class="o">(</span><span class="n">u</span><span class="o">,</span><span class="n">a</span><span class="o">)</span> <span class="k">=&gt;</span>
+</div><div class='line'>  <span class="n">select</span><span class="o">(</span><span class="n">u</span><span class="o">,</span> <span class="n">a</span><span class="o">.</span><span class="n">url</span><span class="o">)</span>
+</div><div class='line'>  <span class="n">on</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">id</span> <span class="o">===</span> <span class="n">a</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="n">_</span><span class="o">.</span><span class="n">userId</span><span class="o">))</span>
+</div><div class='line'><span class="o">)</span>
+</div></code></pre></td></tr></table></div>
+
+<p>В случае использования внешнего джойна, для юзера не всегда находится соответствующая аватарка, поэтому <code>a</code> в этом примере имеет тип Option.</p>
+
+<h2>Relations</h2>
+
+<p>Зачастую, одна из самых сложных для понимания и использования вещей в обычных ORM - отношения one-to-many и many-to-many между таблицами. Именно там кроется большая часть граблей, на которые наступают неопытные разработчики.</p>
+
+<p>Подобно scala collections, имеющим две ипостаси: immutable и mutable, отношения в Squeryl делятся на <strong>stateless</strong>, являющиеся, по-сути, заранее подготовленными запросами (<code>Query</code>) и <strong>stateful</strong> хранящими все связанные записи в памяти в виде коллекции (<code>Iterable</code>).</p>
+
+<p>Для использования любого из этих вариантов, мы должны описать связь между таблицами в нашей схеме.</p>
+
+<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+<span class='line'>2</span>
+<span class='line'>3</span>
+<span class='line'>4</span>
+<span class='line'>5</span>
+<span class='line'>6</span>
+<span class='line'>7</span>
+<span class='line'>8</span>
+<span class='line'>9</span>
+</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="k">object</span> <span class="nc">MySchema</span> <span class="k">extends</span> <span class="nc">Schema</span> <span class="o">{</span>
+</div><div class='line'>  <span class="k">val</span> <span class="n">users</span> <span class="k">=</span> <span class="n">table</span><span class="o">[</span><span class="kt">User</span><span class="o">]</span>
+</div><div class='line'>  <span class="k">val</span> <span class="n">posts</span> <span class="k">=</span> <span class="n">table</span><span class="o">[</span><span class="kt">Post</span><span class="o">]</span>
+</div><div class='line'>
+</div><div class='line'>  <span class="k">val</span> <span class="n">userPosts</span> <span class="k">=</span>
+</div><div class='line'>    <span class="n">oneToManyRelation</span><span class="o">(</span><span class="n">users</span><span class="o">,</span> <span class="n">posts</span><span class="o">)</span> <span class="n">via</span> <span class="o">(</span> <span class="o">(</span><span class="n">u</span><span class="o">,</span><span class="n">p</span><span class="o">)</span> <span class="k">=&gt;</span>
+</div><div class='line'>      <span class="n">u</span><span class="o">.</span><span class="n">id</span> <span class="o">===</span> <span class="n">p</span><span class="o">.</span><span class="n">userId</span>
+</div><div class='line'>    <span class="o">)</span>
+</div><div class='line'><span class="o">}</span>
+</div></code></pre></td></tr></table></div>
+
+<p>В этом посте я возьму для примера отношения one-to-many. DSL для описания many-to-many не сильно от него отличается и хорошо описан в <a href="http://squeryl.org/relations.html">документации</a>.</p>
+
+<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+<span class='line'>2</span>
+<span class='line'>3</span>
+<span class='line'>4</span>
+<span class='line'>5</span>
+<span class='line'>6</span>
+<span class='line'>7</span>
+<span class='line'>8</span>
+<span class='line'>9</span>
+</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="k">case</span> <span class="k">class</span> <span class="nc">User</span> <span class="o">(....)</span> <span class="k">extends</span> <span class="nc">KeyedEntity</span><span class="o">[</span><span class="kt">Long</span><span class="o">]</span> <span class="o">{</span>
+</div><div class='line'>  <span class="c1">//OneToMany[Post] &lt; Query</span>
+</div><div class='line'>  <span class="k">lazy</span> <span class="k">val</span> <span class="n">posts</span> <span class="k">=</span> <span class="nc">MySchema</span><span class="o">.</span><span class="n">userPosts</span><span class="o">.</span><span class="n">left</span><span class="o">(</span><span class="k">this</span><span class="o">)</span>
+</div><div class='line'><span class="o">}</span>
+</div><div class='line'>
+</div><div class='line'><span class="k">case</span> <span class="k">class</span> <span class="nc">User</span> <span class="o">(....)</span> <span class="k">extends</span> <span class="nc">KeyedEntity</span><span class="o">[</span><span class="kt">Long</span><span class="o">]</span> <span class="o">{</span>
+</div><div class='line'>  <span class="c1">//ManyToOne[User] &lt; Query</span>
+</div><div class='line'>  <span class="k">lazy</span> <span class="k">val</span> <span class="n">user</span> <span class="k">=</span> <span class="nc">MySchema</span><span class="o">.</span><span class="n">userPosts</span><span class="o">.</span><span class="n">right</span><span class="o">(</span><span class="k">this</span><span class="o">)</span>
+</div><div class='line'><span class="o">}</span>
+</div></code></pre></td></tr></table></div>
+
+<p>Теперь мы можем использовать наш релейшен так же как и обычный <code>select</code>.</p>
+
+<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+<span class='line'>2</span>
+</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="k">for</span> <span class="o">(</span><span class="n">p</span> <span class="k">&lt;-</span> <span class="n">user</span><span class="o">.</span><span class="n">posts</span><span class="o">)</span>
+</div><div class='line'>  <span class="n">println</span><span class="o">(</span><span class="n">p</span><span class="o">.</span><span class="n">title</span><span class="o">)</span>
+</div></code></pre></td></tr></table></div>
+
+<p>Кроме этого, stateless relations имеют несколько полезных методов для манипулирования дочерними элементами:</p>
+
+<ul>
+<li><code>assign</code> - привязывает дочерний элемент родительскому, выставляя значение foreign key (имеет смысл только если foreign key - изменяемое поле)</li>
+<li><code>associate</code> - делает <code>assign</code> + сохраняет эту связь в базе</li>
+<li><code>deleteAll</code> - удаляет все дочерние элементы из базы</li>
+</ul>
+
+
+<p>Объявление stateful relation не сильно сложнее:</p>
+
+<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+<span class='line'>2</span>
+<span class='line'>3</span>
+<span class='line'>4</span>
+<span class='line'>5</span>
+<span class='line'>6</span>
+<span class='line'>7</span>
+<span class='line'>8</span>
+<span class='line'>9</span>
+<span class='line'>10</span>
+<span class='line'>11</span>
+<span class='line'>12</span>
+<span class='line'>13</span>
+</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="k">case</span> <span class="k">class</span> <span class="nc">User</span> <span class="o">(....)</span> <span class="k">extends</span> <span class="nc">KeyedEntity</span><span class="o">[</span><span class="kt">Long</span><span class="o">]</span> <span class="o">{</span>
+</div><div class='line'>
+</div><div class='line'>  <span class="c1">//StatefulOneToMany[Post] &lt; Iterable[Post]</span>
+</div><div class='line'>  <span class="k">lazy</span> <span class="k">val</span> <span class="n">posts</span> <span class="k">=</span> <span class="nc">MySchema</span><span class="o">.</span><span class="n">userPosts</span><span class="o">.</span><span class="n">leftStateful</span><span class="o">(</span><span class="k">this</span><span class="o">)</span>
+</div><div class='line'>
+</div><div class='line'><span class="o">}</span>
+</div><div class='line'>
+</div><div class='line'><span class="k">case</span> <span class="nc">User</span> <span class="o">(....)</span> <span class="k">extends</span> <span class="nc">KeyedEntity</span><span class="o">[</span><span class="kt">Long</span><span class="o">]</span> <span class="o">{</span>
+</div><div class='line'>
+</div><div class='line'>  <span class="c1">//StetefulManyToOne[User]</span>
+</div><div class='line'>  <span class="k">lazy</span> <span class="k">val</span> <span class="n">user</span> <span class="k">=</span> <span class="nc">MySchema</span><span class="o">.</span><span class="n">userPosts</span><span class="o">.</span><span class="n">rightStateful</span><span class="o">(</span><span class="k">this</span><span class="o">)</span>
+</div><div class='line'>
+</div><div class='line'><span class="o">}</span>
+</div></code></pre></td></tr></table></div>
+
+<p>По сути, stateful relations являются простыми врапперами вокруг stateless, добавляющими кеширование данных в памяти, что избавляет Squeryl от необходимость делать запрос к базе при каждом обращении к коллекции.</p>
+
+<h2>Недостатки</h2>
+
+<p>Трудно сказать, является это недостатком Squeryl или моим, однако не все механизмы работы этого DSL мне до конца ясны. В частности, я так и не понял, с применением какой магии обычные поля классов модели конвертируются в метаданные столбцов в базе. Ведь это делается не только при создании таблицы, но и во время компиляции (или уже в рантайме) замыканий внутри запросов (например, <code>where</code>).</p>
+
+<p>Один раз, когда мне надо было вынести один из часто используемых паттернов для апдейтов в отдельный метод, магия DSL отказалась работать и мне пришлось расковырять библиотеку и извлечь на свет страннейший артефакт чёрной магии под названием (осторожно): <code>createEqualityExpressionWithLastAccessedFieldReferenceAndConstant</code>. Вам страшно? Мне тоже. Хорошо что такой случай был пока один, и у вас есть все шансы не напороться даже на него (уж больно он специфический).</p>
+
+<p>А вот с казалось бы элементарными, но не всегда работающими implicit conversions, являющимися неотъемлемой частью любого скаловского DSL, дело обстоит хуже. Приведу один только пример. В этом кусочке условия в <code>where</code> я пытаюсь использовать ещё одну замечательную фичу - динамический запрос (то есть запрос, части которого включаются по условию, обычно при заполнении <code>Option</code>, подробнее <a href="http://squeryl.org/dynamic-queries.html">тут</a>):</p>
+
+<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="n">where</span> <span class="o">(</span> <span class="n">u</span><span class="o">.</span><span class="n">flag</span> <span class="o">===</span> <span class="n">boolOpt</span><span class="o">.?</span> <span class="o">)</span>
+</div></code></pre></td></tr></table></div>
+
+<p>Очевидно, здесь DSL вступает в конфликт с синтаксическим сахаром для булевских условий (поскольку для строковых полей всё работает). Перепробовав несколько вариантов, я пришёл к вот такому вот монструозному решению:</p>
+
+<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+<span class='line'>2</span>
+<span class='line'>3</span>
+</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="n">not</span><span class="o">(</span><span class="n">not</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">flag</span><span class="o">)).</span><span class="n">inhibitWhen</span><span class="o">(</span><span class="n">boolOpt</span> <span class="o">!=</span> <span class="nc">Some</span><span class="o">(</span><span class="kc">true</span><span class="o">))</span> <span class="err"> </span>
+</div><div class='line'><span class="n">and</span><span class="err"> </span>
+</div><div class='line'><span class="n">not</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">flag</span><span class="o">).</span><span class="n">inhibitWhen</span><span class="o">(</span><span class="n">boolOpt</span> <span class="o">!=</span> <span class="nc">Some</span><span class="o">(</span><span class="kc">false</span><span class="o">))</span>
+</div></code></pre></td></tr></table></div>
+
+<p>Обратите внимание на изящный двойной <code>not</code>, который пришлось использовать в качестве подсказки компилятору. Судя по всему, я оказался не единственным, кто столкнулся с этой проблемой: на StackOveflow мне <a href="http://stackoverflow.com/questions/7607449/booleans-in-squeryl-dynamic-queries/7640585#7640585">сообщили</a> что в следующей версии этот сахар будет выключен и посоветовали более изящное решение с применением уже знакомого нам оператора <code>~</code>:</p>
+
+<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="n">where</span> <span class="o">(</span> <span class="n">u</span><span class="o">.</span><span class="n">flag</span> <span class="o">===</span> <span class="n">boolOpt</span><span class="o">.~.?</span> <span class="o">)</span>
+</div></code></pre></td></tr></table></div>
+
+<h2>Заключение</h2>
+
+<p>Несмотря на некоторые недостатки, умолчать о которых было бы просто нечестно, Squeryl - замечательная библиотека, позволяющая решить кучу типичных проблем при использовании реляционных БД, не увеличивая сложность и размер кода. Лично я буду использовать её и дальше, что и вам советую делать.</p>
+
+<p>Эти два поста, посвящённые squeryl были в некотором роде заготовкой для выступления на нашем Scala-евенте (хотя это ещё вопрос, что вышло полуфабрикатом, а что полноценным туториалом). Видео моего (и не только) выступления можно найти в небольшом <a href="http://habrahabr.ru/company/e-Legion/blog/130545/#comments">отчёте с него</a>, а слайды у меня на <a href="http://dl.dropbox.com/u/12823109/squeryl.pdf">дропбоксе</a> (кавайные белочки инсайде). Удачи и до встреч.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Yuri Buyanov</span></span>
+
+      
+
+
+
+
+<time datetime="2011-10-03 22:38:00 +0400" pubdate  updated >Oct 3<span>rd</span>, 2011</time>
+
+
+
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://digal.github.com/blog/2011/10/03/squeryl-advanced/" data-via="digal" data-counturl="http://digal.github.com/blog/2011/10/03/squeryl-advanced/" >Tweet</a>
+  
+  
+  <g:plusone size="medium"></g:plusone>
+  
+</div>
+
+    
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread"><div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'digal';
+  var disqus_identifier = 'http://digal.github.com/blog/2011/10/03/squeryl-advanced/';
+  var disqus_url = 'http://digal.github.com/blog/2011/10/03/squeryl-advanced/';
+  //var disqus_developer = 1;
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside role=sidebar>
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/10/03/squeryl-advanced/">Squeryl: Двигаемся дальше</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/09/25/squeryl/">Squeryl: основы</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/09/07/fixtures/">Fixtures</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/09/05/no-newsletters/">Пример хорошего UX</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/08/29/scala-irl-2-ostrich/">Scala IRL. Часть 2: Готовим Домашнего Страуса</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("digal", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/digal" class="twitter-follow-button" data-width="208px" data-show-count="false">Follow @digal</a>
+  
+</section>
+
+
+
+<section>
+  <h1>Pet projects:</h1>
+  <li><a href="http://digal.github.com/nerdometer">Nerd-o-meter</a> - статистика твиттер-клиентов.
+
+  <h1>Work</h1>
+  <li><a href="https://github.com/elegion/jdbc-mongo-migrator">SQL-MongoDB migration tool</a></li> - использовался для миграции базы goozy с MySQL в MongoDB и отлично справился с этим. 
+  <li><a href="https://github.com/elegion/Scala-ZMQ-RPC">Scala-ØMQ-RPC</a> - простой ØMQ-RPC сервер (+ ещё более простой клиент) на Scala. База для одного из рабочих проектов, пока ни разу не production ready.
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer><p>
+  Copyright &copy; 2011 - Yuri Buyanov -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+</body>
+</html>
