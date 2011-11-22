@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Лошоть и байты: iOS-dev: первые впечатления. Язык.</title>
+  <meta name="author" content="Yuri Buyanov">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="canonical" href="http://digal.github.com/blog/2011/11/22/ios-impressions/"/>
+  <link href="/favicon.png" rel="shortcut icon" />
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="http://s3.amazonaws.com/ender-js/jeesh.min.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Лошоть и байты" type="application/atom+xml"/>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-25244055-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+  <!--Fonts from Google's Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body  >
+  <header><hgroup>
+  <h1><a href="/">Лошоть и байты</a></h1>
+  
+    <h2>The blog</h2>
+  
+</hgroup>
+
+</header>
+  <nav role=navigation><ul role=subscription data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+<form action="http://google.com/search" method="get">
+  <fieldset role="site-search">
+    <input type="hidden" name="q" value="site:digal.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+<ul role=main-navigation>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry">
+  
+  <header>
+    
+      <h1 class="entry-title">iOS-dev: первые впечатления. Язык.</h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2011-11-22 10:22:00 +0400" pubdate  updated >Nov 22<span>nd</span>, 2011</time>
+
+
+</p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Недели три назад мне пришлось основательно взяться за разработку под iOS и (куда же тут без него) Objective-C. Из всего опыта была только прочитанная летом наполовину <a href="http://oreilly.com/catalog/9781449397296">книжка</a> по сабжу, пару раз открытый XCode, и попытка собрать <a href="http://www.scummvm.org/">ScummVM</a> для iPad из сорцов. Надо сказать что идея овладеть obj-c появилась у меня в голове ещё больше года назад (с появлением iPad), а после переезда на мак этому не оставалось уже никаких препятствий.</p>
+
+<!--more-->
+
+
+<p>Заранее извиняюсь у экспертов в iOS-деве за возможные ляпы: всё-таки, несколько недель это слишком мало чтобы досконально изучить все тонкости разработки под новую для себя платформу (но в самый раз чтобы зафиксировать впечатления, пока они не успели выветриться из головы). Если вы найдёте какую-то неточность или ошибку - пишите и я обязательно постараюсь её исправить.</p>
+
+<h2>Тёплые ламповости</h2>
+
+<p>Итак, первое что бросается в глаза тому, кто приходит писать под Cocoa (это, если кто не знает, UI-фреймворк в OSX/iOS) - непривычно выглядящий Objective-C. Многие ставят ему в вину необычный синтаксис для вызова методов (которые являются smalltalk-style посылкой сообщений). На самом деле, синтаксис любого языка это, конечно же дело вкуса, и, наверное, самая малая часть из того, к чему приходится привыкать при разработке под новую платформу.</p>
+
+<p>С другой стороны, привычка (выработанная в Scala) выстраивать вызовы методов в длинные цепочки приводит к совершенно нечитаемым кускам кода:</p>
+
+<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+</pre></td><td class='code' width='100%'><pre><code class='objc'><div class='line'><span class="p">[</span><span class="n">webView</span> <span class="nl">loadRequest:</span><span class="p">[</span><span class="n">NSURLRequest</span> <span class="nl">requestWithURL:</span><span class="p">[</span><span class="n">NSURL</span> <span class="nl">fileURLWithPath:</span><span class="p">[[</span><span class="n">NSBundle</span> <span class="n">mainBundle</span><span class="p">]</span> <span class="nl">pathForResource:</span><span class="s">@&quot;test&quot;</span> <span class="nl">ofType:</span><span class="s">@&quot;html&quot;</span><span class="p">]</span> <span class="nl">isDirectory:</span><span class="n">NO</span><span class="p">]]];</span>
+</div></code></pre></td></tr></table></div>
+
+<p>Единственный способ сделать это читаемым - вынести результаты вызовов методов в отдельные переменные. Но даже это окончательно не решит проблему: даже простой вызов метода с четыремя параметрами вполне может не влезть в одну строку, благодаря необходимости указывать имена аргументов и любви создателей библиотек к длинными именам. Последнее, кстати, частично вызвано отсутствием хоть какой-либо системы неймспейсов: приходится следить за уникальностью имён классов, добавляя к ним префиксы.</p>
+
+<p>Ешё одно наследие C, сильно раздражающее перебежчиков из других языков - необходимость создания отдельных заголовочных файлов (.h). Это сразу в два раза увеличивает количество сорцовых файлов в проекте, а любое более-менее серьёзное изменение требует правки сразу обоих файлов.</p>
+
+<h2>Нераскрытые возможности</h2>
+
+<p>Впрочем, это всё мелочи, с которыми можно смириться. Можно даже их любить, если вас греет ощущение использования тёплого лампового языка. От чего действительно становится немного грустно, так это (как ни странно) от его достоинств и клёвых фич. Здесь Objective-C немного напоминает JavaScript лет 5-10 назад, когда большинство программистов на нём просто до конца не понимали что им делать со всей этой динамичностью, прототипами и замыканиями.</p>
+
+<p>Итак, как я уже говорил, вызов метода в Objective-C является передачей сообщения от одного объекта другому. Это очень похоже на то, как это сделано в Ruby. Предвидя возмущение некоторых поклонников Erlang от того факта что передача сообщений происходит синхронно (а поэтому сообщения там &#8220;ненастоящие&#8221;), надо заметить что впервые эта концепция и терминология была предложена в Smalltalk (если не раньше), лет эдак за 15 до Erlang.</p>
+
+<p>Как и Ruby, Objective-C <a href="http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtDynamicResolution.html">умеет</a> обрабатывать неизвестные сообщения (то есть те, для которых не написаны методы). Однако, в отличие от Ruby или Groovy, где возможности метапрограмминга используются на полную катушку, obj-c разработчики, похоже, рассматривают эту возможность скорее как метод расстановки костылей. Хотя лично мне кажется, что аналог <a href="http://guides.rubyonrails.org/active_record_querying.html#dynamic-finders">dynamic finders в activerecord</a> был бы отличным дополнением к core data.</p>
+
+<p>Ещё одна относительно новая фича языка, блоки (&#8220;form of closures&#8221;, как говорит википедия), практически не используется в полную силу. Похоже, ни разработчики библиотек, ни прикладные ios-девелоперы просто не понимают, зачем им это нужно. Хотя, в отличие от предыдущего примера с dynamic finders, мне удалось найти несколько библиотек, пытающихся прикрутить ФП к Objective-C. Самая развесистая - это, пожалуй, <a href="https://github.com/mogeneration/functionalkit/">FunctionalKit</a>.</p>
+
+<h2>Остальное</h2>
+
+<p>С остальными вещами всё более-менее понятно: это протоколы (читай интерфейсы), категории (иногда их ошибочно <a href="http://stackoverflow.com/questions/1244748/objective-c-category-compared-to-mixins">считают</a> миксинами, хотя они скорее являются формой манки-патчинга) и полуавтоматический менеджмент указателей. Последнее, наверное, пугает java- и других &#8220;высокоуровневых&#8221; девелоперов больше всего, однако на практике здесь всё просто. Хотя не к месту всунутый autorelease может доставить немало приятных минут в дебаггере, а устроить себе утечку памяти - вообще как нефиг делать. Всё это хорошо описано и давно используется в повседневной разработке.</p>
+
+<p>Это пожалуй всё, что я хотел сказать об Objective-C. В следующем посте (или постах) я постараюсь рассказать об инструментах разработки и экосистеме этой платформы в целом.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Yuri Buyanov</span></span>
+
+      
+
+
+
+
+<time datetime="2011-11-22 10:22:00 +0400" pubdate  updated >Nov 22<span>nd</span>, 2011</time>
+
+
+
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/ios/'>ios</a>, <a class='category' href='/blog/categories/objective-c/'>objective-c</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://digal.github.com/blog/2011/11/22/ios-impressions/" data-via="digal" data-counturl="http://digal.github.com/blog/2011/11/22/ios-impressions/" >Tweet</a>
+  
+  
+  <g:plusone size="medium"></g:plusone>
+  
+</div>
+
+    
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread"><div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'digal';
+  var disqus_identifier = 'http://digal.github.com/blog/2011/11/22/ios-impressions/';
+  var disqus_url = 'http://digal.github.com/blog/2011/11/22/ios-impressions/';
+  //var disqus_developer = 1;
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside role=sidebar>
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/11/22/ios-impressions/">iOS-dev: первые впечатления. Язык.</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/03/squeryl-advanced/">Squeryl: Двигаемся дальше</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/09/25/squeryl/">Squeryl: основы</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/09/07/fixtures/">Fixtures</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/09/05/no-newsletters/">Пример хорошего UX</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("digal", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/digal" class="twitter-follow-button" data-width="208px" data-show-count="false">Follow @digal</a>
+  
+</section>
+
+
+
+<section>
+  <h1>Pet projects:</h1>
+  <li><a href="http://digal.github.com/nerdometer">Nerd-o-meter</a> - статистика твиттер-клиентов.
+
+  <h1>Work</h1>
+  <li><a href="https://github.com/elegion/jdbc-mongo-migrator">SQL-MongoDB migration tool</a></li> - использовался для миграции базы goozy с MySQL в MongoDB и отлично справился с этим. 
+  <li><a href="https://github.com/elegion/Scala-ZMQ-RPC">Scala-ØMQ-RPC</a> - простой ØMQ-RPC сервер (+ ещё более простой клиент) на Scala. База для одного из рабочих проектов, пока ни разу не production ready.
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer><p>
+  Copyright &copy; 2011 - Yuri Buyanov -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+</body>
+</html>
