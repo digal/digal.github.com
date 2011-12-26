@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Лошоть и байты: iOS-dev: первые впечатления. Всё остальное.</title>
+  <meta name="author" content="Yuri Buyanov">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="canonical" href="http://digal.github.com/blog/2011/11/30/ios-impressions-2/"/>
+  <link href="/favicon.png" rel="shortcut icon" />
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="http://s3.amazonaws.com/ender-js/jeesh.min.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Лошоть и байты" type="application/atom+xml"/>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-25244055-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+  <!--Fonts from Google's Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body  >
+  <header><hgroup>
+  <h1><a href="/">Лошоть и байты</a></h1>
+  
+    <h2>The blog</h2>
+  
+</hgroup>
+
+</header>
+  <nav role=navigation><ul role=subscription data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+<form action="http://google.com/search" method="get">
+  <fieldset role="site-search">
+    <input type="hidden" name="q" value="site:digal.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+<ul role=main-navigation>
+  <li><a href="/">Блог</a></li>
+  <li><a href="/blog/archives">Архив</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry">
+  
+  <header>
+    
+      <h1 class="entry-title">iOS-dev: первые впечатления. Всё остальное.</h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2011-11-30 17:44:00 +0400" pubdate  updated >Nov 30<span>th</span>, 2011</time>
+
+
+</p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Итак, продолжаю описывать уже немного утрясшиеся впечатления от iOS-разработки. Если кто-то пропустил, то <a href="http://digal.github.com/blog/2011/11/22/ios-impressions/">вот первый пост</a>. Теперь немного расскажу об инструментах и экостистеме. Сразу оговорюсь, что поскольку &#8220;настоящим сварщиком&#8221; мне называться пока рано, я могу быть не в курсе источников и реальных причин каких-то недочётов. Например, я наверняка буду приписывать отдельным инструментам недостатки, происходящие от других элементов тулчейна или даже просто из сложившихся здесь традиций.</p>
+
+<!--more-->
+
+
+<h2>IDE</h2>
+
+<p>Самый главный инструмент iOS-девелопера - это, конечно же, XCode. Этот инструмент вызывает смешанные чувства. С одной стороны, если сравнить его с таким монстром (в хорошем смысле) как IntelliJ IDEA, то чувствуется недостаток всяких приятных и ускоряющих работу неопытного девелопера фич (например, я не нашёл как сгенерировать заготовки недостающих методов протокола). Естественно, и вполне в стиле Apple, нет никакого репозитория плагинов. Не обходится, к сожалению, без крэшей и странных багов. Диалог коммита в git, намример, крэшит программу практически через раз, а в одном случае мне пришлось даже перезапустить систему, чтобы то ли XCode, то ли симулятор пришли в себя.</p>
+
+<p>Довольно много сумятицы вносит, как XCode работает с файлами проекта: его структура и местоположение файлов на диске имеют друг с другом мало чего общего. Папки в навигаторе являются чисто &#8220;виртуальными&#8221; и при добавлении файлов в проект откуда-то ещё (например, из какой-нибудь опенсорсной библиотеки) в лучшем случае вы получите кашу из файлов в папке с проектом. В худшем - если забыть поставить галочку при добавлении - файл проекта просто сошлётся на них, а сами файлы останутся лежать где лежали, и конечно не попадут в VCS и выяснится это только, когда проект откроют на другой машине. Я уже не говорю о том что один и тот же файл можно добавить два раза, что ломает билд. Конечно, ко всему этому можно привыкнуть и делать всё аккуратно, но поначалу это вызывает путаницу.</p>
+
+<p>С другой стороны, сделана эта IDE очень приятно, и, положа руку на сердце, можно сказать всё действительно нужное для разработки под iOS и OSX там есть. Есть куча готовых шаблонов для приложений, поддержка svn и git (с учётом упомянутых выше проблем со стабильностью), средства юнит-тестирования и ряд основных рефакторингов. Дизайнер интерфейсов очень неплох (после ада андроидовских XML-ек с лейаутами), многие вещи делаются перетаскиванием стрелочек из одной области окна в другую. А уж после того как я увидел визуализацию найденных <a href="http://clang-analyzer.llvm.org/">static analyzer</a>-ом утечек памяти, я практически влюбился в этот инструмент.</p>
+
+<p><img class='' src='https://img.skitch.com/20111130-qknwak3rexswj8jk8snrjf4fh7.png' width='' height='' alt='' title=''></p>
+
+<p>Впрочем, отталкиваясь от опыта работы с IDEA, RubyMine и WebStorm, очень хотелось бы взглянуть на альтернативу от <a href="http://www.jetbrains.com/">JetBrains</a>: <a href="http://www.jetbrains.com/objc/">AppCode</a>. Если будет время - обязательно попробую и опишу впечатления.</p>
+
+<h2>Пляски с криптографией</h2>
+
+<p>Если кто-то вам скажет, что самая сложная и запутанная часть в программировании для iOS - синтаксис Objective-C, или управление памятью, плюньте этому человеку в лицо. Лично у меня самое большое количество негатива вызвала запутанная возня с сертификатами. Даже если вы работаете в компании с девелоперским аккаунтом (то есть половина бюрократии уже сделана за вас), то для разработки (не распространения) одного приложения вам будет необходимо:</p>
+
+<ul>
+<li>создать certificate signing request</li>
+<li>с помощью него создать сертификат и положить его в кейчейн</li>
+<li>создать app ID</li>
+<li>создать provisioning profile для девайса (для симулятора не нужно, и на том спасибо)</li>
+<li>создать provisioning profile для приложения и добавить туда себя и свой девайс. Впрочем тут можно срезать углы, поскольку при указании bundle id можно использовать wildcard. С другой стороны, при добавлении сюда ещё одного разработчика или девайса, необходимо перегенерировать и импортировать его в систему заново.</li>
+</ul>
+
+
+<p>Если представить себе что все эти артефакты имеют неприятное свойство &#8220;протухать&#8221; (то есть, имеют конечный срок действия), требуют для использования приватных ключей, которые лежат на машинах где был сделан signing request (а если ключа нет - то надо перегенерировать сертификат), умножить всё это на количество разработчиков в команде, а потом ещё раз на количество разрабатываемых приложений, то можно представить сколько нервов, времени и мата занимает вся эта возня. Я уже не говорю про то, сколько на сколько граблей было наступлено при настройки headless сборки-проектов на билд-сервере. Codesign то в упор не видел кейчейна, то зачем-то требовал user interaction в виде окошечка подтверждения доступа к этому самому кейчейну. Впрочем, как и с другими &#8220;острыми углами&#8221;, наступив с десяток граблей и наведя порядок в управлении сертификатами, ключами и профайлами, к этому можно привыкнуть и, в общем, даже жить.</p>
+
+<h2>Управление зависимостями</h2>
+
+<p>Управления зависимостями в obj-c нет как таковой вообще. Библиотеки присоединяются к проекту либо в уже откомпилированном виде, либо в виде сорцовых файлов. И то и другое нужно держать в репозитории. Для особо продвинутых есть git submodules. Вообще, у меня такое ощущение, что использование любых сторонних библиотек не очень поощеряется самим Apple и какой-то частью community. Мне же после java/scala/ruby/python-дева писательство велосипедов кажется уже такой явной глупостью, что это даже не требует каких-то объяснений. Немного порывшись в интернетах, я обнаружил несколько инструментов для управления проектами. Из них самым внятным и стабильными выглядит <a href="https://github.com/CocoaPods/CocoaPods">CocoaPods</a>, очень похожая на рубёвый bundler. Его я тоже собираюсь попробовать, как только будет возможность.</p>
+
+<h2>Заключение</h2>
+
+<p>Этот пост я писал очень уж долго и решил, что рискую оставить его пылиться на ноутбуке вечно. Так что, пожалуй, буду закругляться, несмотря на то что были ещё какие-то мысли и замечания. Может, когда-нибудь ещё наберётся каких-то вещей на ещё один пост. Так, например, полезный опыт приделывания xcode и консольных утилит к Jenkins и настройка непрерывного деплоя через <a href="testflightapp.com">TestFlight</a> вполне потянет на таковой, если дойдут руки. Пока же всем спасибо за внимание и удачно провести праздники :)</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Yuri Buyanov</span></span>
+
+      
+
+
+
+
+<time datetime="2011-11-30 17:44:00 +0400" pubdate  updated >Nov 30<span>th</span>, 2011</time>
+
+
+
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/ios/'>ios</a>, <a class='category' href='/blog/categories/objective-c/'>objective-c</a>, <a class='category' href='/blog/categories/xcode/'>xcode</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://digal.github.com/blog/2011/11/30/ios-impressions-2/" data-via="digal" data-counturl="http://digal.github.com/blog/2011/11/30/ios-impressions-2/" >Tweet</a>
+  
+  
+  <g:plusone size="medium"></g:plusone>
+  
+</div>
+
+    
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread"><div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'digal';
+  var disqus_identifier = 'http://digal.github.com/blog/2011/11/30/ios-impressions-2/';
+  var disqus_url = 'http://digal.github.com/blog/2011/11/30/ios-impressions-2/';
+  //var disqus_developer = 1;
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside role=sidebar>
+  
+    <section>
+  <h1>Ссылки:</h1>
+  <ul>
+    <li><a href="http://www.e-legion.ru/">Работа</a></li>
+    <li><a href="https://github.com/digal/">GitHub</a></li>
+    <li><a href="http://twitter.com/#!/digal">Twitter</a></li>
+  </ul>
+</section><section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/11/30/ios-impressions-2/">iOS-dev: первые впечатления. Всё остальное.</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/22/ios-impressions/">iOS-dev: первые впечатления. Язык.</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/03/squeryl-advanced/">Squeryl: Двигаемся дальше</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/09/25/squeryl/">Squeryl: основы</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/09/07/fixtures/">Fixtures</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("digal", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/digal" class="twitter-follow-button" data-width="208px" data-show-count="false">Follow @digal</a>
+  
+</section>
+
+<section>
+  <h1>Pet projects:</h1>
+  <li><a href="http://digal.github.com/nerdometer">Nerd-o-meter</a> - статистика твиттер-клиентов.
+
+  <h1>Work</h1>
+  <li><a href="https://github.com/elegion/jdbc-mongo-migrator">SQL-MongoDB migration tool</a></li> - использовался для миграции базы goozy с MySQL в MongoDB и отлично справился с этим. 
+  <li><a href="https://github.com/elegion/Scala-ZMQ-RPC">Scala-ØMQ-RPC</a> - простой ØMQ-RPC сервер (+ ещё более простой клиент) на Scala. База для одного из рабочих проектов, пока ни разу не production ready.
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer><p>
+  Copyright &copy; 2011 - Yuri Buyanov -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+</body>
+</html>
