@@ -5,8 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Лошоть и байты: Scala IRL. Часть 2: Готовим Домашнего Страуса</title>
+  <title>Scala IRL. Часть 2: Готовим Домашнего Страуса - Лошоть и байты</title>
   <meta name="author" content="Yuri Buyanov">
+
+  
+  <meta name="description" content="В предыдущем посте я мельком упомянул библиотеку ostrich в качестве инструмента для загрузки конфигов, в этом же постараюсь сделать более подробный &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -15,14 +18,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-
-  <link rel="canonical" href="http://digal.github.com/blog/2011/08/29/scala-irl-2-ostrich/"/>
-  <link href="/favicon.png" rel="shortcut icon" />
+  <link rel="canonical" href="http://digal.github.com/blog/2011/08/29/scala-irl-2-ostrich">
+  <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="http://s3.amazonaws.com/ender-js/jeesh.min.js"></script>
+  <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="Лошоть и байты" type="application/atom+xml"/>
+  <link href="/atom.xml" rel="alternate" title="Лошоть и байты" type="application/atom+xml">
+  <!--Fonts from Google's Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -37,36 +43,10 @@
   </script>
 
 
-  
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
-
-
-  
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-  <!--Fonts from Google's Web font directory at http://google.com/webfonts -->
-<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
-
 </head>
 
-<body  >
-  <header><hgroup>
+<body   >
+  <header role="banner"><hgroup>
   <h1><a href="/">Лошоть и байты</a></h1>
   
     <h2>The blog</h2>
@@ -74,16 +54,18 @@
 </hgroup>
 
 </header>
-  <nav role=navigation><ul role=subscription data-subscription="rss">
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
   <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
   
 </ul>
+  
 <form action="http://google.com/search" method="get">
-  <fieldset role="site-search">
+  <fieldset role="search">
     <input type="hidden" name="q" value="site:digal.github.com" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
+  
 <ul role=main-navigation>
   <li><a href="/">Блог</a></li>
   <li><a href="/blog/archives">Архив</a></li>
@@ -93,7 +75,7 @@
   <div id="main">
     <div id="content">
       <div>
-<article class="hentry">
+<article class="hentry" role="article">
   
   <header>
     
@@ -101,14 +83,21 @@
     
     
       <p class="meta">
+        
 
 
 
 
-<time datetime="2011-08-29 22:28:00 +0400" pubdate  updated >Aug 29<span>th</span>, 2011</time>
 
 
-</p>
+
+
+  
+
+
+<time datetime="2011-08-29T22:28:00+04:00" pubdate data-updated="true">Aug 29<span>th</span>, 2011</time>
+        
+      </p>
     
   </header>
 
@@ -140,151 +129,156 @@
 
 <p>Для начала, нам нужно создать родительский класс для настроек. Чаще всего удобно сделать его же конфигом по умолчанию. Предположим, мы хотим сконфигурировать небольшое серверное приложение. Для этого ostrich предоставляет класс ServerConfig (являющийся наследником Config, предоставляющего базовые функции такие как компиляция, валидация и обязательные/необязательные поля).</p>
 
-<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-<span class='line'>2</span>
-<span class='line'>3</span>
-<span class='line'>4</span>
-<span class='line'>5</span>
-<span class='line'>6</span>
-<span class='line'>7</span>
-<span class='line'>8</span>
-<span class='line'>9</span>
-<span class='line'>10</span>
-<span class='line'>11</span>
-<span class='line'>12</span>
-<span class='line'>13</span>
-<span class='line'>14</span>
-<span class='line'>15</span>
-<span class='line'>16</span>
-<span class='line'>17</span>
-<span class='line'>18</span>
-<span class='line'>19</span>
-<span class='line'>20</span>
-<span class='line'>21</span>
-<span class='line'>22</span>
-<span class='line'>23</span>
-<span class='line'>24</span>
-<span class='line'>25</span>
-</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="k">import</span> <span class="nn">com.twitter.ostrich.admin._</span>
-</div><div class='line'><span class="k">import</span> <span class="nn">com.twitter.ostrich.admin.config._</span>
-</div><div class='line'><span class="k">import</span> <span class="nn">com.twitter.logging.config._</span>
-</div><div class='line'><span class="k">import</span> <span class="nn">com.twitter.logging.Level</span>
-</div><div class='line'>
-</div><div class='line'>
-</div><div class='line'><span class="k">class</span> <span class="nc">MyServerConfig</span> <span class="k">extends</span> <span class="nc">ServerConfig</span><span class="o">[</span><span class="kt">MyServer</span><span class="o">]</span> <span class="o">{</span>
-</div><div class='line'>
-</div><div class='line'>  <span class="c1">//ServerConfig, в отличие от просто Config, должен определить </span>
-</div><div class='line'>  <span class="c1">//метод Apply, для создания инстанса сервера</span>
-</div><div class='line'>  <span class="k">def</span> <span class="n">apply</span><span class="o">(</span><span class="n">runtime</span><span class="k">:</span> <span class="kt">RuntimeEnvironment</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span>
-</div><div class='line'>    <span class="k">new</span> <span class="nc">MyServer</span><span class="o">(</span><span class="k">this</span><span class="o">)</span>
-</div><div class='line'>  <span class="o">}</span>
-</div><div class='line'>
-</div><div class='line'>  <span class="k">var</span> <span class="n">port</span> <span class="k">=</span> <span class="mi">1234</span>
-</div><div class='line'>  <span class="k">var</span> <span class="n">workersNum</span> <span class="k">=</span> <span class="mi">10</span>
-</div><div class='line'>  <span class="k">var</span> <span class="n">baseUrl</span> <span class="k">=</span> <span class="s">&quot;http://localhost:%s&quot;</span> <span class="n">format</span> <span class="n">port</span>
-</div><div class='line'>  <span class="k">var</span> <span class="n">dbConfig</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">DBConfig</span>
-</div><div class='line'><span class="o">}</span>
-</div><div class='line'>
-</div><div class='line'><span class="k">case</span> <span class="k">class</span> <span class="nc">DBConfig</span><span class="o">(</span>
-</div><div class='line'>  <span class="k">var</span> <span class="n">driver</span> <span class="k">=</span> <span class="s">&quot;org.h2.Driver&quot;</span>
-</div><div class='line'>  <span class="k">var</span> <span class="n">uri</span> <span class="k">=</span> <span class="s">&quot;jdbc:h2:mem:&quot;</span>
-</div><div class='line'>  <span class="k">var</span> <span class="n">create</span> <span class="k">=</span> <span class="kc">true</span>
-</div><div class='line'><span class="o">)</span>
-</div></code></pre></td></tr></table></div>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">import</span> <span class="nn">com.twitter.ostrich.admin._</span>
+</span><span class='line'><span class="k">import</span> <span class="nn">com.twitter.ostrich.admin.config._</span>
+</span><span class='line'><span class="k">import</span> <span class="nn">com.twitter.logging.config._</span>
+</span><span class='line'><span class="k">import</span> <span class="nn">com.twitter.logging.Level</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">MyServerConfig</span> <span class="k">extends</span> <span class="nc">ServerConfig</span><span class="o">[</span><span class="kt">MyServer</span><span class="o">]</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">//ServerConfig, в отличие от просто Config, должен определить </span>
+</span><span class='line'>  <span class="c1">//метод Apply, для создания инстанса сервера</span>
+</span><span class='line'>  <span class="k">def</span> <span class="n">apply</span><span class="o">(</span><span class="n">runtime</span><span class="k">:</span> <span class="kt">RuntimeEnvironment</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span>
+</span><span class='line'>    <span class="k">new</span> <span class="nc">MyServer</span><span class="o">(</span><span class="k">this</span><span class="o">)</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">var</span> <span class="n">port</span> <span class="k">=</span> <span class="mi">1234</span>
+</span><span class='line'>  <span class="k">var</span> <span class="n">workersNum</span> <span class="k">=</span> <span class="mi">10</span>
+</span><span class='line'>  <span class="k">var</span> <span class="n">baseUrl</span> <span class="k">=</span> <span class="s">&quot;http://localhost:%s&quot;</span> <span class="n">format</span> <span class="n">port</span>
+</span><span class='line'>  <span class="k">var</span> <span class="n">dbConfig</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">DBConfig</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">case</span> <span class="k">class</span> <span class="nc">DBConfig</span><span class="o">(</span>
+</span><span class='line'>  <span class="k">var</span> <span class="n">driver</span> <span class="k">=</span> <span class="s">&quot;org.h2.Driver&quot;</span>
+</span><span class='line'>  <span class="k">var</span> <span class="n">uri</span> <span class="k">=</span> <span class="s">&quot;jdbc:h2:mem:&quot;</span>
+</span><span class='line'>  <span class="k">var</span> <span class="n">create</span> <span class="k">=</span> <span class="kc">true</span>
+</span><span class='line'><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Надо заметить, что мы используем в этом конфиге изменяемые переменные (<code>var</code>). В Scala это зачастую является признаком недостаточно функционального (декларативного) стиля, однако в данном случае это позволит писать лаконичные конфиги, выставляя значение полей простым присваиванием. Кроме того, этот же стиль используется при объявлении уже имеющихся в ServerConfig значений.</p>
 
 <p>Итак, теперь наш конфиг для, например, тестового сервера, может выглядеть так:</p>
 
-<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-<span class='line'>2</span>
-<span class='line'>3</span>
-<span class='line'>4</span>
-<span class='line'>5</span>
-<span class='line'>6</span>
-</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="k">new</span> <span class="nc">MyServerConfig</span> <span class="o">{</span>
-</div><div class='line'>  <span class="n">port</span> <span class="k">=</span> <span class="mi">80</span>
-</div><div class='line'>  <span class="n">baseUrl</span> <span class="k">=</span> <span class="s">&quot;http://test.myserver.com&quot;</span>
-</div><div class='line'>
-</div><div class='line'>  <span class="n">dbConfig</span><span class="o">.</span><span class="n">uri</span> <span class="k">=</span> <span class="s">&quot;jdbc:h2:/tmp/test.db;AUTO_SERVER=TRUE&quot;</span>
-</div><div class='line'><span class="o">}</span>
-</div></code></pre></td></tr></table></div>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">new</span> <span class="nc">MyServerConfig</span> <span class="o">{</span>
+</span><span class='line'>      <span class="n">port</span> <span class="k">=</span> <span class="mi">80</span>
+</span><span class='line'>      <span class="n">baseUrl</span> <span class="k">=</span> <span class="s">&quot;http://test.myserver.com&quot;</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">dbConfig</span><span class="o">.</span><span class="n">uri</span> <span class="k">=</span> <span class="s">&quot;jdbc:h2:/tmp/test.db;AUTO_SERVER=TRUE&quot;</span>
+</span><span class='line'>    <span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Вполне лаконично, и ничуть не хуже .properties и уж тем более XML-файла. Можем сохранить его под именем <code>test.scala</code>, тогда наш сервер мы сможем запускать как</p>
 
-<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-</pre></td><td class='code' width='100%'><pre><code class='bash'><div class='line'>java -jar my-server.jar -f ./test.scala
-</div></code></pre></td></tr></table></div>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>    java -jar my-server.jar -f ./test.scala
+</span></code></pre></td></tr></table></div></figure>
+
 
 <h2>Загрузка</h2>
 
 <p>Теперь, наш файл настроек надо загрузить и использовать по назначению. Делать это логичнее всего поближе к точке входа, например в <code>main</code>. Путь к файлу можно передать с параметром <code>-f</code> при запуске приложения, а если его нет, то ostrich попытается найти его сам. Определение местоположения конфиг-файла - это то самое место, где становится видно, что проект делался для себя: ostrich ищет его в довольно специфических местах, пытаясь сначала выяснить имя jar-файла. Поэтому, проще всего всегда передавать путь к конфигу через <code>-f</code> плюс явно указать конфиг по умолчанию. Поскольку конфиг по умолчанию является обычным scala-классом, можно просто создать его инстанс в коде. Вот как выглядит загрузка и использование конфига у меня:</p>
 
-<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-<span class='line'>2</span>
-<span class='line'>3</span>
-<span class='line'>4</span>
-<span class='line'>5</span>
-<span class='line'>6</span>
-<span class='line'>7</span>
-<span class='line'>8</span>
-<span class='line'>9</span>
-<span class='line'>10</span>
-<span class='line'>11</span>
-<span class='line'>12</span>
-<span class='line'>13</span>
-<span class='line'>14</span>
-<span class='line'>15</span>
-<span class='line'>16</span>
-<span class='line'>17</span>
-<span class='line'>18</span>
-<span class='line'>19</span>
-<span class='line'>20</span>
-<span class='line'>21</span>
-</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="k">object</span> <span class="nc">MyServer</span> <span class="o">{</span>
-</div><div class='line'>  <span class="k">def</span> <span class="n">main</span><span class="o">(</span><span class="n">args</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">String</span><span class="o">])</span> <span class="o">{</span>
-</div><div class='line'>    <span class="k">val</span> <span class="n">runtime</span> <span class="k">=</span> <span class="nc">RuntimeEnvironment</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">args</span><span class="o">)</span>
-</div><div class='line'>    <span class="k">val</span> <span class="n">server</span> <span class="k">=</span>
-</div><div class='line'>      <span class="k">if</span> <span class="o">(</span><span class="n">runtime</span><span class="o">.</span><span class="n">configFile</span><span class="o">.</span><span class="n">exists</span><span class="o">)</span> <span class="c1">//если ostrich нашёл конфиг-файл </span>
-</div><div class='line'>        <span class="n">runtime</span><span class="o">.</span><span class="n">loadRuntimeConfig</span><span class="o">[</span><span class="kt">Server</span><span class="o">]()</span>
-</div><div class='line'>      <span class="k">else</span> <span class="c1">//default</span>
-</div><div class='line'>        <span class="o">(</span><span class="k">new</span> <span class="nc">MyServerConfig</span><span class="o">)()(</span><span class="n">runtime</span><span class="o">)</span>
-</div><div class='line'>
-</div><div class='line'>    <span class="n">server</span><span class="o">.</span><span class="n">start</span><span class="o">()</span>
-</div><div class='line'>  <span class="o">}</span>
-</div><div class='line'><span class="o">}</span>
-</div><div class='line'>
-</div><div class='line'><span class="k">class</span> <span class="nc">MyServer</span><span class="o">(</span><span class="k">val</span> <span class="n">config</span><span class="k">:</span> <span class="kt">MyServerConfig</span><span class="o">)</span>
-</div><div class='line'><span class="o">{</span>
-</div><div class='line'>  <span class="k">val</span> <span class="n">db</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">DB</span><span class="o">(</span><span class="n">config</span><span class="o">.</span><span class="n">dbConfig</span><span class="o">)</span>
-</div><div class='line'>
-</div><div class='line'>  <span class="k">def</span> <span class="n">start</span><span class="o">()</span> <span class="o">{</span>
-</div><div class='line'>    <span class="c1">//...</span>
-</div><div class='line'>  <span class="o">}</span>
-</div><div class='line'><span class="o">}</span>
-</div></code></pre></td></tr></table></div>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">object</span> <span class="nc">MyServer</span> <span class="o">{</span>
+</span><span class='line'>      <span class="k">def</span> <span class="n">main</span><span class="o">(</span><span class="n">args</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">String</span><span class="o">])</span> <span class="o">{</span>
+</span><span class='line'>        <span class="k">val</span> <span class="n">runtime</span> <span class="k">=</span> <span class="nc">RuntimeEnvironment</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">args</span><span class="o">)</span>
+</span><span class='line'>        <span class="k">val</span> <span class="n">server</span> <span class="k">=</span>
+</span><span class='line'>          <span class="k">if</span> <span class="o">(</span><span class="n">runtime</span><span class="o">.</span><span class="n">configFile</span><span class="o">.</span><span class="n">exists</span><span class="o">)</span> <span class="c1">//если ostrich нашёл конфиг-файл </span>
+</span><span class='line'>            <span class="n">runtime</span><span class="o">.</span><span class="n">loadRuntimeConfig</span><span class="o">[</span><span class="kt">Server</span><span class="o">]()</span>
+</span><span class='line'>          <span class="k">else</span> <span class="c1">//default</span>
+</span><span class='line'>            <span class="o">(</span><span class="k">new</span> <span class="nc">MyServerConfig</span><span class="o">)()(</span><span class="n">runtime</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="n">server</span><span class="o">.</span><span class="n">start</span><span class="o">()</span>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">class</span> <span class="nc">MyServer</span><span class="o">(</span><span class="k">val</span> <span class="n">config</span><span class="k">:</span> <span class="kt">MyServerConfig</span><span class="o">)</span>
+</span><span class='line'>    <span class="o">{</span>
+</span><span class='line'>      <span class="k">val</span> <span class="n">db</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">DB</span><span class="o">(</span><span class="n">config</span><span class="o">.</span><span class="n">dbConfig</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">def</span> <span class="n">start</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>        <span class="c1">//...</span>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>    <span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Обратите внимание на строчку <code>(new MyServerConfig)()(runtime)</code>: сначала мы вызываем метод apply без параметров, а потом вызываем полученную функцию с параметром типа RuntimeEnvironment. При необходимости, этот способ можно расширить для загрузки различных конфигов по умолчанию, например в зависимости от <code>run.mode</code> в lift.</p>
 
 <p>Я не использовал возможность ostrich объявлять поля как обязательные/опциональные, но промолчать о ней будет, наверное, неправильно. В приведённой к классу Config документации всё довольно просто:</p>
 
-<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-<span class='line'>2</span>
-<span class='line'>3</span>
-<span class='line'>4</span>
-<span class='line'>5</span>
-<span class='line'>6</span>
-<span class='line'>7</span>
-<span class='line'>8</span>
-</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="c1">//необязательное поле</span>
-</div><div class='line'><span class="k">var</span> <span class="n">something</span> <span class="k">=</span> <span class="n">optional</span><span class="o">[</span><span class="kt">Duration</span><span class="o">]</span>
-</div><div class='line'>
-</div><div class='line'><span class="c1">//обязательное поле</span>
-</div><div class='line'><span class="k">var</span> <span class="n">level</span> <span class="k">=</span> <span class="n">required</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span>
-</div><div class='line'>
-</div><div class='line'><span class="c1">//вычисляемое (lazily evaluated!) поле</span>
-</div><div class='line'><span class="k">var</span> <span class="n">nextLevel</span> <span class="k">=</span> <span class="n">computed</span><span class="o">(</span><span class="n">level</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span>
-</div></code></pre></td></tr></table></div>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="c1">//необязательное поле</span>
+</span><span class='line'>    <span class="k">var</span> <span class="n">something</span> <span class="k">=</span> <span class="n">optional</span><span class="o">[</span><span class="kt">Duration</span><span class="o">]</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">//обязательное поле</span>
+</span><span class='line'>    <span class="k">var</span> <span class="n">level</span> <span class="k">=</span> <span class="n">required</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">//вычисляемое (lazily evaluated!) поле</span>
+</span><span class='line'>    <span class="k">var</span> <span class="n">nextLevel</span> <span class="k">=</span> <span class="n">computed</span><span class="o">(</span><span class="n">level</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <h2>Конфигурация компонентов</h2>
 
@@ -292,67 +286,72 @@
 
 <p>Представим, что мы хотим добавить в наш север небольшой внутренний почтовый сервис для отсылки писем пользователям.</p>
 
-<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-<span class='line'>2</span>
-<span class='line'>3</span>
-<span class='line'>4</span>
-<span class='line'>5</span>
-<span class='line'>6</span>
-<span class='line'>7</span>
-<span class='line'>8</span>
-<span class='line'>9</span>
-</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="k">trait</span> <span class="nc">MailConfig</span> <span class="o">{</span>
-</div><div class='line'>  <span class="k">def</span> <span class="n">smtpServer</span><span class="k">:</span>  <span class="kt">String</span>
-</div><div class='line'>  <span class="k">def</span> <span class="n">smtpPort</span><span class="k">:</span>    <span class="kt">String</span>
-</div><div class='line'>  <span class="k">def</span> <span class="n">fromAddress</span><span class="k">:</span> <span class="kt">String</span>
-</div><div class='line'><span class="o">}</span>
-</div><div class='line'>
-</div><div class='line'><span class="k">class</span> <span class="nc">MailManager</span><span class="o">(</span><span class="k">val</span> <span class="n">config</span><span class="k">:</span> <span class="kt">MailConfig</span><span class="o">)</span> <span class="o">{</span>
-</div><div class='line'>  <span class="o">...</span>
-</div><div class='line'><span class="o">}</span>
-</div></code></pre></td></tr></table></div>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">trait</span> <span class="nc">MailConfig</span> <span class="o">{</span>
+</span><span class='line'>  <span class="k">def</span> <span class="n">smtpServer</span><span class="k">:</span>  <span class="kt">String</span>
+</span><span class='line'>  <span class="k">def</span> <span class="n">smtpPort</span><span class="k">:</span>    <span class="kt">String</span>
+</span><span class='line'>  <span class="k">def</span> <span class="n">fromAddress</span><span class="k">:</span> <span class="kt">String</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">MailManager</span><span class="o">(</span><span class="k">val</span> <span class="n">config</span><span class="k">:</span> <span class="kt">MailConfig</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>  <span class="o">...</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
 
 <p>Теперь мы просто подмешиваем трейт в наш основной конфиг, перегружая его методы нашими <code>var</code>ами:</p>
 
-<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-<span class='line'>2</span>
-<span class='line'>3</span>
-<span class='line'>4</span>
-<span class='line'>5</span>
-<span class='line'>6</span>
-<span class='line'>7</span>
-<span class='line'>8</span>
-<span class='line'>9</span>
-<span class='line'>10</span>
-</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="k">class</span> <span class="nc">MyServerConfig</span>
-</div><div class='line'><span class="k">extends</span> <span class="nc">ServerConfig</span><span class="o">[</span><span class="kt">MyServer</span><span class="o">]</span>
-</div><div class='line'><span class="k">with</span> <span class="nc">MailConfig</span>
-</div><div class='line'><span class="o">{</span>
-</div><div class='line'>  <span class="o">...</span>
-</div><div class='line'>
-</div><div class='line'>  <span class="k">var</span> <span class="n">smtpServer</span> <span class="k">=</span> <span class="n">required</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span>
-</div><div class='line'>  <span class="k">var</span> <span class="n">smtpPort</span> <span class="k">=</span> <span class="mi">24</span>
-</div><div class='line'>  <span class="k">var</span> <span class="n">fromAddress</span> <span class="k">=</span> <span class="s">&quot;noreply@domain.com&quot;</span>
-</div><div class='line'><span class="o">}</span>
-</div></code></pre></td></tr></table></div>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">class</span> <span class="nc">MyServerConfig</span>
+</span><span class='line'>    <span class="k">extends</span> <span class="nc">ServerConfig</span><span class="o">[</span><span class="kt">MyServer</span><span class="o">]</span>
+</span><span class='line'>    <span class="k">with</span> <span class="nc">MailConfig</span>
+</span><span class='line'>    <span class="o">{</span>
+</span><span class='line'>      <span class="o">...</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">var</span> <span class="n">smtpServer</span> <span class="k">=</span> <span class="n">required</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span>
+</span><span class='line'>      <span class="k">var</span> <span class="n">smtpPort</span> <span class="k">=</span> <span class="mi">24</span>
+</span><span class='line'>      <span class="k">var</span> <span class="n">fromAddress</span> <span class="k">=</span> <span class="s">&quot;noreply@domain.com&quot;</span>
+</span><span class='line'>    <span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>В нашем конфиг-файле (<code>test.scala</code>) эти поля будут работать точно так же как и все остальные. При инстанциировании менеджера можно просто передать ему общий конфиг:</p>
 
-<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-<span class='line'>2</span>
-<span class='line'>3</span>
-<span class='line'>4</span>
-<span class='line'>5</span>
-<span class='line'>6</span>
-<span class='line'>7</span>
-</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="k">class</span> <span class="nc">MyServer</span><span class="o">(</span><span class="k">val</span> <span class="n">config</span><span class="k">:</span> <span class="kt">MyServerConfig</span><span class="o">)</span>
-</div><div class='line'><span class="o">{</span>
-</div><div class='line'>  <span class="k">val</span> <span class="n">db</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">DB</span><span class="o">(</span><span class="n">config</span><span class="o">.</span><span class="n">dbConfig</span><span class="o">)</span>
-</div><div class='line'>  <span class="k">val</span> <span class="n">mailer</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">MailManager</span><span class="o">(</span><span class="n">config</span><span class="o">)</span>
-</div><div class='line'>
-</div><div class='line'>  <span class="o">...</span>
-</div><div class='line'><span class="o">}</span>
-</div></code></pre></td></tr></table></div>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">class</span> <span class="nc">MyServer</span><span class="o">(</span><span class="k">val</span> <span class="n">config</span><span class="k">:</span> <span class="kt">MyServerConfig</span><span class="o">)</span>
+</span><span class='line'>    <span class="o">{</span>
+</span><span class='line'>      <span class="k">val</span> <span class="n">db</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">DB</span><span class="o">(</span><span class="n">config</span><span class="o">.</span><span class="n">dbConfig</span><span class="o">)</span>
+</span><span class='line'>      <span class="k">val</span> <span class="n">mailer</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">MailManager</span><span class="o">(</span><span class="n">config</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="o">...</span>
+</span><span class='line'>    <span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Также, в отдельный трейт можно вынести готовые значения для настроек если они представляют собой что-то более сложное чем простые значения.</p>
 
@@ -372,10 +371,14 @@
 
 
 
-<time datetime="2011-08-29 22:28:00 +0400" pubdate  updated >Aug 29<span>th</span>, 2011</time>
 
 
 
+
+  
+
+
+<time datetime="2011-08-29T22:28:00+04:00" pubdate data-updated="true">Aug 29<span>th</span>, 2011</time>
       
 
 <span class="categories">
@@ -392,35 +395,30 @@
   <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://digal.github.com/blog/2011/08/29/scala-irl-2-ostrich/" data-via="digal" data-counturl="http://digal.github.com/blog/2011/08/29/scala-irl-2-ostrich/" >Tweet</a>
   
   
-  <g:plusone size="medium"></g:plusone>
   
 </div>
 
     
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/08/23/scala-irl-1-configs/" title="Previous Post: Scala IRL. Часть 1: конфиги.">&laquo; Scala IRL. Часть 1: конфиги.</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/09/05/no-newsletters/" title="Next Post: Пример хорошего UX">Пример хорошего UX &raquo;</a>
+      
+    </p>
   </footer>
 </article>
 
   <section>
     <h1>Comments</h1>
-    <div id="disqus_thread"><div id="disqus_thread"></div>
-<script type="text/javascript">
-  var disqus_shortname = 'digal';
-  var disqus_identifier = 'http://digal.github.com/blog/2011/08/29/scala-irl-2-ostrich/';
-  var disqus_url = 'http://digal.github.com/blog/2011/08/29/scala-irl-2-ostrich/';
-  //var disqus_developer = 1;
-  (function() {
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
   </section>
 
 </div>
 
-<aside role=sidebar>
+<aside class="sidebar">
   
     <section>
   <h1>Ссылки:</h1>
@@ -432,6 +430,10 @@
 </section><section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/05/03/update/">Апдейт</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/01/04/2011-2012/">2011/2012</a>
@@ -449,17 +451,43 @@
         <a href="/blog/2011/10/03/squeryl-advanced/">Squeryl: Двигаемся дальше</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2011/09/25/squeryl/">Squeryl: основы</a>
-      </li>
-    
   </ul>
 </section>
 
 <section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/digal">@digal</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'digal',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
@@ -468,18 +496,10 @@
   </script>
   <script src="/javascripts/twitter.js" type="text/javascript"> </script>
   
-    <a href="http://twitter.com/digal" class="twitter-follow-button" data-width="208px" data-show-count="false">Follow @digal</a>
+    <a href="http://twitter.com/digal" class="twitter-follow-button" data-show-count="false">Follow @digal</a>
   
 </section>
 
-<section>
-  <h1>Pet projects:</h1>
-  <li><a href="http://digal.github.com/nerdometer">Nerd-o-meter</a> - статистика твиттер-клиентов.
-
-  <h1>Work</h1>
-  <li><a href="https://github.com/elegion/jdbc-mongo-migrator">SQL-MongoDB migration tool</a></li> - использовался для миграции базы goozy с MySQL в MongoDB и отлично справился с этим. 
-  <li><a href="https://github.com/elegion/Scala-ZMQ-RPC">Scala-ØMQ-RPC</a> - простой ØMQ-RPC сервер (+ ещё более простой клиент) на Scala. База для одного из рабочих проектов, пока ни разу не production ready.
-</section>
 
   
 </aside>
@@ -487,11 +507,49 @@
 
     </div>
   </div>
-  <footer><p>
+  <footer role="contentinfo"><p>
   Copyright &copy; 2012 - Yuri Buyanov -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
 </footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'digal';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://digal.github.com/blog/2011/08/29/scala-irl-2-ostrich/';
+        var disqus_url = 'http://digal.github.com/blog/2011/08/29/scala-irl-2-ostrich/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
 </body>
 </html>

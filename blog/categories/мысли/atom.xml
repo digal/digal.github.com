@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: мысли | Лошоть и байты]]></title>
+  <link href="http://digal.github.com/blog/categories/мысли/atom.xml" rel="self"/>
+  <link href="http://digal.github.com/"/>
+  <updated>2012-05-03T12:36:40+04:00</updated>
+  <id>http://digal.github.com/</id>
+  <author>
+    <name><![CDATA[Yuri Buyanov]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Очередная классификация программистов]]></title>
+    <link href="http://digal.github.com/blog/2011/08/20/types-of-programmers/"/>
+    <updated>2011-08-20T11:31:00+04:00</updated>
+    <id>http://digal.github.com/blog/2011/08/20/types-of-programmers</id>
+    <content type="html"><![CDATA[<p>Утром наткнулся в zite на замечательную статью: "<a href="http://techiferous.com/2011/08/are-you-a-good-programmer/">Are You a Good Programmer?</a>", в которой приведена интересная классификация <em>хороших</em> программистов. Несмотря на всю относительность таких классификаций, очень занимательно примерять это всё на себя.</p>
+
+<p>Мне трудно судить, являюсь ли я на данный момент действительно хорошим программистом (и каким критериям, собственно, надо для этого соответствовать?), но определённо могу сказать что последний год развиваюсь в сторону первого типа (Philosopher). Этому явно способствует и спользование такого языка как scala, склоняющая к очень "безопасному" стилю программирования, и позволяющая хорошо управлять ограничениями в коде с помощью системы типов, при этом сохраняя красоту и лаконичность кода.</p>
+
+<p>Было бы интересно узнать, к какому типу вы себя относите? Понятно что типы могут сочетаться в разных пропорциях, и вполне возможно, что можно придумать ещё несколько.</p>
+]]></content>
+  </entry>
+  
+</feed>

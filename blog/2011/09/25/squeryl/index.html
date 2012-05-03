@@ -5,8 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Лошоть и байты: Squeryl: основы</title>
+  <title>Squeryl: основы - Лошоть и байты</title>
   <meta name="author" content="Yuri Buyanov">
+
+  
+  <meta name="description" content="Этим и следующим постом (который, надеюсь, будет вот совсем скоро) я хочу познакомить вас с замечательной ORM-библиотекой для scala, которую сейчас &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -15,14 +18,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-
-  <link rel="canonical" href="http://digal.github.com/blog/2011/09/25/squeryl/"/>
-  <link href="/favicon.png" rel="shortcut icon" />
+  <link rel="canonical" href="http://digal.github.com/blog/2011/09/25/squeryl">
+  <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="http://s3.amazonaws.com/ender-js/jeesh.min.js"></script>
+  <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="Лошоть и байты" type="application/atom+xml"/>
+  <link href="/atom.xml" rel="alternate" title="Лошоть и байты" type="application/atom+xml">
+  <!--Fonts from Google's Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -37,36 +43,10 @@
   </script>
 
 
-  
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
-
-
-  
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-  <!--Fonts from Google's Web font directory at http://google.com/webfonts -->
-<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
-
 </head>
 
-<body  >
-  <header><hgroup>
+<body   >
+  <header role="banner"><hgroup>
   <h1><a href="/">Лошоть и байты</a></h1>
   
     <h2>The blog</h2>
@@ -74,16 +54,18 @@
 </hgroup>
 
 </header>
-  <nav role=navigation><ul role=subscription data-subscription="rss">
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
   <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
   
 </ul>
+  
 <form action="http://google.com/search" method="get">
-  <fieldset role="site-search">
+  <fieldset role="search">
     <input type="hidden" name="q" value="site:digal.github.com" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
+  
 <ul role=main-navigation>
   <li><a href="/">Блог</a></li>
   <li><a href="/blog/archives">Архив</a></li>
@@ -93,7 +75,7 @@
   <div id="main">
     <div id="content">
       <div>
-<article class="hentry">
+<article class="hentry" role="article">
   
   <header>
     
@@ -101,14 +83,21 @@
     
     
       <p class="meta">
+        
 
 
 
 
-<time datetime="2011-09-25 21:46:00 +0400" pubdate  updated >Sep 25<span>th</span>, 2011</time>
 
 
-</p>
+
+
+  
+
+
+<time datetime="2011-09-25T21:46:00+04:00" pubdate data-updated="true">Sep 25<span>th</span>, 2011</time>
+        
+      </p>
     
   </header>
 
@@ -126,27 +115,30 @@
 
 <p>Итак, для начала нужно инициализировать драйвер и реализовать фабрику сессий. Не надо пугаться названия, это всего лишь функция, возвращающая экземпляр класса Session:</p>
 
-<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-<span class='line'>2</span>
-<span class='line'>3</span>
-<span class='line'>4</span>
-<span class='line'>5</span>
-<span class='line'>6</span>
-<span class='line'>7</span>
-<span class='line'>8</span>
-<span class='line'>9</span>
-<span class='line'>10</span>
-</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="k">import</span> <span class="nn">org.squeryl.SessionFactory</span>
-</div><div class='line'>
-</div><div class='line'>  <span class="nc">Class</span><span class="o">.</span><span class="n">forName</span><span class="o">(</span><span class="s">&quot;org.h2.Driver&quot;</span><span class="o">);</span>
-</div><div class='line'>
-</div><div class='line'>  <span class="nc">SessionFactory</span><span class="o">.</span><span class="n">concreteFactory</span> <span class="k">=</span> <span class="nc">Some</span> <span class="o">{</span> <span class="o">()</span><span class="k">=&gt;</span>
-</div><div class='line'>    <span class="nc">Session</span><span class="o">.</span><span class="n">create</span><span class="o">(</span>
-</div><div class='line'>      <span class="n">java</span><span class="o">.</span><span class="n">sql</span><span class="o">.</span><span class="nc">DriverManager</span><span class="o">.</span><span class="n">getConnection</span><span class="o">(</span><span class="s">&quot;jdbc:h2:mem:&quot;</span><span class="o">),</span>
-</div><div class='line'>      <span class="k">new</span> <span class="n">H2Adapter</span>
-</div><div class='line'>    <span class="o">)</span>
-</div><div class='line'>  <span class="o">}</span>
-</div></code></pre></td></tr></table></div>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">import</span> <span class="nn">org.squeryl.SessionFactory</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="nc">Class</span><span class="o">.</span><span class="n">forName</span><span class="o">(</span><span class="s">&quot;org.h2.Driver&quot;</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="nc">SessionFactory</span><span class="o">.</span><span class="n">concreteFactory</span> <span class="k">=</span> <span class="nc">Some</span> <span class="o">{</span> <span class="o">()</span><span class="k">=&gt;</span>
+</span><span class='line'>        <span class="nc">Session</span><span class="o">.</span><span class="n">create</span><span class="o">(</span>
+</span><span class='line'>          <span class="n">java</span><span class="o">.</span><span class="n">sql</span><span class="o">.</span><span class="nc">DriverManager</span><span class="o">.</span><span class="n">getConnection</span><span class="o">(</span><span class="s">&quot;jdbc:h2:mem:&quot;</span><span class="o">),</span>
+</span><span class='line'>          <span class="k">new</span> <span class="n">H2Adapter</span>
+</span><span class='line'>        <span class="o">)</span>
+</span><span class='line'>      <span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
 
 <p>Это довольно простая реализация, в реальном проекте скорее всего будет уместнее использовать connection pool, типа <a href="http://commons.apache.org/dbcp/">DBCP</a> или <a href="http://jolbox.com/">BoneCP</a>.</p>
 
@@ -154,21 +146,24 @@
 
 <p>С транзакциями всё просто: транзакция осуществляется с помощью двух методов <code>transaction</code> и <code>inTransaction</code>, которые, принимая на вход функцию, оборачивают её выполнение в транзакцию.</p>
 
-<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-<span class='line'>2</span>
-<span class='line'>3</span>
-<span class='line'>4</span>
-<span class='line'>5</span>
-<span class='line'>6</span>
-<span class='line'>7</span>
-</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="k">import</span> <span class="nn">org.squeryl.PrimitiveTypeMode._</span>
-</div><div class='line'>
-</div><div class='line'><span class="n">transaction</span> <span class="o">{</span>
-</div><div class='line'>
-</div><div class='line'>  <span class="c1">//операции с данными ...</span>
-</div><div class='line'>
-</div><div class='line'><span class="o">}</span> <span class="c1">//коммит транзакции</span>
-</div></code></pre></td></tr></table></div>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">import</span> <span class="nn">org.squeryl.PrimitiveTypeMode._</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">transaction</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="c1">//операции с данными ...</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="o">}</span> <span class="c1">//коммит транзакции</span>
+</span><span class='line'>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Их отличие состоит в том, что <code>transaction</code> всегда открывает новую транзакцию перед началом выполнения блока и коммитит после завершения, a <code>inTransaction</code> делает это только в том случае, если не находится внутри другой транзакции.</p>
 
@@ -178,55 +173,58 @@
 
 <p>Классы схемы могут быть любыми скаловскими классами, поля, объявленные в конструкторе будут столбцами. Поля могут быть как mutable, так и immutable. Я предпочитаю для большей ясности использовать второй вариант в сочетании с case-классами и при необходимости просто вызывать метод copy. Однако, стоит заметить что этот способ имеет свои недостатки (например, не будет работать &#8220;из коробки&#8221; optimistic concurrency control, поскольку поле с версией не будет копироваться при вызове copy).</p>
 
-<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-<span class='line'>2</span>
-<span class='line'>3</span>
-<span class='line'>4</span>
-<span class='line'>5</span>
-<span class='line'>6</span>
-<span class='line'>7</span>
-</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="k">case</span> <span class="k">class</span> <span class="nc">User</span><span class="o">(</span>
-</div><div class='line'>  <span class="n">id</span><span class="k">:</span>     <span class="kt">Long</span> <span class="o">=</span> <span class="mi">0</span><span class="o">,</span>
-</div><div class='line'>  <span class="nd">@Column</span><span class="o">(</span><span class="n">length</span> <span class="k">=</span> <span class="mi">256</span><span class="o">)</span>
-</div><div class='line'>  <span class="n">email</span><span class="k">:</span>  <span class="kt">String</span><span class="o">,</span>
-</div><div class='line'>  <span class="n">name</span><span class="k">:</span>   <span class="kt">String</span><span class="o">,</span>
-</div><div class='line'>  <span class="n">rating</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="o">,</span>
-</div><div class='line'><span class="o">)</span> <span class="k">extends</span> <span class="nc">KeyedEntity</span><span class="o">[</span><span class="kt">Long</span><span class="o">]</span>
-</div></code></pre></td></tr></table></div>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">case</span> <span class="k">class</span> <span class="nc">User</span><span class="o">(</span>
+</span><span class='line'>      <span class="n">id</span><span class="k">:</span>     <span class="kt">Long</span> <span class="o">=</span> <span class="mi">0</span><span class="o">,</span>
+</span><span class='line'>      <span class="nd">@Column</span><span class="o">(</span><span class="n">length</span> <span class="k">=</span> <span class="mi">256</span><span class="o">)</span>
+</span><span class='line'>      <span class="n">email</span><span class="k">:</span>  <span class="kt">String</span><span class="o">,</span>
+</span><span class='line'>      <span class="n">name</span><span class="k">:</span>   <span class="kt">String</span><span class="o">,</span>
+</span><span class='line'>      <span class="n">rating</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="o">,</span>
+</span><span class='line'>    <span class="o">)</span> <span class="k">extends</span> <span class="nc">KeyedEntity</span><span class="o">[</span><span class="kt">Long</span><span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Трейт KeyedEntity просто говорит Squeryl что id является первичным ключом, позволяя, например, упростить поиск записи по id до вызова единственного метода <code>lookup(id)</code> над таблицей.</p>
 
 <p>Таблицы и связи между ними описываются в классе, отнаследованным от Schema, в большинстве случаев можно сделать его синглтоном:</p>
 
-<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-<span class='line'>2</span>
-<span class='line'>3</span>
-<span class='line'>4</span>
-<span class='line'>5</span>
-<span class='line'>6</span>
-<span class='line'>7</span>
-<span class='line'>8</span>
-<span class='line'>9</span>
-</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="k">object</span> <span class="nc">MySchema</span> <span class="k">extends</span> <span class="nc">Schema</span> <span class="o">{</span>
-</div><div class='line'>  <span class="k">val</span> <span class="n">users</span> <span class="k">=</span> <span class="n">table</span><span class="o">[</span><span class="kt">User</span><span class="o">]</span>
-</div><div class='line'>
-</div><div class='line'>  <span class="n">on</span><span class="o">(</span><span class="n">users</span><span class="o">)</span> <span class="o">{</span> <span class="n">u</span> <span class="k">=&gt;</span> <span class="n">declare</span><span class="o">(</span>
-</div><div class='line'>      <span class="n">u</span><span class="o">.</span><span class="n">id</span>    <span class="n">is</span> <span class="o">(</span><span class="n">autoIncremented</span><span class="o">),</span>
-</div><div class='line'>      <span class="n">u</span><span class="o">.</span><span class="n">email</span> <span class="n">is</span> <span class="o">(</span><span class="n">unique</span><span class="o">)</span>
-</div><div class='line'>    <span class="o">)</span>
-</div><div class='line'>  <span class="o">}</span>
-</div><div class='line'><span class="o">}</span>
-</div></code></pre></td></tr></table></div>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">object</span> <span class="nc">MySchema</span> <span class="k">extends</span> <span class="nc">Schema</span> <span class="o">{</span>
+</span><span class='line'>      <span class="k">val</span> <span class="n">users</span> <span class="k">=</span> <span class="n">table</span><span class="o">[</span><span class="kt">User</span><span class="o">]</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">on</span><span class="o">(</span><span class="n">users</span><span class="o">)</span> <span class="o">{</span> <span class="n">u</span> <span class="k">=&gt;</span> <span class="n">declare</span><span class="o">(</span>
+</span><span class='line'>          <span class="n">u</span><span class="o">.</span><span class="n">id</span>    <span class="n">is</span> <span class="o">(</span><span class="n">autoIncremented</span><span class="o">),</span>
+</span><span class='line'>          <span class="n">u</span><span class="o">.</span><span class="n">email</span> <span class="n">is</span> <span class="o">(</span><span class="n">unique</span><span class="o">)</span>
+</span><span class='line'>        <span class="o">)</span>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>    <span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Наличие схемы, как в любом приличном ORM избавляет необходимости писать тонны SQL CREATE ручками. Для создания схемы в базе можно воспользоваться методом <code>create</code>.</p>
 
-<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-<span class='line'>2</span>
-<span class='line'>3</span>
-</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="n">transaction</span> <span class="o">{</span>
-</div><div class='line'>  <span class="nc">MySchema</span><span class="o">.</span><span class="n">create</span>
-</div><div class='line'><span class="o">}</span>
-</div></code></pre></td></tr></table></div>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="n">transaction</span> <span class="o">{</span>
+</span><span class='line'>      <span class="nc">MySchema</span><span class="o">.</span><span class="n">create</span>
+</span><span class='line'>    <span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Аналогично, для импорта схемы в виде SQL, есть метод <code>printDdl</code>, а для очистки базы - <code>drop</code>.</p>
 
@@ -234,92 +232,103 @@
 
 <p>Итак, мы объявили схему и можем приступить к тому, ради чего, собственно, всё и затевалось. Для начала создадим несколько пользователей:</p>
 
-<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-<span class='line'>2</span>
-<span class='line'>3</span>
-<span class='line'>4</span>
-</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="k">import</span> <span class="nn">MySchema._</span>
-</div><div class='line'>
-</div><div class='line'><span class="k">val</span> <span class="n">vasya</span> <span class="k">=</span> <span class="n">users</span><span class="o">.</span><span class="n">insert</span><span class="o">(</span><span class="k">new</span> <span class="nc">User</span><span class="o">(</span><span class="s">&quot;vasya@example.com&quot;</span><span class="o">,</span> <span class="s">&quot;Vasya Poupkine&quot;</span><span class="o">))</span>
-</div><div class='line'><span class="k">val</span> <span class="n">masha</span> <span class="k">=</span> <span class="n">users</span><span class="o">.</span><span class="n">insert</span><span class="o">(</span><span class="k">new</span> <span class="nc">User</span><span class="o">(</span><span class="s">&quot;masha@example.com&quot;</span><span class="o">,</span> <span class="s">&quot;Masha Petrova&quot;</span><span class="o">))</span>
-</div></code></pre></td></tr></table></div>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">import</span> <span class="nn">MySchema._</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">val</span> <span class="n">vasya</span> <span class="k">=</span> <span class="n">users</span><span class="o">.</span><span class="n">insert</span><span class="o">(</span><span class="k">new</span> <span class="nc">User</span><span class="o">(</span><span class="s">&quot;vasya@example.com&quot;</span><span class="o">,</span> <span class="s">&quot;Vasya Poupkine&quot;</span><span class="o">))</span>
+</span><span class='line'>    <span class="k">val</span> <span class="n">masha</span> <span class="k">=</span> <span class="n">users</span><span class="o">.</span><span class="n">insert</span><span class="o">(</span><span class="k">new</span> <span class="nc">User</span><span class="o">(</span><span class="s">&quot;masha@example.com&quot;</span><span class="o">,</span> <span class="s">&quot;Masha Petrova&quot;</span><span class="o">))</span>
+</span><span class='line'>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <h2>Select</h2>
 
 <p>Select в squeryl является практически двойником оного в SQL за исключением того, написан на Scala со всеми вытекающими плюшками:</p>
 
-<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-<span class='line'>2</span>
-<span class='line'>3</span>
-<span class='line'>4</span>
-<span class='line'>5</span>
-<span class='line'>6</span>
-<span class='line'>7</span>
-<span class='line'>8</span>
-<span class='line'>9</span>
-<span class='line'>10</span>
-<span class='line'>11</span>
-<span class='line'>12</span>
-<span class='line'>13</span>
-<span class='line'>14</span>
-<span class='line'>15</span>
-<span class='line'>16</span>
-<span class='line'>17</span>
-</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="k">import</span> <span class="nn">MySchema._</span>
-</div><div class='line'>
-</div><div class='line'><span class="k">val</span> <span class="n">nullRated</span> <span class="k">=</span>
-</div><div class='line'>  <span class="n">from</span><span class="o">(</span><span class="n">users</span><span class="o">)</span> <span class="o">(</span> <span class="n">u</span> <span class="k">=&gt;</span>
-</div><div class='line'>    <span class="n">select</span><span class="o">(</span><span class="n">u</span><span class="o">)</span>
-</div><div class='line'>    <span class="n">where</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">rating</span> <span class="o">===</span> <span class="mi">0</span><span class="o">)</span> <span class="c1">//(1)</span>
-</div><div class='line'>  <span class="o">)</span>
-</div><div class='line'>
-</div><div class='line'><span class="k">val</span> <span class="n">mails</span> <span class="k">=</span>
-</div><div class='line'>  <span class="n">from</span><span class="o">(</span><span class="n">users</span><span class="o">)</span> <span class="o">(</span> <span class="n">u</span> <span class="k">=&gt;</span>
-</div><div class='line'>    <span class="n">select</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">email</span><span class="o">)</span>
-</div><div class='line'>  <span class="o">)</span>
-</div><div class='line'>
-</div><div class='line'><span class="k">val</span> <span class="n">idsWithMails</span> <span class="k">=</span>
-</div><div class='line'>  <span class="n">from</span><span class="o">(</span><span class="n">users</span><span class="o">)</span> <span class="o">(</span> <span class="n">u</span> <span class="k">=&gt;</span>
-</div><div class='line'>    <span class="n">select</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">id</span><span class="o">,</span> <span class="n">u</span><span class="o">.</span><span class="n">email</span><span class="o">)</span>
-</div><div class='line'>  <span class="o">)</span>
-</div></code></pre></td></tr></table></div>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">import</span> <span class="nn">MySchema._</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">val</span> <span class="n">nullRated</span> <span class="k">=</span>
+</span><span class='line'>      <span class="n">from</span><span class="o">(</span><span class="n">users</span><span class="o">)</span> <span class="o">(</span> <span class="n">u</span> <span class="k">=&gt;</span>
+</span><span class='line'>        <span class="n">select</span><span class="o">(</span><span class="n">u</span><span class="o">)</span>
+</span><span class='line'>        <span class="n">where</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">rating</span> <span class="o">===</span> <span class="mi">0</span><span class="o">)</span> <span class="c1">//(1)</span>
+</span><span class='line'>      <span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">val</span> <span class="n">mails</span> <span class="k">=</span>
+</span><span class='line'>      <span class="n">from</span><span class="o">(</span><span class="n">users</span><span class="o">)</span> <span class="o">(</span> <span class="n">u</span> <span class="k">=&gt;</span>
+</span><span class='line'>        <span class="n">select</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">email</span><span class="o">)</span>
+</span><span class='line'>      <span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">val</span> <span class="n">idsWithMails</span> <span class="k">=</span>
+</span><span class='line'>      <span class="n">from</span><span class="o">(</span><span class="n">users</span><span class="o">)</span> <span class="o">(</span> <span class="n">u</span> <span class="k">=&gt;</span>
+</span><span class='line'>        <span class="n">select</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">id</span><span class="o">,</span> <span class="n">u</span><span class="o">.</span><span class="n">email</span><span class="o">)</span>
+</span><span class='line'>      <span class="o">)</span>
+</span><span class='line'>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Обратите внимание на тройное <code>===</code> (1). В отличие от обычного двойного <code>==</code>  - это не встроенный в scala оператор, а конструкция DSL Squeryl.
 Трейт <code>KeyedEntity</code> даёт нам возможность использовать упрощённый синтаксис для поиска записи по id:</p>
 
-<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="k">val</span> <span class="n">zeroUser</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">User</span><span class="o">]</span> <span class="k">=</span> <span class="n">users</span><span class="o">.</span><span class="n">lookup</span><span class="o">(</span><span class="n">id</span><span class="o">)</span>
-</div></code></pre></td></tr></table></div>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">val</span> <span class="n">zeroUser</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">User</span><span class="o">]</span> <span class="k">=</span> <span class="n">users</span><span class="o">.</span><span class="n">lookup</span><span class="o">(</span><span class="n">id</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <h2>Update</h2>
 
 <p>Операция обновления в squeryl поддерживает два вида синтаксиса: частичное и полное обновление. Полное обновление, как следует из названия, использует в качестве источника обновлённых данных объект целиком. Поскольку в нашем примере классы целиком иммутабельны, мы будем подсовывать в update объекты, созданные через метод copy.</p>
 
-<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-<span class='line'>2</span>
-</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="k">val</span> <span class="n">updatedVasya</span> <span class="k">=</span> <span class="n">vasya</span><span class="o">.</span><span class="n">copy</span><span class="o">(</span><span class="n">rating</span> <span class="k">=</span> <span class="n">vasya</span><span class="o">.</span><span class="n">rating</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span>
-</div><div class='line'><span class="n">users</span><span class="o">.</span><span class="n">update</span><span class="o">(</span><span class="n">updatedVasya</span><span class="o">)</span>
-</div></code></pre></td></tr></table></div>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">val</span> <span class="n">updatedVasya</span> <span class="k">=</span> <span class="n">vasya</span><span class="o">.</span><span class="n">copy</span><span class="o">(</span><span class="n">rating</span> <span class="k">=</span> <span class="n">vasya</span><span class="o">.</span><span class="n">rating</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span>
+</span><span class='line'>    <span class="n">users</span><span class="o">.</span><span class="n">update</span><span class="o">(</span><span class="n">updatedVasya</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Полный update всегда обновляет только одну запись, поэтому ничего не возвращает.</p>
 
 <p>При частичном обновлении используется конструкция DSL, похожая на ту, которую мы использовали в select:</p>
 
-<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-<span class='line'>2</span>
-<span class='line'>3</span>
-<span class='line'>4</span>
-<span class='line'>5</span>
-<span class='line'>6</span>
-<span class='line'>7</span>
-</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="k">val</span> <span class="n">updated</span> <span class="k">=</span>
-</div><div class='line'>  <span class="n">update</span><span class="o">(</span><span class="n">users</span><span class="o">)</span> <span class="o">(</span> <span class="n">u</span> <span class="k">=&gt;</span>
-</div><div class='line'>    <span class="n">set</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">rating</span> <span class="o">:=</span> <span class="n">u</span><span class="o">.</span><span class="n">rating</span><span class="o">.~</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span> <span class="c1">//(1)</span>
-</div><div class='line'>    <span class="n">where</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">name</span> <span class="n">like</span> <span class="s">&quot;%Vasya%&quot;</span><span class="o">)</span>    <span class="c1">//(2)</span>
-</div><div class='line'>  <span class="o">)</span>
-</div><div class='line'>
-</div><div class='line'><span class="n">println</span><span class="o">(</span><span class="s">&quot;%s Vasyas rated&quot;</span> <span class="n">format</span> <span class="n">updated</span><span class="o">)</span>
-</div></code></pre></td></tr></table></div>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">val</span> <span class="n">updated</span> <span class="k">=</span>
+</span><span class='line'>      <span class="n">update</span><span class="o">(</span><span class="n">users</span><span class="o">)</span> <span class="o">(</span> <span class="n">u</span> <span class="k">=&gt;</span>
+</span><span class='line'>        <span class="n">set</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">rating</span> <span class="o">:=</span> <span class="n">u</span><span class="o">.</span><span class="n">rating</span><span class="o">.~</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span> <span class="c1">//(1)</span>
+</span><span class='line'>        <span class="n">where</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">name</span> <span class="n">like</span> <span class="s">&quot;%Vasya%&quot;</span><span class="o">)</span>    <span class="c1">//(2)</span>
+</span><span class='line'>      <span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">println</span><span class="o">(</span><span class="s">&quot;%s Vasyas rated&quot;</span> <span class="n">format</span> <span class="n">updated</span><span class="o">)</span>
+</span><span class='line'>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Как это принято в JDBC, update возвращает количество обновлённых записей.</p>
 
@@ -329,23 +338,26 @@
 
 <p>Удаление выполняется аналогично: либо по id (для классов, с примешанным KeyedEntity) либо по условию.</p>
 
-<div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-<span class='line'>2</span>
-<span class='line'>3</span>
-<span class='line'>4</span>
-<span class='line'>5</span>
-<span class='line'>6</span>
-<span class='line'>7</span>
-<span class='line'>8</span>
-</pre></td><td class='code' width='100%'><pre><code class='scala'><div class='line'><span class="n">users</span><span class="o">.</span><span class="n">deleted</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
-</div><div class='line'>
-</div><div class='line'><span class="k">val</span> <span class="n">deleted</span> <span class="k">=</span>
-</div><div class='line'>  <span class="n">users</span><span class="o">.</span><span class="n">deleteWhere</span><span class="o">(</span> <span class="n">u</span> <span class="k">=&gt;</span>
-</div><div class='line'>    <span class="n">u</span><span class="o">.</span><span class="n">rating</span><span class="o">.~</span> <span class="o">&lt;</span> <span class="mi">0</span>
-</div><div class='line'>  <span class="o">)</span>
-</div><div class='line'>
-</div><div class='line'><span class="n">println</span><span class="o">(</span><span class="s">&quot;%s users deleted&quot;</span> <span class="n">format</span> <span class="n">deleted</span><span class="o">)</span>
-</div></code></pre></td></tr></table></div>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="n">users</span><span class="o">.</span><span class="n">deleted</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">val</span> <span class="n">deleted</span> <span class="k">=</span>
+</span><span class='line'>      <span class="n">users</span><span class="o">.</span><span class="n">deleteWhere</span><span class="o">(</span> <span class="n">u</span> <span class="k">=&gt;</span>
+</span><span class='line'>        <span class="n">u</span><span class="o">.</span><span class="n">rating</span><span class="o">.~</span> <span class="o">&lt;</span> <span class="mi">0</span>
+</span><span class='line'>      <span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">println</span><span class="o">(</span><span class="s">&quot;%s users deleted&quot;</span> <span class="n">format</span> <span class="n">deleted</span><span class="o">)</span>
+</span><span class='line'>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <h2>Продолжение следует</h2>
 
@@ -365,15 +377,19 @@
 
 
 
-<time datetime="2011-09-25 21:46:00 +0400" pubdate  updated >Sep 25<span>th</span>, 2011</time>
 
 
 
+
+  
+
+
+<time datetime="2011-09-25T21:46:00+04:00" pubdate data-updated="true">Sep 25<span>th</span>, 2011</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/DSL/'>DSL</a>, <a class='category' href='/blog/categories/ORM/'>ORM</a>, <a class='category' href='/blog/categories/libraries/'>libraries</a>, <a class='category' href='/blog/categories/scala/'>scala</a>, <a class='category' href='/blog/categories/squeryl/'>squeryl</a>
+    <a class='category' href='/blog/categories/dsl/'>DSL</a>, <a class='category' href='/blog/categories/orm/'>ORM</a>, <a class='category' href='/blog/categories/libraries/'>libraries</a>, <a class='category' href='/blog/categories/scala/'>scala</a>, <a class='category' href='/blog/categories/squeryl/'>squeryl</a>
   
 </span>
 
@@ -385,35 +401,30 @@
   <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://digal.github.com/blog/2011/09/25/squeryl/" data-via="digal" data-counturl="http://digal.github.com/blog/2011/09/25/squeryl/" >Tweet</a>
   
   
-  <g:plusone size="medium"></g:plusone>
   
 </div>
 
     
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/09/07/fixtures/" title="Previous Post: Fixtures">&laquo; Fixtures</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/10/03/squeryl-advanced/" title="Next Post: Squeryl: Двигаемся дальше">Squeryl: Двигаемся дальше &raquo;</a>
+      
+    </p>
   </footer>
 </article>
 
   <section>
     <h1>Comments</h1>
-    <div id="disqus_thread"><div id="disqus_thread"></div>
-<script type="text/javascript">
-  var disqus_shortname = 'digal';
-  var disqus_identifier = 'http://digal.github.com/blog/2011/09/25/squeryl/';
-  var disqus_url = 'http://digal.github.com/blog/2011/09/25/squeryl/';
-  //var disqus_developer = 1;
-  (function() {
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
   </section>
 
 </div>
 
-<aside role=sidebar>
+<aside class="sidebar">
   
     <section>
   <h1>Ссылки:</h1>
@@ -425,6 +436,10 @@
 </section><section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/05/03/update/">Апдейт</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/01/04/2011-2012/">2011/2012</a>
@@ -442,17 +457,43 @@
         <a href="/blog/2011/10/03/squeryl-advanced/">Squeryl: Двигаемся дальше</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2011/09/25/squeryl/">Squeryl: основы</a>
-      </li>
-    
   </ul>
 </section>
 
 <section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/digal">@digal</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'digal',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
@@ -461,18 +502,10 @@
   </script>
   <script src="/javascripts/twitter.js" type="text/javascript"> </script>
   
-    <a href="http://twitter.com/digal" class="twitter-follow-button" data-width="208px" data-show-count="false">Follow @digal</a>
+    <a href="http://twitter.com/digal" class="twitter-follow-button" data-show-count="false">Follow @digal</a>
   
 </section>
 
-<section>
-  <h1>Pet projects:</h1>
-  <li><a href="http://digal.github.com/nerdometer">Nerd-o-meter</a> - статистика твиттер-клиентов.
-
-  <h1>Work</h1>
-  <li><a href="https://github.com/elegion/jdbc-mongo-migrator">SQL-MongoDB migration tool</a></li> - использовался для миграции базы goozy с MySQL в MongoDB и отлично справился с этим. 
-  <li><a href="https://github.com/elegion/Scala-ZMQ-RPC">Scala-ØMQ-RPC</a> - простой ØMQ-RPC сервер (+ ещё более простой клиент) на Scala. База для одного из рабочих проектов, пока ни разу не production ready.
-</section>
 
   
 </aside>
@@ -480,11 +513,49 @@
 
     </div>
   </div>
-  <footer><p>
+  <footer role="contentinfo"><p>
   Copyright &copy; 2012 - Yuri Buyanov -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
 </footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'digal';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://digal.github.com/blog/2011/09/25/squeryl/';
+        var disqus_url = 'http://digal.github.com/blog/2011/09/25/squeryl/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
 </body>
 </html>
