@@ -4,7 +4,7 @@
   <title><![CDATA[Лошоть и байты]]></title>
   <link href="http://digal.github.com/atom.xml" rel="self"/>
   <link href="http://digal.github.com/"/>
-  <updated>2012-05-04T23:12:11+04:00</updated>
+  <updated>2012-05-09T23:10:03+04:00</updated>
   <id>http://digal.github.com/</id>
   <author>
     <name><![CDATA[Yuri Buyanov]]></name>
@@ -12,6 +12,32 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Линкопост номер 3]]></title>
+    <link href="http://digal.github.com/blog/2012/05/09/weekend-links/"/>
+    <updated>2012-05-09T22:12:00+04:00</updated>
+    <id>http://digal.github.com/blog/2012/05/09/weekend-links</id>
+    <content type="html"><![CDATA[<p>И снова привет. Вопреки моим ожиданиям, в &#8220;избранное&#8221; твиттера за праздники набежало довольно-таки много всего, попробую накопать из этой кучи чего-нибудь интересное для сегодняшней подборки.</p>
+
+<!--more-->
+
+
+<ul>
+<li><p>Компания Dell <a href="http://bartongeorge.net/2012/05/07/introducing-project-sputnik-developer-laptop/">готовится</a> выпустить Sputnik — ноутбук с Убунтой на борту, предназначенный специально разработчиков. Помимо железа (которое не сильно отличается от Dell XPS13) предполагается некая система управления разработческим софтом, однако чем оно лучше MBP с обычным пакетным менеджером, я пока не очень понимаю.</p></li>
+<li><p>GitHub опять порадовал, <a href="https://github.com/blog/1125-new-git-homepage">сделав</a> новую домашнюю страничку для <a href="http://git-scm.com/">Git</a>. Мне нравится.</p></li>
+<li><p>Twitter не отстал, <a href="http://thechangelog.com/post/22607432623/twitter-text-objc-an-objective-c-implementation-of-twitt">выпустив</a> ObjC-<a href="https://github.com/twitter/twitter-text-objc">библиотеку</a> для обработки текста. Ну, правда, обработки не абы какой, а вполне понятной: вычленения #хештегов, @упоминаний, ссылок и подсчёта количества символов в тексте. Впрочем, должно оказаться полезным для тех, кому нужна какая-то функциональность твиттер-клиента. Также, в природе существуют версии для <a href="https://github.com/twitter/twitter-text-rb">Ruby</a>, <a href="https://github.com/twitter/twitter-text-java">Java</a> и <a href="https://github.com/twitter/twitter-text-js">JavaScript</a>.</p></li>
+<li><p>В репозиторий вебкита прилетел <a href="http://trac.webkit.org/changeset/116384">коммит</a>, добавляющий в движок функцилнальность <a href="http://webintents.org/">веб-интентов</a>. Для тех, кто занимался разработкой для Android: да, это те же самые Intents, только для веба. Для остальных, могу только пояснить что это способ, предназначенный для организации взаимодействия между совершенно незнакомыми веб-приложениями через некий стандартный механизм. Ну то есть, например, имея картинку в каком-нибудь одном веб-приложении, пользователь может отредактировать её в другом, а затем расшарить с помощью третьего. Немного сумбурно объясняю, но, поверьте мне, это довольно круто. По крайней мере, именно механизма интентов мне не хватает больше всего в iOS как бывшему пользователю Android.</p></li>
+<li><p><a href="http://blog.prettylittlestatemachine.com/blog/2011/07/05/hello-world-candy-5-fues-for-developers-to-love/">Подборка</a> пяти проектов, дающих разработчику самый лучший, с точки зрения автора поста, FUE — First User Experience. Также предлагается интересная метрика сложности инструментов разработки (или скорее качества Developer Experience) — TTFHW (Time To First Hello World). Вообще тема <a href="http://developerexperience.org/">Developer Experience</a> очень интересная, положу её, пожалуй, тоже в стопочку &#8220;когда-нибудь написать большой пост&#8221;.</p></li>
+<li><p>Просто очень милый <a href="http://zmoazeni.github.com/gitspective/">таймлайн</a> пользователя на Гитхабе. Пишут что в стиле Фейсбука, хотя я фейсбучный таймлайн так и не заценил. Придётся поверить на слово.</p></li>
+<li><p><a href="http://html9responsiveboilerstrapjs.com/">HTML9 Responsive Boilerstrap JS</a> — мне кажется, кто-то должен сделать из этого генератор текстов-заглушек по типу <a href="http://hipsteripsum.me/">Hipster Ipsum</a>.</p></li>
+<li><p>HTML5-<a href="http://wolfenstein.bethsoft.com/">версия</a> Wolfenstein 3D, в честь 20-летия (всего-то?) выхода оригинала.</p></li>
+</ul>
+
+
+<p>Вот, пожалуй, и всё. Увидимся.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Линкоблог: iOS-выпуск]]></title>
