@@ -4,7 +4,7 @@
   <title><![CDATA[Category: links | Лошоть и байты]]></title>
   <link href="http://digal.github.com/blog/categories/links/atom.xml" rel="self"/>
   <link href="http://digal.github.com/"/>
-  <updated>2012-05-11T23:35:58+04:00</updated>
+  <updated>2012-05-15T23:12:49+04:00</updated>
   <id>http://digal.github.com/</id>
   <author>
     <name><![CDATA[Yuri Buyanov]]></name>
@@ -12,6 +12,35 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Линкопост номер 5]]></title>
+    <link href="http://digal.github.com/blog/2012/05/15/links-5/"/>
+    <updated>2012-05-15T22:43:00+04:00</updated>
+    <id>http://digal.github.com/blog/2012/05/15/links-5</id>
+    <content type="html"><![CDATA[<p>Хотел написать этот пост ещё пару дней назад, но всё никак не успевал, так что некоторые ссылки могли потерять первозданный блеск и свежесть. Ну да не страшно, поехали!</p>
+
+<!--more-->
+
+
+<ul>
+<li><p>Линус Торвальдс <a href="https://github.com/torvalds/linux/pull/17#issuecomment-5654674">не любит</a> гитхабовские пуллреквесты. Странно, а мне они нравятся.</p></li>
+<li><p>Тема не нова, но тем не менее: неплохой <a href="http://www.revision-zero.org/orm-haters-do-get-it">пост</a> о несоместимости объектного и реляционного миров и о том, что ORM неэффективны по определению.</p></li>
+<li><p>В догонку к ссылке из предыдущего поста: ещё один, гораздо более сложный <a href="http://wtpl.heroku.com/">тест</a> на знание языков программирования. И даже не надейтесь набрать сколько-нибудь высокий балл, если вы не отличаете K от J, SNUSP от BrainFuck и ACL от Common Lisp.</p></li>
+<li><p>Интересная <a href="http://rogerstringer.com/2012/04/16/using-dropbox-as-a-git-repository">идея</a> использовать DropBox в качестве стораджа для GitHub-репозитория. Должно быть действительно довольно удобно для тех, кто работает на разных машинах, но пока не очень ясно чем может грозить.</p></li>
+<li><p>Неплохое <a href="http://docs.python.org/release/3.1.5/howto/functional.html">введение</a> в функциональное программирование вообще и на Python в частности. Прямо в питоновской документации.</p></li>
+<li><p>А вот авторы <a href="http://fsharpnews.blogspot.co.uk/2012/05/parallel-programming-in-functional.html">другой статьи</a> — предостерегают от использования "чисто" функциональных языков в параллельных (хотя по сути, скорее, в сколько-нибудь нагруженных) системах, взяв за пример Haskell и указывая на ряд нерешённых в таких языках проблем, прямо влияющих на производительность. В качестве альтернативы они предлагают использовать F# (ну или другие гибридные языки, например, Scala — добавлю я от себя.)</p></li>
+<li><p><a href="http://kapeli.com/dash/">Dash</a> — Очень милая смотрелка документации для сocoa- и web- девелоперов. Также, позволяет довольно удобно хранить и использовать снипеты. <a href="http://itunes.apple.com/us/app/dash-docs-snippets/id458034879?mt=12">Лежит бесплатно</a> в Mac App store. В общем, поставил себе, и всем советую.</p></li>
+<li><p>Несколько полезных контролов для iOS девелоперов: Во-первых: сетка <a href="https://github.com/kolinkrewinkel/KKGridView">KKGridView</a> с замахом на самую лучшую реализацию этого контрола, скорость и похожесть на UITableView. Во-вторых: похожий, но более специализированный <a href="https://github.com/ultragtx/GSBookShelf">GSBookShelf</a> — по сути, имплементация "книжных полок" из iBooks. И в-третьих — всплывающее меню с иконочками: <a href="https://github.com/mattgemmell/MGTileMenu">MGTileMenu</a>. Может пригодиться, например, в качестве панели инструментов в каком-нибудь редакторе чего-нибудь.</p></li>
+<li><p>Немецкие фрилансеры <a href="http://www.deskmag.com/en/new-350-euro-monthly-freelancer-tax-will-kill-innovation-in-germany-378">напуганы</a> очередным налогом, который грозит поставить данный вид под угрозу вымирания. Платить от 650 евро в месяц ещё вообще ничего не заработав — это, действительно, не очень приятно.</p></li>
+<li><p><a href="http://be5invis.github.com/moescript/">Moe</a> — очередная замена JavaScript, в этот раз базирующаяся на идеях Haskell и Python.</p></li>
+<li><p>Тоже диалект JS, но совсем в другую сторону. <a href="http://mbebenita.github.com/LLJS/">LLJS</a> — низкоуровневый типизированный жаваскрипт с ручным управлением памятью. С malloc и free, всё как у больших. Ну я не знаю даже…</p></li>
+</ul>
+
+
+<p>На этом на сегодня всё, пишите фидбеки и присылайте ссылки. Пока.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Линкопост номер 3]]></title>
