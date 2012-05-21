@@ -4,7 +4,7 @@
   <title><![CDATA[Лошоть и байты]]></title>
   <link href="http://digal.github.com/atom.xml" rel="self"/>
   <link href="http://digal.github.com/"/>
-  <updated>2012-05-15T23:12:49+04:00</updated>
+  <updated>2012-05-22T00:02:35+04:00</updated>
   <id>http://digal.github.com/</id>
   <author>
     <name><![CDATA[Yuri Buyanov]]></name>
@@ -12,6 +12,40 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Линкопост номер 6]]></title>
+    <link href="http://digal.github.com/blog/2012/05/21/links-6/"/>
+    <updated>2012-05-21T21:50:00+04:00</updated>
+    <id>http://digal.github.com/blog/2012/05/21/links-6</id>
+    <content type="html"><![CDATA[<p>Привет.</p>
+
+<p>Последние дни был очень занят подготовкой и проведением <a href="http://scaladev.ru/">ScalaDev</a>, так что ссылок накопилось просто неимоверное количество. Приступим, не мешкая.</p>
+
+<!--more-->
+
+
+<ul>
+<li><p>Симпатичный анимированный <a href="http://www.google.com/green/storyofsend/desktop/">сайт</a> от гугла, наглядно рассказывающий о путешествии обычного электронного письма. Могут же, когда захотят.</p></li>
+<li><p>Просто очень симпатичный <a href="http://pretty-rfc.herokuapp.com/">сайт</a> на базе <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>, для удобного и приятного глазу чтения RFC.</p></li>
+<li><p><a href="http://blog.evernote.com/2011/03/24/evernote%E2%80%99s-three-laws-of-data-protection/">Политика</a> Evernote по отношению к пользовательским данным в трёх простых правилах. Очень понятный и хороший подход. Надеюсь, другие сервисы эти правила тоже позаимствуют.</p></li>
+<li><p><a href="http://slon.ru/ipad/7_elementov_sistemy_obrazovaniya_xxi_veka-786760.xhtml">Статья</a> Павла Дурова о настоящем и будущем образования. Где-то, может, он утрирует, но в целом, со многими вещами я соглашусь.</p></li>
+<li><p>Очень боянистая ссылка, которая повторно всплыла в моей ленте, и которой я не могу не поделиться. <a href="https://github.com/mroth/lolcommits">Lolcommit</a>: небольшая программка, которая снимает вас на вебкамеру всякий раз, когда вы делаете git commit, дополняя фотографию коммит мессаджем.</p></li>
+<li><p>Большая <a href="http://www.rockettheme.com/magazine/1319-using-sublime-text-2-for-development">статья</a> о том, чего можно накрутить на <a href="http://www.sublimetext.com/2">Sublime Text 2</a> для нужд разработчика. Всем, кто использует этот замечательный редактор — читать. Всем кто не использует — читать, устанавливать, и тоже использовать.</p></li>
+<li><p>Веб-сервер nginx <a href="http://forum.nginx.org/read.php?29,226562">собирается</a> обзавестись поддержкой <a href="http://ru.wikipedia.org/wiki/SPDY">SPDY</a>. Ну, будем надеяться, что другие не отстанут.</p></li>
+<li><p><a href="http://underscorejs.org/">Undescore.js</a>, библиотека для добавления массы удобных ФП-фишечек в JS, внезапно <a href="https://github.com/robb/Underscore.m">перенесена</a> на Obj-C. Выглядит немного непривычно, но попробовать стоит обязательно. К слову, оригинальную либу я использовал в работе над <a href="http://digal.github.com/nerdometer/">&#8220;нердометром&#8221;</a>, для того чтобы добавить в JS хотя бы немного привычной скаловской функциональщины.</p></li>
+<li><p><a href="https://github.com/xissburg/XBImageFilters">XBImageFilters</a> ios-библиотека для создания фильтров изображений в реальном времени, например для обработки изображения с камеры айфона. Работает на OpenGL ES 2, фильтры задаются шейдерами на GLSL. Выглядит довольно впечатляюще.</p></li>
+<li><p>Большой <a href="http://www.codinghorror.com/blog/2012/05/the-eternal-lorem-ipsum.html">пост</a> от Джеффа Атвуда, посвящённый Lorem Ipsum, c подробным введением в историю вопроса и очень большой подборкой ипсум-генераторов на любой вкус и цвет. Мой любимый — <a href="http://hipsteripsum.me/">Hipster Ipsum</a>.</p></li>
+<li><p>Большой эммм&#8230; спор о роли Николы Теслы и Томаса Эдисона в истории. Начинается <a href="http://theoatmeal.com/comics/tesla">эпичным</a> комиксом на the Oatmeal, продолжается <a href="http://www.forbes.com/sites/alexknapp/2012/05/18/nikola-tesla-wasnt-god-and-thomas-edison-wasnt-the-devil/">статьёй</a> с возражениями в Forbes, и заканчивается (заканчивается ли?), и подробным <a href="http://theoatmeal.com/blog/tesla_response">разбором полётов</a> от того же the Oatmeal. Ждём продолжения.</p></li>
+<li><p>GitHub <a href="https://github.com/blog/1127-github-for-windows">выпустил</a> клиента для Windows. Я пока не очень понял, насколько он хорошо выступает в качестве просто Git-клиента, но если это действительно так, то мои поздравления пользователям Windows.</p></li>
+<li><p>Ещё одна <a href="http://worqshop.com/">IDE для айпада</a>, на этот раз с поддержкой Git и Heroku. То есть, практически, полноценный инструмент разработки на iOS.</p></li>
+<li><p>И на последок — вещь, которой мне, слоупоку, не хватало те последние несколько лет, которые я активно работал со всякими REST-сервисами. <a href="https://chrome.google.com/webstore/detail/chklaanhfefbnpoihckbnefhakgolnmc">Хромовский экстеншен</a> для удобного просмотра JSON в браузере. Наверняка он не единственный, и вообще существует очень давно, но догадался я найти и использовать такую штуку только сейчас. Очень рекомендую, если вам, как и мне, часто приходится работать с JSON.</p></li>
+</ul>
+
+
+<p>На этом всё, увидимся через несколько дней. Пока.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Линкопост номер 5]]></title>
