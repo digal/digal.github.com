@@ -1,108 +1,97 @@
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>Fixtures - Лошоть и байты</title>
-  <meta name="author" content="Yuri Buyanov">
+	<meta charset="utf-8">
+	<title>Fixtures - Лошоть и байты</title>
+	<meta name="author" content="Yuri Buyanov">
 
-  
-  <meta name="description" content="В предыдущем посте я рассказывал об исполняемых конфигах ostrich и не упомянул особых их достоинств, кроме type safety и удобства работы с &hellip;">
-  
+	
+	<meta name="description" content="В предыдущем посте я рассказывал об исполняемых конфигах ostrich и не упомянул особых их достоинств, кроме type safety и удобства работы с &hellip;">
+	
+	<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://digal.github.com/blog/2011/09/07/fixtures">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="Лошоть и байты" type="application/atom+xml">
-  <!--Fonts from Google's Web font directory at http://google.com/webfonts -->
-<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
-
-  
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-25244055-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-
-
+	<link href="/atom.xml" rel="alternate" title="Лошоть и байты" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">Лошоть и байты</a></h1>
-  
-    <h2>The blog</h2>
-  
-</hgroup>
+<body>
+	<header id="header" class="inner"><h1><a href="/">Лошоть и байты</a></h1>
+<nav id="main-nav"><ul class="main">
+	<!-- <li><a href="/">Blog</a></li> -->
+	<li><a href="/blog/archives">Архив</a></li>
+  <li><a href="http://www.e-legion.ru/">Работа</a></li>
+  <li><a href="http://digal.github.com/nerdometer">Nerd-o-meter</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<!-- <li><a href="/">Blog</a></li> -->
+	<li><a href="/blog/archives">Архив</a></li>
+  <li><a href="http://www.e-legion.ru/">Работа</a></li>
+  <li><a href="http://digal.github.com/nerdometer">Nerd-o-meter</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:digal.github.com">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		<a class="twitter" href="http://twitter.com/digal" title="Twitter">Twitter</a>
+		
+		
+		<a class="github" href="https://github.com/digal" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:digal.github.com">
+	</form>
+</nav>
 
 </header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:digal.github.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul role=main-navigation>
-  <li><a href="/">Блог</a></li>
-  <li><a href="/blog/archives">Архив</a></li>
-</ul>
-
-</nav>
-  <div id="main">
-    <div id="content">
-      <div>
-<article class="hentry" role="article">
-  
-  <header>
-    
-      <h1 class="entry-title">Fixtures</h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-09-07T09:46:00+04:00" pubdate data-updated="true">Sep 7<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-<div class="entry-content"><p>В предыдущем посте я рассказывал об исполняемых конфигах ostrich и не упомянул особых их достоинств, кроме type safety и удобства работы с настройками со стороны приложения. На прошлой неделе я наткнулся на ещё один хороший юзкейс для таких конфигов.</p>
+	<!-- 
+<div id="banner" class="inner">
+	<div class="container">
+		<ul class="feed"></ul>
+	</div>
+	<small><a href="http://twitter.com/digal">digal</a> @ <a href="http://twitter.com">Twitter</a></small>
+	<div class="loading">Loading...</div>
+</div>
+<script src="/javascripts/twitter.js"></script>
+<script type="text/javascript">
+	(function($){
+		$('#banner').getTwitterFeed('digal', 4, false);
+	})(jQuery);
+</script>
+ -->
+	<div id="content" class="inner"><article class="post">
+	<h1 class="title">Fixtures</h1>
+	<div class="entry-content"><p>В предыдущем посте я рассказывал об исполняемых конфигах ostrich и не упомянул особых их достоинств, кроме type safety и удобства работы с настройками со стороны приложения. На прошлой неделе я наткнулся на ещё один хороший юзкейс для таких конфигов.</p>
 
 <p>Предположим, мы развёртываем наше приложение в разных окружениях (dev, test, prod), и в некоторых из них было бы здорово иметь в базе некоторые начальные данные для упрощения, например, процесса тестирования. Есть несколько достаточно тривиальных, но не очень удобных способов решения этой проблемы, особенно если загрузка этих начальных данных - часть автоматического развёртывания через CI-сервер. В скриптовых языках, где исполняемые файлы настроек - норма, такие данные (называемые fixtures) часто делаются частью конфига.</p>
 
@@ -220,14 +209,8 @@
 </div>
 
 
-  <footer>
-    <p class="meta">
-      
-  
-
-<span class="byline author vcard">Posted by <span class="fn">Yuri Buyanov</span></span>
-
-      
+<div class="meta">
+	<div class="date">
 
 
 
@@ -239,142 +222,48 @@
   
 
 
-<time datetime="2011-09-07T09:46:00+04:00" pubdate data-updated="true">Sep 7<span>th</span>, 2011</time>
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/libraries/'>libraries</a>, <a class='category' href='/blog/categories/ostrich/'>ostrich</a>, <a class='category' href='/blog/categories/scala/'>scala</a>
-  
-</span>
+<time datetime="2011-09-07T09:46:00+04:00" pubdate data-updated="true">Sep 7<span>th</span>, 2011</time></div>
+	<div class="tags">
 
 
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://digal.github.com/blog/2011/09/07/fixtures/" data-via="digal" data-counturl="http://digal.github.com/blog/2011/09/07/fixtures/" >Tweet</a>
-  
-  
-  
+	<a class='category' href='/blog/categories/libraries/'>libraries</a>, <a class='category' href='/blog/categories/ostrich/'>ostrich</a>, <a class='category' href='/blog/categories/scala/'>scala</a>
+
+
+</div>
+	
+</div></article>
+<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
 
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2011/09/05/no-newsletters/" title="Previous Post: Пример хорошего UX">&laquo; Пример хорошего UX</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2011/09/25/squeryl/" title="Next Post: Squeryl: основы">Squeryl: основы &raquo;</a>
-      
-    </p>
-  </footer>
-</article>
 
-  <section>
-    <h1>Comments</h1>
+<section id="comment">
+    <h1 class="title">Comments</h1>
     <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-  </section>
-
+</section>
 </div>
+	<footer id="footer" class="inner">Copyright &copy; 2012
 
-<aside class="sidebar">
-  
-    <section>
-  <h1>Ссылки:</h1>
-  <ul>
-    <li><a href="http://www.e-legion.ru/">Работа</a></li>
-    <li><a href="https://github.com/digal/">GitHub</a></li>
-    <li><a href="http://twitter.com/#!/digal">Twitter</a></li>
-  </ul>
-</section><section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2012/05/31/links-7/">Линкопост номер 7, дачный.</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/05/21/links-6/">Линкопост номер 6</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/05/15/links-5/">Линкопост номер 5</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/05/11/links-4/">Линкопост номер 4</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/05/09/weekend-links/">Линкопост номер 3</a>
-      </li>
-    
-  </ul>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating...</li>
-  </ul>
-  
-  <a href="https://github.com/digal">@digal</a> on GitHub
-  
-  <script type="text/javascript">
-    $.domReady(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'digal',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-<section>
-  <h1>Latest Tweets</h1>
-  <ul id="tweets">
-    <li class="loading">Status updating...</li>
-  </ul>
-  <script type="text/javascript">
-    $.domReady(function(){
-      getTwitterFeed("digal", 4, false);
-    });
-  </script>
-  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
-  
-    <a href="http://twitter.com/digal" class="twitter-follow-button" data-show-count="false">Follow @digal</a>
-  
-</section>
-
-
-  
-</aside>
-
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2012 - Yuri Buyanov -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
+    Yuri Buyanov
 
 </footer>
-  
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
 
 <script type="text/javascript">
       var disqus_shortname = 'digal';
@@ -394,21 +283,17 @@
 
 
 
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-25244055-1']);
+		_gaq.push(['_trackPageview']);
 
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
 
 
 

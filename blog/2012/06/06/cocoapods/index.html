@@ -1,0 +1,399 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Cocoapods: управление зависимостями в iOS-проектах - Лошоть и байты</title>
+	<meta name="author" content="Yuri Buyanov">
+
+	
+	<meta name="description" content="Собрался завтра рассказать коллегам про управление зависимостями в iOS-проектах и решил, что написать пост — самый лучший способ подготовиться и &hellip;">
+	
+	<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Лошоть и байты" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+</head>
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">Лошоть и байты</a></h1>
+<nav id="main-nav"><ul class="main">
+	<!-- <li><a href="/">Blog</a></li> -->
+	<li><a href="/blog/archives">Архив</a></li>
+  <li><a href="http://www.e-legion.ru/">Работа</a></li>
+  <li><a href="http://digal.github.com/nerdometer">Nerd-o-meter</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<!-- <li><a href="/">Blog</a></li> -->
+	<li><a href="/blog/archives">Архив</a></li>
+  <li><a href="http://www.e-legion.ru/">Работа</a></li>
+  <li><a href="http://digal.github.com/nerdometer">Nerd-o-meter</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:digal.github.com">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		<a class="twitter" href="http://twitter.com/digal" title="Twitter">Twitter</a>
+		
+		
+		<a class="github" href="https://github.com/digal" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:digal.github.com">
+	</form>
+</nav>
+
+</header>
+	<!-- 
+<div id="banner" class="inner">
+	<div class="container">
+		<ul class="feed"></ul>
+	</div>
+	<small><a href="http://twitter.com/digal">digal</a> @ <a href="http://twitter.com">Twitter</a></small>
+	<div class="loading">Loading...</div>
+</div>
+<script src="/javascripts/twitter.js"></script>
+<script type="text/javascript">
+	(function($){
+		$('#banner').getTwitterFeed('digal', 4, false);
+	})(jQuery);
+</script>
+ -->
+	<div id="content" class="inner"><article class="post">
+	<h1 class="title">Cocoapods: управление зависимостями в iOS-проектах</h1>
+	<div class="entry-content"><p>Собрался завтра рассказать коллегам про управление зависимостями в iOS-проектах и решил, что написать пост — самый лучший способ подготовиться и привести мысли в порядок. Надеюсь, этот &#8220;побочный продукт&#8221;, поможет и кому-то из читателей.</p>
+
+<!--more-->
+
+
+<h2>Проблемы?</h2>
+
+<p>Наверное, каждый, кто добавлял в iOS- (или, если брать шире, Cocoa-) проект библиотеку-другую, знает, насколько бесчеловечно организована работа со сторонним кодом в XCode и всём эппловском тулчейне. Особенно очевидна проблема для тех, кто ранее разрабатывал под платформы, где есть развитые средства для управления зависимостями. В частности это Java (и всё разношёрстное JVM-based-племя) c монстрообразным Maven и инструментами на его основе (ivy, gradle, buildr, sbt) и Ruby (с общепринятыми gems и bundler). Собственно, так было и в моём случае. Попробую описать вкратце встречающиеся проблемы.</p>
+
+<h3>Установка</h3>
+
+<p>Начинается всё с установки. Инструкция по оной к более-менее развесистой библиотеке занимает обычно не один экран текста со скриншотами, да ещё и имеет неприятное свойство устаревать или быть несовместимой с какими-то версиями XCode. Хорошими примерами могут быть <a href="https://github.com/RestKit/RestKit/wiki/Installing-RestKit-in-Xcode-4.x">RestKit</a> или, например, <a href="http://sqlcipher.net/ios-tutorial">SQLCipher</a>. Да и если библиотека устанавливается просто добавлением исходников (или статической либы) в проект, процедура скачать-распаковать-перенести-добавить-в-проект начинает несколько доставать. И уж совершенно точно это всё отбивает охоту попробовать несколько библиотек, с тем, чтобы найти подходящую под нужды конкретного проекта.</p>
+
+<h3>Хранение</h3>
+
+<p>После установки, перед разработчиком встаёт выбор варианта хранения.</p>
+
+<ul>
+<li>Положить статически собранную библиотеку в проект и VCS.</li>
+<li>Положить сорцы библиотеки в проект и VCS. Обычно в какую-нибудь отдельную папочку типа Vendors.</li>
+<li>Положить сорцы в виде Git-сабмодуля.</li>
+<li>Держать библиотеки вообще вне VCS.</li>
+<li>Вытаскивать библиотеки откуда-либо шелл-скриптом при сборке.</li>
+</ul>
+
+
+<p>У каждого из этих способов есть куча разных достоинств и надостатков. Даже ставшие стандартом де-факто git submodules неидеальны. Библиотека-то может лежать и в SVN. А уж сколько плясок с бубном придётся выполнить, чтобы сменить репозиторий (например, на свой форк библиотеки). Впрочем, на первых порах проблемы вызывает даже процесс обновления исходников.</p>
+
+<h3>Подзависимости</h3>
+
+<p>Иногда наши библиотеки используют &#8220;ещё более другие&#8221;© библиотеки. Чаще всего, они лежат вместе с исходниками родительской библиотеки. Весёлости начинаются тогда, когда в вашем проекте, или в другой библиотеке эта дочерняя библиотека уже используется. А если она ещё и другой версии? В этом случае приходится выбирать, от какой от них избавиться.</p>
+
+<h3>Обновление</h3>
+
+<p>Вот где начинается главное веселье. Проблемы могут возникнуть уже при попытке определить, а какая, собственно, версия используется сейчас. Хорошо если это сабмодуль, или есть какой-ниубдь README. А если нет? Проблема вовсе не надумана: невозможность узнать текущую версию библиотеки мешает понять, например, исправлен ли в ней определённый баг.</p>
+
+<p>Дальше — интереснее. Хорошим примером тут будет всё тот же RestKit. Обновление с версии 0.9.4 до 0.10.0 с непривычки может легко съесть рабочий день. Тут и пляски с сабмодулем, и обновление Header Search Paths (которые, кстати, теперь, оказываются в разных местах при сборке из XCode и на билд-сервере). По сути, обновление библиотеки, это просто ещё одна установка. Как-то спасают здесь (не всегда) только git submodules.</p>
+
+<h2>Решение</h2>
+
+<p>Итак, как мы выяснили, проблем при использовании библиотек в Cocoa-разработке возникает целая куча. При этом на других платформах она вполне себе решается использованием dependency management tools, таких как maven или bundler. Как оказалось, альтернатив для платформы от Apple, оказалось даже несколько, однако стандартом де-факто сегодня становится одна: <a href="http://cocoapods.org/">CocoaPods</a>. Этот инструмент создан бывшим Ruby-девелопером Eloy Durán, написан на Ruby, и очень напоминает bundler.</p>
+
+<h3>Установка</h3>
+
+<p>Cocoapods является рубёвым гемом, поэтому установка проста до безобразия:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ [sudo] gem install cocoapods
+</span><span class='line'>$ pod setup
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Собственно всё, теперь cocoapods установлен на вашей машине.</p>
+
+<h3>Podfile</h3>
+
+<p>Все зависимости прописываются в специальном файле под названием <code>Podfile</code>. Синтаксис довольно простой. Предположим, мы хотим добавить в наш проект (<code>Example.xcodeproj</code>) библиотеку <code>AFNetworking</code>. Создаём в папке с проектом (рядом с .xcodeproj) оный подфайл и пишем туда:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">platform</span> <span class="ss">:ios</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">dependency</span> <span class="s1">&#39;AFNetworking&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;= 0.9.1&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>затем делаем:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="err">$</span> <span class="n">pod</span> <span class="n">install</span> <span class="no">Example</span><span class="o">.</span><span class="n">xcodeproj</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>и вуаля:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Updating</span> <span class="n">spec</span> <span class="n">repo</span> <span class="sb">`master&#39;</span>
+</span><span class='line'><span class="sb">Installing AFNetworking (0.9.1)</span>
+</span><span class='line'><span class="sb">Generating support files</span>
+</span><span class='line'>
+</span><span class='line'><span class="sb">[!] From now on use &#39;Example.xcworkspace&#39; instead of &#39;Example.xcodeproj&#39;.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Последняя строчка говорит нам о том, что cocoapods создал workspace с таким же названием, как и наш проект, и теперь надо использовать именно его. Собственно, вот как выглядит папка с проектом после установки подов:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="err">$</span> <span class="n">tree</span> <span class="o">-</span><span class="n">L</span> <span class="mi">1</span>
+</span><span class='line'><span class="o">.</span>
+</span><span class='line'><span class="err">├──</span> <span class="no">Default</span><span class="o">.</span><span class="n">png</span>
+</span><span class='line'><span class="err">├──</span> <span class="no">Default</span><span class="err">@</span><span class="mi">2</span><span class="n">x</span><span class="o">.</span><span class="n">png</span>
+</span><span class='line'><span class="err">├──</span> <span class="no">Example</span>
+</span><span class='line'><span class="err">├──</span> <span class="no">Example</span><span class="o">.</span><span class="n">xcodeproj</span>
+</span><span class='line'><span class="err">├──</span> <span class="no">Example</span><span class="o">.</span><span class="n">xcworkspace</span>
+</span><span class='line'><span class="err">├──</span> <span class="no">Pods</span>
+</span><span class='line'><span class="err">├──</span> <span class="no">Podfile</span>
+</span><span class='line'><span class="err">└──</span> <span class="no">Podfile</span><span class="o">.</span><span class="n">lock</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Этот воркспейс состоит из нашего проекта и проекта Pods, содержащего все указанные в подфайле библиотеки с зависимостями и собирающегося в одну единственную библиотеку <code>libPods.a</code>. Собственно, это всё. Никаких копирований-распаковок, никаких ковыряний в build settings. Собcтвенно и хранить-то папочку с проектом Pods в VCS не нужно, достаточно добавить только Podfile и Example.xcworkspace (и то я не уверен, что второе обязательно).</p>
+
+<h3>Specs</h3>
+
+<p>Естественно, никакой магии в этом нет, вся информация о зависимостях (откуда тянуть файлы, какие есть подзависимости, нужен ли для сборки ARC, какие платформы поддерживаются) содержится в большом <a href="https://github.com/cocoapods/specs">репозитории</a> на гитхабе в виде файликов, называющихся Specs. Искать по нему библиотеки можно с помощью команды <code>pod search</code>, или на <a href="http://cocoapods.org">сайте проекта</a>, а присоединиться к команде мейнтейнеров может любой: достаточно написать свою спеку (это довольно просто) и сделать pull request, что собственно я и сделал.</p>
+
+<p>Кстати, слежение за пулл-реквестами в specs-репозиторий, равно как и слежение за <a href="http://twitter.com/CocoaPodsOrg">твиттером проекта</a> — хороший способ находить полезные библиотеки, чем я и пользуюсь для своих линкопостов.</p>
+
+<h3>Версии и обновление</h3>
+
+<p>Cocoapods использует <a href="http://semver.org/">semantic versioning</a> для зависимостей, поэтому их версии можно указывать несколькими способами. Здесь, в принципе, почти всё понятно из синтаксиса.</p>
+
+<ul>
+<li><code>&gt; 0.1</code></li>
+<li><code>&gt;= 0.1</code></li>
+<li><code>&lt; 0.1</code></li>
+<li><code>&lt;= 0.1</code></li>
+<li><code>~&gt; 0.1.2</code> - использовать версии от 0.1.2 до 0.2 (не включая последнюю).</li>
+</ul>
+
+
+<p>Можно, кстати, и не указывать версию, в этом случае всегда будет использоваться самая последняя.</p>
+
+<p>Чтобы обновить библиотеку (или добавить ещё одну), достаточно просто обновить Podfile и опять сделать <code>pod install &lt;имяпроекта&gt;.xcodeproj</code></p>
+
+<h3>Посторонние библиотеки</h3>
+
+<p>Всё это прекрасно — скажете вы — но что делать, если нужной мне библиотеки нет в спеках, а заморачиваться с пулл-реквестом лень? Здесь есть несколько способов. Во-первых, можно использовать спеку, не лежащую в главном репозитории:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">dependency</span> <span class="s1">&#39;JSONKit&#39;</span><span class="p">,</span> <span class="ss">:podspec</span> <span class="o">=&gt;</span> <span class="s1">&#39;https://raw.github.com/gist/1346394/1d26570f68ca27377a27430c65841a0880395d72/JSONKit.podspec&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Во-вторых, можно даже включить спеку прямо в подфайл:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">dependency</span> <span class="k">do</span> <span class="o">|</span><span class="n">spec</span><span class="o">|</span>
+</span><span class='line'>  <span class="n">spec</span><span class="o">.</span><span class="n">name</span>         <span class="o">=</span> <span class="s1">&#39;JSONKit&#39;</span>
+</span><span class='line'>  <span class="n">spec</span><span class="o">.</span><span class="n">version</span>      <span class="o">=</span> <span class="s1">&#39;1.4&#39;</span>
+</span><span class='line'>  <span class="n">spec</span><span class="o">.</span><span class="n">source</span>       <span class="o">=</span> <span class="p">{</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">&#39;https://github.com/johnezang/JSONKit.git&#39;</span><span class="p">,</span> <span class="ss">:tag</span> <span class="o">=&gt;</span> <span class="s1">&#39;v1.4&#39;</span> <span class="p">}</span>
+</span><span class='line'>  <span class="n">spec</span><span class="o">.</span><span class="n">source_files</span> <span class="o">=</span> <span class="s1">&#39;JSONKit.*&#39;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>В-третьих, если спека на библиотеку уже есть, но вы хотите использовать другую (более новую, например, версию), можно указать репозиторий, откуда тащить код:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">dependency</span> <span class="s1">&#39;AFNetworking&#39;</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">&#39;https://github.com/gowalla/AFNetworking.git&#39;</span>
+</span><span class='line'><span class="n">dependency</span> <span class="s1">&#39;AFNetworking&#39;</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">&#39;https://github.com/gowalla/AFNetworking.git&#39;</span><span class="p">,</span> <span class="ss">:commit</span> <span class="o">=&gt;</span> <span class="s1">&#39;082f8319af&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Точное управление зависимостями</h3>
+
+<p>Часто, для разных таргетов в проекте необходимы разные зависимости. Классический случай: тестовый фреймворк нужен только для тестов. В этом случае, можно собрать несколько версий libPods:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">target</span> <span class="ss">:debug</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">dependency</span> <span class="s1">&#39;CocoaLumberjack&#39;</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">target</span> <span class="ss">:test</span><span class="p">,</span> <span class="ss">:exclusive</span> <span class="o">=&gt;</span> <span class="kp">true</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">dependency</span> <span class="s1">&#39;Kiwi&#39;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Опция exclusive указывает на то, что в библиотеку включаются <em>только</em> указанные зависимости. Нужные библиотеки нужно будет прицепить куда надо ручками, но это не так уж и сложно.</p>
+
+<h3>Грабли и бонусы</h3>
+
+<p>Поскольку cocoapods  — молодой проект, то, естественно, не обходится без каких-то проблем. Впрочем, пока всё что я встречал - довольно легко решалось. Одной такой граблей была проблема с тем же злополучным RestKit: как оказалось, необходимо было вместо добавления существующей большой спеки, добавить штук пять под-спек (вида <code>RestKit/CoreData</code>). Впрочем, возможно это уже починили.</p>
+
+<p>Другая проблема — xcodebuild на билд-сервере не видит схем внутри воркспейса. Для починки нужно один раз открыть воркспейс в XCode на машине, где происходит сборка. Впрочем, эта потеря времени должна компенсироваться наличием кеша для библиотек: лично у меня добавление RestKit в проект запросто добавляет лишние пять минут к сборке на сервере именно за счёт долгого <code>git clone</code>.</p>
+
+<h2>Заключение</h2>
+
+<p>В общем, по опыту тех нескольких проектов, где я использовал CocoaPods — впечатления очень хорошие. Довольно много времени экономится на добавлении и обновлении библиотек, да и единый их список для проекта очень удобен. Я очень надеюсь, что нам удастся встроить этот инструмент в стандартный процесс iOS-разработки в <a href="http://www.e-legion.ru/">e-Legion</a>, для чего, собственно я и создал это введение. Спасибо за внимание и пишите фидбеки.</p>
+
+<p>Пока.</p>
+
+<h2>P.S.</h2>
+
+<p>Решил сменить дефолтную тему на <a href="http://zespia.tw/Octopress-Theme-Slash/">slash</a>. Как вам?</p>
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-06T21:52:00+04:00" pubdate data-updated="true">Jun 6<span>th</span>, 2012</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/cocoapods/'>cocoapods</a>, <a class='category' href='/blog/categories/ios/'>ios</a>, <a class='category' href='/blog/categories/tutorials/'>tutorials</a>
+
+
+</div>
+	
+</div></article>
+<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2012
+
+    Yuri Buyanov
+
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'digal';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://digal.github.com/blog/2012/06/06/cocoapods/';
+        var disqus_url = 'http://digal.github.com/blog/2012/06/06/cocoapods/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-25244055-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+</body>
+</html>

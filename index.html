@@ -1,92 +1,110 @@
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>Лошоть и байты</title>
-  <meta name="author" content="Yuri Buyanov">
+	<meta charset="utf-8">
+	<title>Лошоть и байты</title>
+	<meta name="author" content="Yuri Buyanov">
 
-  
-  <meta name="description" content="Очередной выпуск с аж десятидневной задержкой, вызванной поездкой на дачу и, как обычно, кучей работы. В этом году дачный сезон скрашивается &hellip;">
-  
+	
+	<meta name="description" content="Собрался завтра рассказать коллегам про управление зависимостями в iOS-проектах и решил, что написать пост — самый лучший способ подготовиться и &hellip;">
+	
+	<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://digal.github.com">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="Лошоть и байты" type="application/atom+xml">
-  <!--Fonts from Google's Web font directory at http://google.com/webfonts -->
-<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
-
-  
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-25244055-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-
-
+	<link href="/atom.xml" rel="alternate" title="Лошоть и байты" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">Лошоть и байты</a></h1>
-  
-    <h2>The blog</h2>
-  
-</hgroup>
+<body>
+	<header id="header" class="inner"><h1><a href="/">Лошоть и байты</a></h1>
+<nav id="main-nav"><ul class="main">
+	<!-- <li><a href="/">Blog</a></li> -->
+	<li><a href="/blog/archives">Архив</a></li>
+  <li><a href="http://www.e-legion.ru/">Работа</a></li>
+  <li><a href="http://digal.github.com/nerdometer">Nerd-o-meter</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<!-- <li><a href="/">Blog</a></li> -->
+	<li><a href="/blog/archives">Архив</a></li>
+  <li><a href="http://www.e-legion.ru/">Работа</a></li>
+  <li><a href="http://digal.github.com/nerdometer">Nerd-o-meter</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:digal.github.com">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		<a class="twitter" href="http://twitter.com/digal" title="Twitter">Twitter</a>
+		
+		
+		<a class="github" href="https://github.com/digal" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:digal.github.com">
+	</form>
+</nav>
 
 </header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:digal.github.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul role=main-navigation>
-  <li><a href="/">Блог</a></li>
-  <li><a href="/blog/archives">Архив</a></li>
-</ul>
+	<!-- 
+<div id="banner" class="inner">
+	<div class="container">
+		<ul class="feed"></ul>
+	</div>
+	<small><a href="http://twitter.com/digal">digal</a> @ <a href="http://twitter.com">Twitter</a></small>
+	<div class="loading">Loading...</div>
+</div>
+<script src="/javascripts/twitter.js"></script>
+<script type="text/javascript">
+	(function($){
+		$('#banner').getTwitterFeed('digal', 4, false);
+	})(jQuery);
+</script>
+ -->
+	<div id="content" class="inner">
 
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/05/31/links-7/">Линкопост номер 7, дачный.</a></h1>
-    
-    
-      <p class="meta">
-        
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/06/06/cocoapods/">Cocoapods: управление зависимостями в iOS-проектах</a></h1>
+	<div class="entry-content">
+		<p>Собрался завтра рассказать коллегам про управление зависимостями в iOS-проектах и решил, что написать пост — самый лучший способ подготовиться и привести мысли в порядок. Надеюсь, этот &#8220;побочный продукт&#8221;, поможет и кому-то из читателей.</p>
+
+
+		
+		<a href="/blog/2012/06/06/cocoapods/" class="more-link">Read on &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
 
 
 
@@ -98,36 +116,31 @@
   
 
 
-<time datetime="2012-05-31T21:39:00+04:00" pubdate data-updated="true">May 31<span>st</span>, 2012</time>
-        
-      </p>
-    
-  </header>
+<time datetime="2012-06-06T21:52:00+04:00" pubdate data-updated="true">Jun 6<span>th</span>, 2012</time></div>
+	<div class="tags">
 
 
-  <div class="entry-content"><p>Очередной выпуск с аж десятидневной задержкой, вызванной поездкой на дачу и, как обычно, кучей работы. В этом году дачный сезон скрашивается практически нормальным 3G от Мегафона и айфоновским хотспотом, так что поток ссылок не иссякает.</p>
+	<a class='category' href='/blog/categories/cocoapods/'>cocoapods</a>, <a class='category' href='/blog/categories/ios/'>ios</a>, <a class='category' href='/blog/categories/tutorials/'>tutorials</a>
+
 
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/05/31/links-7/">Read on &rarr;</a>
-    </footer>
-  
+	
+</div></article>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/05/21/links-6/">Линкопост номер 6</a></h1>
-    
-    
-      <p class="meta">
-        
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/05/31/links-7/">Линкопост номер 7, дачный.</a></h1>
+	<div class="entry-content">
+		<p>Очередной выпуск с аж десятидневной задержкой, вызванной поездкой на дачу и, как обычно, кучей работы. В этом году дачный сезон скрашивается практически нормальным 3G от Мегафона и айфоновским хотспотом, так что поток ссылок не иссякает.</p>
+
+
+		
+		<a href="/blog/2012/05/31/links-7/" class="more-link">Read on &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
 
 
 
@@ -139,38 +152,33 @@
   
 
 
-<time datetime="2012-05-21T21:50:00+04:00" pubdate data-updated="true">May 21<span>st</span>, 2012</time>
-        
-      </p>
-    
-  </header>
+<time datetime="2012-05-31T21:39:00+04:00" pubdate data-updated="true">May 31<span>st</span>, 2012</time></div>
+	<div class="tags">
 
 
-  <div class="entry-content"><p>Привет.</p>
+	<a class='category' href='/blog/categories/links/'>links</a>
+
+
+</div>
+	
+</div></article>
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/05/21/links-6/">Линкопост номер 6</a></h1>
+	<div class="entry-content">
+		<p>Привет.</p>
 
 <p>Последние дни был очень занят подготовкой и проведением <a href="http://scaladev.ru/">ScalaDev</a>, так что ссылок накопилось просто неимоверное количество. Приступим, не мешкая.</p>
 
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/05/21/links-6/">Read on &rarr;</a>
-    </footer>
-  
+
+		
+		<a href="/blog/2012/05/21/links-6/" class="more-link">Read on &rarr;</a>
+	</div>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/05/15/links-5/">Линкопост номер 5</a></h1>
-    
-    
-      <p class="meta">
-        
+<div class="meta">
+	<div class="date">
 
 
 
@@ -182,36 +190,31 @@
   
 
 
-<time datetime="2012-05-15T22:43:00+04:00" pubdate data-updated="true">May 15<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
+<time datetime="2012-05-21T21:50:00+04:00" pubdate data-updated="true">May 21<span>st</span>, 2012</time></div>
+	<div class="tags">
 
 
-  <div class="entry-content"><p>Хотел написать этот пост ещё пару дней назад, но всё никак не успевал, так что некоторые ссылки могли потерять первозданный блеск и свежесть. Ну да не страшно, поехали!</p>
+	<a class='category' href='/blog/categories/links/'>links</a>
+
 
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/05/15/links-5/">Read on &rarr;</a>
-    </footer>
-  
+	
+</div></article>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/05/11/links-4/">Линкопост номер 4</a></h1>
-    
-    
-      <p class="meta">
-        
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/05/15/links-5/">Линкопост номер 5</a></h1>
+	<div class="entry-content">
+		<p>Хотел написать этот пост ещё пару дней назад, но всё никак не успевал, так что некоторые ссылки могли потерять первозданный блеск и свежесть. Ну да не страшно, поехали!</p>
+
+
+		
+		<a href="/blog/2012/05/15/links-5/" class="more-link">Read on &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
 
 
 
@@ -223,36 +226,31 @@
   
 
 
-<time datetime="2012-05-11T21:53:00+04:00" pubdate data-updated="true">May 11<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
+<time datetime="2012-05-15T22:43:00+04:00" pubdate data-updated="true">May 15<span>th</span>, 2012</time></div>
+	<div class="tags">
 
 
-  <div class="entry-content"><p>Привет. Внезапно набежало очень много всего за пару дней, будем разбирать. Пока кладу всё в перемешку, но думаю уже ввести какие-то разделы внутри одного поста, либо разделить посты по тематике. Надо?</p>
+	<a class='category' href='/blog/categories/links/'>links</a>
+
 
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/05/11/links-4/">Read on &rarr;</a>
-    </footer>
-  
+	
+</div></article>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/05/09/weekend-links/">Линкопост номер 3</a></h1>
-    
-    
-      <p class="meta">
-        
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/05/11/links-4/">Линкопост номер 4</a></h1>
+	<div class="entry-content">
+		<p>Привет. Внезапно набежало очень много всего за пару дней, будем разбирать. Пока кладу всё в перемешку, но думаю уже ввести какие-то разделы внутри одного поста, либо разделить посты по тематике. Надо?</p>
+
+
+		
+		<a href="/blog/2012/05/11/links-4/" class="more-link">Read on &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
 
 
 
@@ -264,36 +262,31 @@
   
 
 
-<time datetime="2012-05-09T22:12:00+04:00" pubdate data-updated="true">May 9<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
+<time datetime="2012-05-11T21:53:00+04:00" pubdate data-updated="true">May 11<span>th</span>, 2012</time></div>
+	<div class="tags">
 
 
-  <div class="entry-content"><p>И снова привет. Вопреки моим ожиданиям, в &#8220;избранное&#8221; твиттера за праздники набежало довольно-таки много всего, попробую накопать из этой кучи чего-нибудь интересное для сегодняшней подборки.</p>
+	<a class='category' href='/blog/categories/links/'>links</a>
+
 
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/05/09/weekend-links/">Read on &rarr;</a>
-    </footer>
-  
+	
+</div></article>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/05/04/other-links/">Линкоблог: iOS-выпуск</a></h1>
-    
-    
-      <p class="meta">
-        
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/05/09/weekend-links/">Линкопост номер 3</a></h1>
+	<div class="entry-content">
+		<p>И снова привет. Вопреки моим ожиданиям, в &#8220;избранное&#8221; твиттера за праздники набежало довольно-таки много всего, попробую накопать из этой кучи чего-нибудь интересное для сегодняшней подборки.</p>
+
+
+		
+		<a href="/blog/2012/05/09/weekend-links/" class="more-link">Read on &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
 
 
 
@@ -305,38 +298,33 @@
   
 
 
-<time datetime="2012-05-04T22:22:00+04:00" pubdate data-updated="true">May 4<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
+<time datetime="2012-05-09T22:12:00+04:00" pubdate data-updated="true">May 9<span>th</span>, 2012</time></div>
+	<div class="tags">
 
 
-  <div class="entry-content"><p>Оказалось, что если аккуратно складывать найденные интересные ссылки в файлик, то за день их легко набирается на нормальную подборку. Не такую как у некоторых, но всё же. Осталось только понять, где взять время на написание собственно поста.</p>
+	<a class='category' href='/blog/categories/links/'>links</a>
+
+
+</div>
+	
+</div></article>
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/05/04/other-links/">Линкоблог: iOS-выпуск</a></h1>
+	<div class="entry-content">
+		<p>Оказалось, что если аккуратно складывать найденные интересные ссылки в файлик, то за день их легко набирается на нормальную подборку. Не такую как у некоторых, но всё же. Осталось только понять, где взять время на написание собственно поста.</p>
 
 <p>Как-то так получилось, что сегодняшняя подборка посвящена в основном iOS и смежным темам. Впрочем, это наверное будет скорее правилом, нежели исключением, по крайней мере в ближайшее время.</p>
 
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/05/04/other-links/">Read on &rarr;</a>
-    </footer>
-  
+
+		
+		<a href="/blog/2012/05/04/other-links/" class="more-link">Read on &rarr;</a>
+	</div>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/05/03/links/">Links</a></h1>
-    
-    
-      <p class="meta">
-        
+<div class="meta">
+	<div class="date">
 
 
 
@@ -348,36 +336,31 @@
   
 
 
-<time datetime="2012-05-03T12:43:00+04:00" pubdate data-updated="true">May 3<span>rd</span>, 2012</time>
-        
-      </p>
-    
-  </header>
+<time datetime="2012-05-04T22:22:00+04:00" pubdate data-updated="true">May 4<span>th</span>, 2012</time></div>
+	<div class="tags">
 
 
-  <div class="entry-content"><p>Итак, обещанные ссылки. Сразу предупреждаю, что практически всё - не такое уж и новое, но тем кто не видел — определённо стоит посмотреть.</p>
+	<a class='category' href='/blog/categories/links/'>links</a>
+
 
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/05/03/links/">Read on &rarr;</a>
-    </footer>
-  
+	
+</div></article>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/05/03/update/">Апдейт</a></h1>
-    
-    
-      <p class="meta">
-        
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/05/03/links/">Links</a></h1>
+	<div class="entry-content">
+		<p>Итак, обещанные ссылки. Сразу предупреждаю, что практически всё - не такое уж и новое, но тем кто не видел — определённо стоит посмотреть.</p>
+
+
+		
+		<a href="/blog/2012/05/03/links/" class="more-link">Read on &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
 
 
 
@@ -389,14 +372,18 @@
   
 
 
-<time datetime="2012-05-03T12:08:00+04:00" pubdate data-updated="true">May 3<span>rd</span>, 2012</time>
-        
-      </p>
-    
-  </header>
+<time datetime="2012-05-03T12:43:00+04:00" pubdate data-updated="true">May 3<span>rd</span>, 2012</time></div>
+	<div class="tags">
+
+</div>
+	
+</div></article>
 
 
-  <div class="entry-content"><p>И снова здравствуйте.</p>
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/05/03/update/">Апдейт</a></h1>
+	<div class="entry-content">
+		<p>И снова здравствуйте.</p>
 
 <p>Поскольку времени на написание развёрнутых постов &#8220;на тему&#8221; категорически не хватает, мне пришла в голову мысль решить одним махом сразу две проблемы: оживить бложек и начать складывать куда-то все ссылки, которые лежат мёртвым грузом в &#8220;избранном&#8221; твиттера, инстапапере, гуглоридере и даже в закладках браузера. То есть, попросту говоря, организовать небольшой линкоблог по типу Бобуковского <a href="http://addmeto.cc/">addmeto.cc</a>, на который если кто-то ещё не подписался, то очень зря. Сегодня вечером попробую выложить то что собралось за вчера/сегодня отдельным постом, ну и дальше буду выкладывать по мере накопления.</p>
 
@@ -405,23 +392,14 @@
 <p>Также, не могу не упомянуть про одну из причин нехватки времени: отличные онлайн-курсы от <a href="https://www.coursera.org/">Coursera</a>. Вот буквально неделю назад я сдал финальный экзамен по <a href="https://www.coursera.org/course/algo">Design and Analysis of Algorithms I</a> от Стэнфорда, не удержался и начал десятинедельный <a href="https://www.coursera.org/course/compilers">Compilers</a> от него же, хотя пока не уверен, что буду успевать всё делать.</p>
 
 <p>Ну и на последок, прорекламирую очередной <a href="http://elegion.timepad.ru/event/manage/21310">ScalaSPB</a>, который пройдёт 19 Мая. Приходите, пообщаемся.</p>
-</div>
-  
-  
+
+		
+		
+	</div>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/01/04/2011-2012/">2011/2012</a></h1>
-    
-    
-      <p class="meta">
-        
+<div class="meta">
+	<div class="date">
 
 
 
@@ -433,36 +411,27 @@
   
 
 
-<time datetime="2012-01-04T22:33:00+04:00" pubdate data-updated="true">Jan 4<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Наконец дозрел до стандартного поста в виде небольшого подбивания (профессиональных) итогов года и построения планов на следующий. Год назад я приблизительно сформулировал в голове вещи, которые мне бы хотелось сделать в 2011-м, и, оглядываясь назад, можно с хорошей долей уверенности сказать что бОльшая часть вещей так или иначе выполнена.</p>
+<time datetime="2012-05-03T12:08:00+04:00" pubdate data-updated="true">May 3<span>rd</span>, 2012</time></div>
+	<div class="tags">
 
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/01/04/2011-2012/">Read on &rarr;</a>
-    </footer>
-  
+	
+</div></article>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/11/30/ios-impressions-2/">iOS-dev: первые впечатления. Всё остальное.</a></h1>
-    
-    
-      <p class="meta">
-        
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/01/04/2011-2012/">2011/2012</a></h1>
+	<div class="entry-content">
+		<p>Наконец дозрел до стандартного поста в виде небольшого подбивания (профессиональных) итогов года и построения планов на следующий. Год назад я приблизительно сформулировал в голове вещи, которые мне бы хотелось сделать в 2011-м, и, оглядываясь назад, можно с хорошей долей уверенности сказать что бОльшая часть вещей так или иначе выполнена.</p>
+
+
+		
+		<a href="/blog/2012/01/04/2011-2012/" class="more-link">Read on &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
 
 
 
@@ -474,129 +443,33 @@
   
 
 
-<time datetime="2011-11-30T17:44:00+04:00" pubdate data-updated="true">Nov 30<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Итак, продолжаю описывать уже немного утрясшиеся впечатления от iOS-разработки. Если кто-то пропустил, то <a href="http://digal.github.com/blog/2011/11/22/ios-impressions/">вот первый пост</a>. Теперь немного расскажу об инструментах и экостистеме. Сразу оговорюсь, что поскольку &#8220;настоящим сварщиком&#8221; мне называться пока рано, я могу быть не в курсе источников и реальных причин каких-то недочётов. Например, я наверняка буду приписывать отдельным инструментам недостатки, происходящие от других элементов тулчейна или даже просто из сложившихся здесь традиций.</p>
+<time datetime="2012-01-04T22:33:00+04:00" pubdate data-updated="true">Jan 4<span>th</span>, 2012</time></div>
+	<div class="tags">
 
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2011/11/30/ios-impressions-2/">Read on &rarr;</a>
-    </footer>
-  
+	
+</div></article>
 
+<nav id="pagenavi">
+    
+    
+        <a href="/blog/page/2/" class="next">Next</a>
+    
+    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
+</nav></div>
+	<footer id="footer" class="inner">Copyright &copy; 2012
 
-    </article>
-  
-  <div class="pagination">
-    
-      <a class="prev" href="/blog/page/2/">&larr; Older</a>
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
-  
-    <section>
-  <h1>Ссылки:</h1>
-  <ul>
-    <li><a href="http://www.e-legion.ru/">Работа</a></li>
-    <li><a href="https://github.com/digal/">GitHub</a></li>
-    <li><a href="http://twitter.com/#!/digal">Twitter</a></li>
-  </ul>
-</section><section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2012/05/31/links-7/">Линкопост номер 7, дачный.</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/05/21/links-6/">Линкопост номер 6</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/05/15/links-5/">Линкопост номер 5</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/05/11/links-4/">Линкопост номер 4</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/05/09/weekend-links/">Линкопост номер 3</a>
-      </li>
-    
-  </ul>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  
-  <a href="https://github.com/digal">@digal</a> on GitHub
-  
-  <script type="text/javascript">
-    $.domReady(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'digal',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-<section>
-  <h1>Latest Tweets</h1>
-  <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  <script type="text/javascript">
-    $.domReady(function(){
-      getTwitterFeed("digal", 4, false);
-    });
-  </script>
-  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
-  
-    <a href="http://twitter.com/digal" class="twitter-follow-button" data-show-count="false">Follow @digal</a>
-  
-</section>
-
-
-  
-</aside>
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2012 - Yuri Buyanov -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
+    Yuri Buyanov
 
 </footer>
-  
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
 
 <script type="text/javascript">
       var disqus_shortname = 'digal';
@@ -613,21 +486,17 @@
 
 
 
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-25244055-1']);
+		_gaq.push(['_trackPageview']);
 
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
 
 
 
