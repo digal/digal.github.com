@@ -4,7 +4,7 @@
   <title><![CDATA[Лошоть и байты]]></title>
   <link href="http://digal.github.com/atom.xml" rel="self"/>
   <link href="http://digal.github.com/"/>
-  <updated>2012-06-07T00:44:42+04:00</updated>
+  <updated>2012-06-07T00:50:47+04:00</updated>
   <id>http://digal.github.com/</id>
   <author>
     <name><![CDATA[Yuri Buyanov]]></name>
@@ -18,7 +18,7 @@
     <link href="http://digal.github.com/blog/2012/06/06/cocoapods/"/>
     <updated>2012-06-06T21:52:00+04:00</updated>
     <id>http://digal.github.com/blog/2012/06/06/cocoapods</id>
-    <content type="html"><![CDATA[<p>Собрался завтра рассказать коллегам про управление зависимостями в iOS-проектах и решил, что написать пост — самый лучший способ подготовиться и привести мысли в порядок. Надеюсь, этот &#8220;побочный продукт&#8221;, поможет и кому-то из читателей.</p>
+    <content type="html"><![CDATA[<p>Собрался завтра рассказать коллегам про управление зависимостями в iOS-проектах и решил, что написать пост — самый лучший способ подготовиться и привести мысли в порядок. Надеюсь, этот &#8220;побочный продукт&#8221; поможет и кому-то из читателей.</p>
 
 <!--more-->
 
