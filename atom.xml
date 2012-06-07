@@ -4,7 +4,7 @@
   <title><![CDATA[Лошоть и байты]]></title>
   <link href="http://digal.github.com/atom.xml" rel="self"/>
   <link href="http://digal.github.com/"/>
-  <updated>2012-06-07T12:32:42+04:00</updated>
+  <updated>2012-06-07T15:13:32+04:00</updated>
   <id>http://digal.github.com/</id>
   <author>
     <name><![CDATA[Yuri Buyanov]]></name>
@@ -156,7 +156,7 @@
 
 <p>Можно, кстати, и не указывать версию, в этом случае всегда будет использоваться самая последняя.</p>
 
-<p>Чтобы обновить библиотеку (или добавить ещё одну), достаточно просто обновить Podfile и опять сделать <code>pod install &lt;имяпроекта&gt;.xcodeproj</code></p>
+<p>Чтобы обновить библиотеку (или добавить ещё одну), достаточно просто обновить Podfile и опять сделать <code>pod install</code></p>
 
 <h3>Посторонние библиотеки</h3>
 
