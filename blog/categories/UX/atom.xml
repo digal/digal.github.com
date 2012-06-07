@@ -4,7 +4,7 @@
   <title><![CDATA[Category: UX | Лошоть и байты]]></title>
   <link href="http://digal.github.com/blog/categories/ux/atom.xml" rel="self"/>
   <link href="http://digal.github.com/"/>
-  <updated>2012-06-07T00:50:47+04:00</updated>
+  <updated>2012-06-07T12:33:33+04:00</updated>
   <id>http://digal.github.com/</id>
   <author>
     <name><![CDATA[Yuri Buyanov]]></name>
@@ -20,7 +20,9 @@
     <id>http://digal.github.com/blog/2011/09/05/no-newsletters</id>
     <content type="html"><![CDATA[<p>Регистрируясь на <a href="http://coderwall.com/">coderwall</a> (по наводке <a href="http://twitter.com/shaman_sir">@shaman_sir</a>) увидел замечательный пример той самой области UX, не относящейся ни к дизайну ни к юзабилити. Ничего супер-пупер-грандиозного, просто под полем для ввода электропочты в форме регистрации - небольшое примечание.</p>
 
-<p><blockquote><p>No spam, always private. We respect the sanctity of your email and share your dislike for spam and unnecessarily frequent newsletters. If you're interested in future coderwall news, we suggest you follow us on twitter.</p></blockquote></p>
+<p>{% blockquote %}
+No spam, always private. We respect the sanctity of your email and share your dislike for spam and unnecessarily frequent newsletters. If you're interested in future coderwall news, we suggest you follow us on twitter.
+{% endblockquote %}</p>
 
 <p>Не знаю как вам, а мне безумно приятно видеть сервис, уважающий моё личное информационное пространство и максимально ненавязчиво предлагающий просто подписаться на твиттер, если уж мне так хочется читать относящиеся к нему новости. По-моему, это гораздо лучше обычной галочки "присылать/не присылать новости": в случае с твиттером заранее знаешь, что отписаться при желании можно будет в любой момент и одной кнопкой. Я уже не говорю о случаях, когда пользователю вообще не оставляют никакого выбора.</p>
 
