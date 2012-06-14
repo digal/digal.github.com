@@ -4,7 +4,7 @@
   <title><![CDATA[Category: cocoapods | Лошоть и байты]]></title>
   <link href="http://digal.github.com/blog/categories/cocoapods/atom.xml" rel="self"/>
   <link href="http://digal.github.com/"/>
-  <updated>2012-06-07T15:13:32+04:00</updated>
+  <updated>2012-06-15T00:38:41+04:00</updated>
   <id>http://digal.github.com/</id>
   <author>
     <name><![CDATA[Yuri Buyanov]]></name>
@@ -19,6 +19,8 @@
     <updated>2012-06-06T21:52:00+04:00</updated>
     <id>http://digal.github.com/blog/2012/06/06/cocoapods</id>
     <content type="html"><![CDATA[<p>Собрался завтра рассказать коллегам про управление зависимостями в iOS-проектах и решил, что написать пост — самый лучший способ подготовиться и привести мысли в порядок. Надеюсь, этот "побочный продукт" поможет и кому-то из читателей.</p>
+
+<p><em>Upd:</em> Слайды с прошедшей презентации есть <a href="/slides/cocoapods/">тут</a>.</p>
 
 <!--more-->
 
