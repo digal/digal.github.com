@@ -4,7 +4,7 @@
   <title><![CDATA[Лошоть и байты]]></title>
   <link href="http://digal.github.com/atom.xml" rel="self"/>
   <link href="http://digal.github.com/"/>
-  <updated>2012-06-15T00:38:41+04:00</updated>
+  <updated>2012-07-13T00:15:07+04:00</updated>
   <id>http://digal.github.com/</id>
   <author>
     <name><![CDATA[Yuri Buyanov]]></name>
@@ -12,6 +12,65 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Линкопост номер 9]]></title>
+    <link href="http://digal.github.com/blog/2012/07/13/links-9/"/>
+    <updated>2012-07-13T00:13:00+04:00</updated>
+    <id>http://digal.github.com/blog/2012/07/13/links-9</id>
+    <content type="html"><![CDATA[<p>Привет всем.</p>
+
+<p>Каюсь, опять надолго пропал: berserk mode (в хорошем смысле) по поводу старта нового интересного проекта съел целиком всё свободное время и начал отпускать только недели через три. Поэтому ссылок опять много, рассовывать их по разделам лень, разве что подборка iOS-related вещей удостоилась отдельной секции в подвале. Ну, погнали:</p>
+
+<!--more-->
+
+
+<ul>
+<li><p><a href="https://www.gittip.com/">Gittip</a> — сайт для сбора регулярных &#8220;чаевых&#8221; разработчикам открытого софта. Идея хорошая, но цифры пока не впечатляют.</p></li>
+<li><p>Хороший <a href="http://www.erlang.se/doc/programming_rules.shtml">сборник</a> правил и соглашений по написанию кода. Написано для Erlang, но применимо практически везде.</p></li>
+<li><p><a href="http://infiniteundo.com/post/25326999628/falsehoods-programmers-believe-about-time">Список</a> заблуждений, касающихся свойств времени. Отдельным постом — <a href="http://infiniteundo.com/post/things-you-should-test">продолжение</a> из комментариев к первому. Особенно актуально в свете последних <a href="http://serverfault.com/questions/403732/anyone-else-experiencing-high-rates-of-linux-server-crashes-during-a-leap-second">проблем</a> с високосной секундой в некоторых ОС (нет, как ни странно, это не Windows).</p></li>
+<li><p>Компенсирует ли написание юнит-тестов в динамических языках отсутствие нормальной системы типов? Ответ на этот вопрос оказался <a href="http://evanfarrer.blogspot.ca/2012/06/unit-testing-isnt-enough-you-need.html">немного предсказуем</a>.</p></li>
+<li><p>Ставшие стандартными коммандлайновые аргументы юниксовых программ в виде <a href="http://www.johndcook.com/blog/2011/05/12/command-option-patterns/">краткого списка</a>. <a href="http://www.catb.org/~esr/writings/taoup/html/ch10s05.html#id2948149">Взято</a> из книжки Эрика Рэймонда <a href="http://www.catb.org/~esr/writings/taoup/html/index.html">&#8220;The Art of Unix Programming&#8221;</a>.</p></li>
+<li><p><a href="http://www.geertvanderploeg.com/unicode-gen/">Генератор</a> юникодного текста. Because lorem ipsum is too ASCII. ٩(͡๏̯͡๏)۶</p></li>
+<li><p><a href="http://warpech.github.com/jquery-handsontable/index.html">Handsontable</a> — Очередной WYSIWYG редактор на JS, на этот раз - для экселеподобных табличек</p></li>
+<li><p><a href="http://www.reddit.com/r/AskReddit/comments/vomtn/update_my_friends_call_me_a_scumbag_because_i/">Замечательная история</a> со счастливым концом c Реддита.</p></li>
+<li><p>Большой красивый <a href="http://www.evolutionoftheweb.com/">таймлайн</a> про эволюцию веба и браузеров.</p></li>
+<li><p><a href="http://www.infoq.com/articles/java-8-vs-scala">Сравнение</a> фич Scala и Java 8. Про главную фичу Scala — она уже давно вышла, в отличие от Java 8 — почему-то умалчивается. Ну и правильная фраза из комментов: &#8220;Remeber even if its java 8, it still just java. Don&#8217;t expect too much.&#8221;</p></li>
+<li><p><a href="https://github.com/liuliu/ccv">CCV</a> — современная и практичная (по заявлению авторов) сишная библиотека для всяческого распознавания образов. Примеры работы <a href="http://libccv.org/post/introducing-ccv-milestone/">выглядят</a> многообещающе.</p></li>
+<li><p>Очередное <a href="http://marklodato.github.com/visual-git-guide/index-en.html">иллюстрированное руководство</a> по Git. Должно пригодиться, например, тем, чья контора до сих пор сидит на SVN и кто хочет донести до коллег основные принципы работы с Git.</p></li>
+<li><p>Вот <a href="http://www.theverge.com/2012/7/9/3148368/whats-the-most-ancient-thing-you-can-tweet-from">тут</a> люди соревнуются, кто напишет твит с более старого девайса, типа старого Макинтоша, или <a href="http://tomsolari.id.au/post/26884513380/tweeting-from-a-cisco-7940">IP-телефона</a>.</p></li>
+<li><p><a href="http://whenilearnedtocode.tumblr.com/">When I learned to code</a> — ещё один тумблр с гифками, на этот раз на тему программирования.</p></li>
+<li><p><a href="http://getbarkeep.org/">Barkeep</a> — Дружелюбная система для кодревью. Выглядит, вроде, симпатично, попробую поюзать на каком-нибудь проекте. Есть <a href="http://demo.getbarkeep.org/commits">live demo</a>.</p></li>
+<li><p>Совсем не в тему блога, но вот вам зачем-то <a href="http://twitpic.com/a0izm9/full">советская военная карта Сан-Франциско</a>.</p></li>
+<li><p><a href="http://ansible.github.com/">Ansible</a> — очередной config management/deploy tool, полагающийся только на SSH и не требующий никаких демонов на клиентской машине. Если надо будет вернуться к сервер-сайду — обязательно попробую.</p></li>
+<li><p><a href="http://www.risc.jku.at/people/ckoutsch/stuff/e_algorithms.html">Top-32</a> самых важных алгоритмов. Ну-ка, сколько из них вы напишете, не подглядывая в гугл?</p></li>
+<li><p><a href="http://www.tldrlegal.com/">tl;drLegal</a> — Хороший справочник по софтверным лицензиям, кратко объясняющий что можно и чего нельзя делать с сорцами под GPL или MIT. Также есть обратный поиск, т.е. &#8220;какие лицензии разрешают коммерческое использование?&#8221;</p></li>
+<li><p>Если вы до сих пор не освоили Scala, то сейчас самое время это сделать с помощью <a href="http://scalatron.github.com/">Scalatron</a>: игры с программируемыми на Scala ботами. Подробный туториал прилагается.</p></li>
+<li><p><a href="http://www.kineticjs.com/">KineticJS</a> — JS-библиотека с кучей полезностей для работы с анимацией, canvas, и евентами. Есть довольно много наглядных примеров работы.</p></li>
+<li><p>Если вам нравится <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>, но уже навязла на зубах стандартная серо-голубая тема, то <a href="https://wrapbootstrap.com/">вот здесь</a> можно за небольшую денежку купить кастомную себе по душе. А если навыки и вкус позволяют — сделать и выставить на продажу свою собственную.</p></li>
+<li><p><a href="http://blog.jgc.org/2012/07/some-things-ive-learnt-about.html">Some things I&#8217;ve learnt about programming</a> — блогпост, чьё название говорит само за себя: просто небольшой набор мыслей по поводу разработки ПО. Почти со всем соглашусь.</p></li>
+<li><p>Довольно старая <a href="http://www.mahdiyusuf.com/post/9947002105/most-pressed-keys-and-programming-syntaxes-2">штука</a>, но недавно наткнулся на неё снова: heatmap&#8217;ы, показывающие частоту использования тех или иных клавиш при работе с разными языками прораммирования.</p></li>
+<li><p>Тред <a href="http://stackoverflow.com/questions/11227809/why-is-processing-a-sorted-array-faster-than-an-unsorted-array">&#8220;почему сортированный массив обрабатывается быстрее чем несортированный&#8221;</a> на StackOveflow. Очень хороший пример и объяснение сути branch prediction.</p></li>
+<li><p><a href="http://www.indooratlas.com/">Стартап</a>, создатели которого утверждают, что всё-таки решили проблему навигации внутри зданий при помощи замеров изменений магнитного поля. Интересная идея, лежавшая на поверхности. Посмотрим, что получится.</p></li>
+<li><p><a href="http://prose.io/">prose.io</a> — редактор контента для Гитхаба, в смысле для тех, кто пишет много текста в маркдауне и хранит его в гитхабовских репозиториях (как, например, я). Немного попробовал пописать в нём этот выпуск и могу сказать что для octopress подходит почти идеально, но по удобству редактирования текста, всё-таки, не сравнится с Sublime. Впрочем, обязательно попробуйте, если вам актуально.</p></li>
+</ul>
+
+
+<h2>iOS</h2>
+
+<ul>
+<li><p><a href="https://github.com/vl4dimir/ObjectiveMixin">ObjectiveMixin</a> — реализация миксинов для Obj-C. Мне, кстати, после скаловских traits, миксинов в ObjC действительно очень сильно не хватает. Другое дело, хотелось бы иметь их на уровне языка а не в виде такой вот библиотеки.</p></li>
+<li><p><a href="https://github.com/samvermette/SVHTTPRequest">SVHTTPRequest</a> — простая библиотека для работы с REST, должна быть адекватной легковесной заменой <a href="http://restkit.org/">RestKit</a> в простых кейсах. Например, когда нужно сделать один-два запроса к серверу и вытащить несколько полей из полученного JSON.</p></li>
+<li><p><a href="https://github.com/mobiata/MBRequest">MBRequest</a> — ешё один блочный враппер вокруг NSURLConnection. Вдруг тоже кому пригодится.</p></li>
+<li><p><a href="https://github.com/mugginsoft/Fragaria">Fragaria</a> — аналог NSTextView с поддержкой подсветки синтаксиса. Пригодится разве что тем, кто пишет какую-нибудь IDE для айпада, но вдруг тут есть такие.</p></li>
+<li><p><a href="http://eerolanguage.org/">eero</a> - Диалект Objective-C с большим закосом в сторону питона: структурирование отступами, необязательные точки с запятыми, и всё такое прочее. Интересно посмотреть что получится, хотя мне больше по душе было бы введение дженериков и прочих радостей статической типизации.</p></li>
+<li><p><a href="https://github.com/mattt/cupertino">cupertino</a> — коммандлайновый тул для работы с Apple Developer Portal и iTunes Connect. Возможностей пока немного: работа с девайсами, сертификатами, профилями и app id&#8217;s. И то, даже это ещё не сделано до конца. Впрочем, я очень сильно надеюсь, что в конце концов эта утилита достигнет такого уровня, который позволит автоматизировать и встроить в наш процесс выкладку в апстор.</p></li>
+</ul>
+
+
+<p>На этом всем пока и до следующего поста.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Линкопост номер 8]]></title>
@@ -1760,19 +1819,6 @@ log {
 <p>Также, ostrich предоставляет готовую заготовку ServerConfig, включающую в себя настройку логгинга и поднятие http/socket интерфейса при загрузке.</p>
 
 <p>Несмотря на фичастость, мне кажется что автор configgy совершенно зря остановил развитие библиотеки: она очень проста в использовании и идеально подходит для большого диапазона проектов. Ostrich же относится к совершенно другой категории и для многих задач его навороченность выглядит излишней. Кроме того, в его использовании есть несколько подводных камней, о которых я постараюсь рассказать поподробнее в следующий раз.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Очередная классификация программистов]]></title>
-    <link href="http://digal.github.com/blog/2011/08/20/types-of-programmers/"/>
-    <updated>2011-08-20T11:31:00+04:00</updated>
-    <id>http://digal.github.com/blog/2011/08/20/types-of-programmers</id>
-    <content type="html"><![CDATA[<p>Утром наткнулся в zite на замечательную статью: &#8221;<a href="http://techiferous.com/2011/08/are-you-a-good-programmer/">Are You a Good Programmer?</a>&#8221;, в которой приведена интересная классификация <em>хороших</em> программистов. Несмотря на всю относительность таких классификаций, очень занимательно примерять это всё на себя.</p>
-
-<p>Мне трудно судить, являюсь ли я на данный момент действительно хорошим программистом (и каким критериям, собственно, надо для этого соответствовать?), но определённо могу сказать что последний год развиваюсь в сторону первого типа (Philosopher). Этому явно способствует и спользование такого языка как scala, склоняющая к очень &#8220;безопасному&#8221; стилю программирования, и позволяющая хорошо управлять ограничениями в коде с помощью системы типов, при этом сохраняя красоту и лаконичность кода.</p>
-
-<p>Было бы интересно узнать, к какому типу вы себя относите? Понятно что типы могут сочетаться в разных пропорциях, и вполне возможно, что можно придумать ещё несколько.</p>
 ]]></content>
   </entry>
   
