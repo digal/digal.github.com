@@ -4,7 +4,7 @@
   <title><![CDATA[Category: links | Лошоть и байты]]></title>
   <link href="http://digal.github.com/blog/categories/links/atom.xml" rel="self"/>
   <link href="http://digal.github.com/"/>
-  <updated>2012-09-10T22:12:38+04:00</updated>
+  <updated>2012-11-14T00:01:52+04:00</updated>
   <id>http://digal.github.com/</id>
   <author>
     <name><![CDATA[Yuri Buyanov]]></name>
@@ -12,6 +12,71 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Линкопост номер 10 (июль-август)]]></title>
+    <link href="http://digal.github.com/blog/2012/11/09/links-10/"/>
+    <updated>2012-11-09T23:07:00+04:00</updated>
+    <id>http://digal.github.com/blog/2012/11/09/links-10</id>
+    <content type="html"><![CDATA[<p>В Питер пришла сначала осень, а теперь уже и почти зима, <a href="http://www.e-legion.ru/portfolio/mobile/Raiffeisen/">проект года</a> на работе вышел в нервную и полную граблей фазу релиза, и у меня закончились все силы, требуемые для нормальной гиковской активности, читай: писать в бложек, вести сайд-проекты, организовывать эвенты, выступать на эвентах, да даже просто ездить на них. Так, к моему великому сожалению, я не поехал в этом году на YAC, который, по всем отзывам, получился просто отличным.</p>
+
+<p>Впрочем, привычка отправлять в фейворитс интересные ссылки никуда не делась, так что материал для поста как обычно есть. Более того, ссылок накопилось очень много, так что в этом посте пока только то, что попало мне в тви за лето (конец июля-август). Ссылки не самой первой, естественно, свежести, но, надеюсь, каждый найдёт для себя что-то интересное.</p>
+
+<!--more-->
+
+
+<ul>
+<li><p><a href="http://blog.alainmeier.com/post/27255145114/some-things-beginners-might-not-know-about-sublime-text">Очередная подборка</a> всяких штук, которые можно делать в Sublime Text 2. Правда, если вы, так же как и я, привязаны к дурацкой монструозной IDE, а ST используете максимум в качестве вспомогательного "блокнота", запомнить и довести до автоматизма все эти вещи будет не очень просто (и не очень нужно).</p></li>
+<li><p>Аналогичная <a href="http://blog.joocode.com/browsers/12-things-about-the-webkit-inspector-i-didnt-know/">подборка</a> для WebKit inspector. А по ссылке в начале статьи — более подробное <a href="http://jtaby.com/2012/04/23/modern-web-development-part-1.html">руководство</a> по оному.</p></li>
+<li><p>Если вдруг кто-то интересуется альтернативными раскладками клавиатуры, то вот вам <a href="http://patorjk.com/keyboard-layout-analyzer/">анализатор</a> текста на предмет того, какую раскладку для его набора лучше использовать. Множество цифр, графиков и хитмэпов прилагается.</p></li>
+<li><p>Хорошая статья (внезапно, по-русски и не на хабре) про найм программистов: <a href="http://softwaremaniacs.org/blog/2012/07/19/hiring-wrong/">"Найм программистов: вы всё делаете не так."</a></p></li>
+<li><p><a href="http://www.dadhacker.com/blog/?p=987">Donkey Kong and Me</a> — интересно о работе в геймдеве (конкретнее, в Atari) в ранние 80-е.</p></li>
+<li><p>Ещё из ретро-геймдева: увлекательнейшее чтиво про историю создания Warcraft из первых рук. <a href="http://www.codeofhonor.com/blog/the-making-of-warcraft-part-1">Часть 1</a>, <a href="http://www.codeofhonor.com/blog/the-making-of-warcraft-part-2">часть 2</a>.</p></li>
+<li><p><a href="http://rigaux.org/language-study/syntax-across-languages.html">Большое сравнение</a> того, как элементы синтаксиса выглядят в разных языках. По утверждению автора, может пригодиться как создателям новых языков, так и просто обычным разработчикам.</p></li>
+<li><p><a href="http://boundary.com/blog/2012/05/02/know-a-delay-nagles-algorithm-and-you/">Немного</a> о тюнинге TCP и параметре NODELAY.</p></li>
+<li><p>Интересная <a href="http://www.pcgamesn.com/article/steam-hardware-survey-suggests-average-gaming-pc-getting-slightly-slower">статистика</a> по геймерским машинам от Steam: они, как ни странно, в среднем становятся менее мощными.</p></li>
+<li><p><a href="http://blog.mongodb.org/post/28053108398/edda-a-log-visualizer-for-mongodb">Edda</a>: тул для визуализации схемы серверов MongoDB из логов. Результат выглядит довольно симпатично.</p></li>
+<li><p><a href="http://cpudb.stanford.edu/">Большая база данных по CPU</a> от Стэнфорда.</p></li>
+<li><p><a href="http://iobound.com/pareidoloop/">Генератор</a> случайных лиц на JavaScript (face-detection + генетические алгоритмы). Занятно, но результат выглядит довольно странно.</p></li>
+<li><p>Яндекс наконец-то (ещё в конце июля, вот что значит долго в блог не писать) выкатил в опецсорц свой <a href="https://github.com/yandex-load/yandex-tank">Танк</a>, многократно рекламировавшийся на конференциях инструмент для нагрузочного тестирования. Если кто-то пробовал, то интересно услышать отзыв.</p></li>
+<li><p><a href="https://github.com/blog/530-how-we-made-github-fast">Как мы сделали Github Быстрым</a>: заметка в блоге Гитхаба о том, какие технологии и архитектурные решания были выбраны при строительстве оного, и почему.</p></li>
+<li><p><a href="http://www.missionintegers.com/">Сервис</a>, выдающий целые числа ручной работы и высшей пробы. Есть API, усё как надо.</p></li>
+<li><p><a href="http://gridster.net/">gridster.js</a> - библиотека для создания сеток из блоков с поддержкой драг-н-дропа. По-русски формулируется довольно запутанно, но по демо на главной странице всё должно стать ясно. Может пригодиться при создании настраиваемых пользователем интерфейсов.</p></li>
+<li><p>Netflix <a href="http://techblog.netflix.com/2012/07/chaos-monkey-released-into-wild.html">открывает</a> код Chaos Monkey (точнее, целой <a href="http://techblog.netflix.com/2011/07/netflix-simian-army.html">армии "обезьян"</a> ) — набора инструментов для внесения рандомных неполадок в работающие сервисы с целью непрерывно тестировать их устойчивость к отказам. Вообще, очень крутая идея, правда.</p></li>
+<li><p><a href="http://cortesi.github.com/pathod/">pathod</a> — демон для тестирования и всяческих издевательств над HTTP-клиентами. Может выдавать разные ответы, имитируя разное некорректное поведение сервера типа внезапного дисконнекта или подвисания.</p></li>
+<li><p><a href="http://www.troyhunt.com/2012/07/lessons-in-website-security-anti.html">Подборка</a> антипаттернов в области безопасности в вебе.</p></li>
+<li><p><a href="http://devmag.org.za/2012/07/29/how-to-choose-colours-procedurally-algorithms/">Статья</a> про программный подбор сочетаний цветов. Даны теоретические основы и несколько алгоритмов на разные случаи жизни.</p></li>
+<li><p><a href="http://blog.echen.me/2012/07/31/edge-prediction-in-a-social-graph-my-solution-to-facebooks-user-recommendation-contest-on-kaggle/">Edge Prediction in a Social Graph</a> — подробное (с графами, картинками и кодом на scala) описание link prediction алгоритма (то что в соцсеточках называется "Who to follow" и "Similar to"). Интересно также взглянуть на приведённый в конце инструментарий: Scala, Python, Ruby, R, CoffeeScript+d3 — хороший аргумент в пользу polyglot programming. Прочитав статью, решил как следует углубиться в анализ данных (уже <a href="https://class.coursera.org/compdata-2012-001/">начал</a>) и macine learning (только планирую).</p></li>
+<li><p><a href="https://github.com/redroot/holmes">Holmes</a>: просто валидатор HTML. Интересен тем, что реализован в виде обычного CSS-файла, который при подключении подсвечивает ошибки HTML-разметки (недостающие атрибуты, etc).</p></li>
+<li><p><a href="http://www.noexcuselist.com/">No Excuse List</a>: просто подборка самых популярных ресурсов для самообучения самым разным вещам. Назван так понятно почему. Когда я такое вижу, мне начинает хотеться, чтобы в сутках было 48 часов (ну или хотя бы можно было обходиться без сна).</p></li>
+<li><p>Маленькая полуюмористическая <a href="http://www.anekdot.ru/id/585131/">подборка</a> фейлов при разработке военного ПО. На anekdot.ru, да.</p></li>
+<li><p><a href="http://mattgemmell.com/2012/08/05/managing-email-realistically/">Руководство</a> по управлению электронной почтой для ленивых и не склонных к GTD-сектантству людей. Впрочем, даже это для меня слишком сложно :(</p></li>
+<li><p><a href="http://tos-dr.info/">Попытка</a> кратко описать и классифицировать TOS (условия использования) популярных сервисов. Помогает понять, что и как сервис может делать с вашими данными, не читая -дцать страниц текста.</p></li>
+<li><p><a href="http://www.over-yonder.net/~fullermd/rants/bsd4linux/01">Большая</a> даже не статья, а почти книжка о коренных различиях Linux и BSD. Несмотря на то, что написано активным пользователем последней, сделано это взвешенно, глубоко, и читается с большим удовольствием.</p></li>
+<li><p>5-минутный (на самом деле, больше) <a href="http://denniskubes.com/2012/08/16/the-5-minute-guide-to-c-pointers/">гайд</a> по сишным поинтерам. Может пригодиться некоторым Obj-C программистам, не учившим C.</p></li>
+<li><p>Pure Java <a href="https://github.com/miniway/jeromq">реализация</a> библиотеки <a href="http://www.zeromq.org/">ØMQ</a>. Некоторые наверняка будут плеваться, но джавистам, которым приходится использовать враппер вокруг нативной либы (о боже, они нужны разные для разных платформ) должно понравиться.</p></li>
+<li><p><a href="http://newartisans.com/2012/08/monads-in-pictures/">Монады в картинках</a>, ну то есть совсем-совсем на пальцах, даже я понял.</p></li>
+<li><p><a href="http://programmers.blogoverflow.com/2012/08/20-controversial-programming-opinions/">20 противоречивых мнений</a> о программировании. По сути, набор выводов, к которым легко приходит почти любой разработчик после 5-10 лет разработки реальных продуктов с ограниченным бюджетом и сроками.</p></li>
+<li><p><a href="http://stephane.godbillon.com/2012/08/30/reactivemongo-for-scala-unleashing-mongodb-streaming-capabilities-for-realtime-web">ReactiveMongo</a> — то, чего очень хотелось года два назад, когда мы писали Goozy: неблокирующая scala-библиотека для работы с монгой.</p></li>
+</ul>
+
+
+<h2>iOS</h2>
+
+<ul>
+<li><p><a href="https://github.com/fjolnir/tranquil">Tranquil</a> очередной странный язык поверх LLVM и ObjC Runtime.</p></li>
+<li><p><a href="https://github.com/AFNetworking/AFIncrementalStore">AFNetworkingStore</a> — вроде бы как замена RestKit и инструмент для привязки доменных моделей к REST (и не очень) -сервисам поверх <a href="https://github.com/afnetworking/afnetworking">AFNetworking</a> и CoreData. Надо будет попробовать. OSX 10.6+, iOS 5.0+</p></li>
+<li><p>Комплементарное дополнение для сервер-сайда: <a href="https://github.com/mattt/rack-core-data">Rack::CoreData</a> для герерации REST API из моделей Core Data. С архитектурной точки зрения, клиент в виде белого ящика и вообще, разработка API исходя из клиентской модели данных — это явный такой антипаттерн, но очень интересно всё-таки узнать, насколько оно применимо в реальности.</p></li>
+<li><p>Очередной <a href="http://www.raywenderlich.com/14793/how-to-make-a-game-like-cut-the-rope-part-1">туториал</a> по игровому движку Cocos2D (на самом деле, ещё и по физическому Box2D), на примере игры типа Cut the Rope.</p></li>
+<li><p>Просто большая (примерно 700 шт) <a href="http://www.cocoacontrols.com/">библиотека</a> Cocoa- и CocoaTouch-контролов.</p></li>
+<li><p><a href="https://github.com/sebastienwindal/FRD3DBarChart">FRD3DBarChart</a> — iOS-библиотека для построения красивых трёхмерных OpenGL-чартов. <a href="http://windal.net/blog/?p=153">В блоге автора</a> - документация, демо и больше примеров.</p></li>
+<li><p><a href="http://0xc0.de/LibComponentLogging">LibComponentLogging</a> — попытка унифицировать зоопарк логгинг-фреймворков в Cocoa. Судя по всему, собирается стать местным аналогом log4j.</p></li>
+</ul>
+
+
+<p>Это пока, наверное, всё. Если останутся силы, в ближайшее время попробую выкатить пост (или посты) с осенними ссылками. До встречи.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Линкопост номер 9]]></title>
@@ -213,37 +278,6 @@
 
 
 <p>На этом на сегодня всё, пишите фидбеки и присылайте ссылки. Пока.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Линкопост номер 4]]></title>
-    <link href="http://digal.github.com/blog/2012/05/11/links-4/"/>
-    <updated>2012-05-11T21:53:00+04:00</updated>
-    <id>http://digal.github.com/blog/2012/05/11/links-4</id>
-    <content type="html"><![CDATA[<p>Привет. Внезапно набежало очень много всего за пару дней, будем разбирать. Пока кладу всё в перемешку, но думаю уже ввести какие-то разделы внутри одного поста, либо разделить посты по тематике. Надо?</p>
-
-<!--more-->
-
-
-<ul>
-<li><p>Небезызвестная контора Atlassian отличилась, просто эпически прое... эм... <a href="http://www.theregister.co.uk/2012/05/09/atlassian_cloud_storage_outage/">потеряв армейским способом</a> данные клиентов своего облачного сервиса. Клиентов вроде не очень много, но, насколько я понимаю, среди них есть довольно крупные. В общем, ещё одна грустная история о криворуких админах, не озаботившихся сохранностью данных.</p></li>
-<li><p><a href="http://www.hanselman.com/blog/TheFloppyDiskMeansSaveAnd14OtherOldPeopleIconsThatDontMakeSenseAnymore.aspx">15 иконок</a>, изображающих предметы, вышедшие из обихода. А правда, интересно, как воспринимает, например, иконку дискеты тот, кто никогда её в глаза не видел?</p></li>
-<li><p>Локальная <a href="https://github.com/jubos/fake-s3">замена</a> Amazon S3. По идее, должно быть очень полезно для тестирования сервисов, использующих оный сторадж, особенно учитывая, скажем, скорость S3 на аплоад файлов снаружи, да и вообще его платность.</p></li>
-<li><p><a href="http://blog.greweb.fr/2012/05/illuminated-js-2d-lights-and-shadows-rendering-engine-for-html5-applications/">Библиотека</a> динамического 2D-освещения для JS. Предназачается, в основном, для игрушек, однако было бы занятно посмотреть, как это можно применить в каком-нибудь прикладном интерфейсе.</p></li>
-<li><p>Хорошая <a href="http://gojko.net/2012/05/08/redefining-software-quality/">статья</a> о <a href="http://ru.wikipedia.org/wiki/%D0%9F%D0%B8%D1%80%D0%B0%D0%BC%D0%B8%D0%B4%D0%B0_%D0%BF%D0%BE%D1%82%D1%80%D0%B5%D0%B1%D0%BD%D0%BE%D1%81%D1%82%D0%B5%D0%B9_%D0%BF%D0%BE_%D0%9C%D0%B0%D1%81%D0%BB%D0%BE%D1%83">пирамиде потребностей Маслоу</a> (ну или скорее её аналоге) в разработке ПО. Хорошо раскладывает приоритеты по полочкам. Подумалось, что, к сожалению, в отличие от оригинальной пирамиды, в разработке ПО есть очень много людей и проектов, не осиливших даже первую ступеньку.</p></li>
-<li><p>Очень красивая демосценерская <a href="http://www.creativeapplications.net/windows/hartverdrahtet-infinite-complexity-in-4096-bytes/">работа</a> всего в 4х килобайтах. Обязательно зацените.</p></li>
-<li><p>Ещё в ту же тему: большая <a href="http://www.displayhack.org/2012/the-great-demoscene-sourcecode-giveaway/">подборка</a> демосценерских инструметов и исходников демок от разных групп, включая нашумевший <a href="https://github.com/farbrausch/fr_public">сет</a> от Farbrausch. Там есть, например, небезызвестный Kkrieger — шутер от первого лица в 96 килобайтах.</p></li>
-<li><p>Apple, <a href="http://9to5mac.com/2012/05/11/ios-6-apple-drops-google-maps-debuts-in-house-maps-with-incredible-3d-mode/">похоже</a>, собирается отказаться в iOS6 от гуглокарт в пользу собственной разработки. На видео и скринах можно заметить довольно впечатляющий 3D-режим. Естественно, это пока неофициальная информация, однако судя <a href="http://news.cnet.com/8301-13579_3-20010523-37.html">по</a> <a href="http://9to5mac.com/2011/10/29/apple-acquired-mind-blowing-3d-mapping-company-c3-technologies-looking-to-take-ios-maps-to-the-next-level/">некоторым</a> <a href="http://9to5mac.com/2009/09/30/apple-buys-a-mapping-company-called-placebase/">приобретениям</a>, всё к тому и идёт.</p></li>
-<li><p><a href="http://www.infoworld.com/d/application-development/hello-world-programming-languages-quiz-188874">Квиз</a> на угадывание языков программирования по реализации Hello World. Я набрал 19 из 20 — не узнал Logo.</p></li>
-<li><p><a href="http://blog.mongodb.org/post/21923016898">Анализатор</a> схемы данных для MongoDB, как ни парадоксально это звучит. Поддерживает разные типы для одного и того же поля, ведёт статистику наличия этих самых полей в документах и всё такое прочее. Должно быть полезно как для ковыряния в легаси-базах, так и, возможно, для какого-то ограниченного датамайнинга в своих.</p></li>
-<li><p>Если вдруг кому-то интересно такое странное извращение — <a href="http://habrahabr.ru/post/142447/#habracut">статья</a> на хабре, рассказывающая о том, как собрать JVM с выключенным GC. Ну, вдруг кому-то память, например, девать некуда.</p></li>
-<li><p>Разработчик <a href="http://www.zeromq.org/">ØMQ</a> <a href="http://www.250bpm.com/blog:4">рассказывает</a> о том, почему для разработки был выбран C++, и о том, что следовало выбрать C. Должно быть интересно даже для тех, кто далёк и от первого, и от второго, и от третьего. И, кстати, если вы ещё не читали <a href="http://zguide.zeromq.org/page:all">гайд</a> по ØMQ — обязательно почитайте. По сути, это очень хорошо написанная книжка по messaging patterns и распределённым архитектурам.</p></li>
-<li><p>В этот раз почему-то совсем не набралось ссылок, посвящённых разработке под iOS. Вот вам хотя бы <a href="http://markpospesel.wordpress.com/2012/05/10/anatomy-of-a-folding-animation/">одна</a> — с детальным разбором folding animation и пачкой полезных ссылок в подвале.</p></li>
-</ul>
-
-
-<p>Особую благодарность сегодня хочу выразить Сергею <a href="https://twitter.com/#!/novakche">@novakche</a> за пуллреквесты к бложеку с исправлениями опечаток и пунктуации. Всем пока и до следующего выпуска.</p>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[Лошоть и байты]]></title>
   <link href="http://digal.github.com/atom.xml" rel="self"/>
   <link href="http://digal.github.com/"/>
-  <updated>2012-09-10T22:12:38+04:00</updated>
+  <updated>2012-11-14T00:00:16+04:00</updated>
   <id>http://digal.github.com/</id>
   <author>
     <name><![CDATA[Yuri Buyanov]]></name>
@@ -12,6 +12,69 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Линкопост номер 10 (июль-август)]]></title>
+    <link href="http://digal.github.com/blog/2012/11/09/links-10/"/>
+    <updated>2012-11-09T23:07:00+04:00</updated>
+    <id>http://digal.github.com/blog/2012/11/09/links-10</id>
+    <content type="html"><![CDATA[<p>В Питер пришла сначала осень, а теперь уже и почти зима, <a href="http://www.e-legion.ru/portfolio/mobile/Raiffeisen/">проект года</a> на работе вышел в нервную и полную граблей фазу релиза, и у меня закончились все силы, требуемые для нормальной гиковской активности, читай: писать в бложек, вести сайд-проекты, организовывать эвенты, выступать на эвентах, да даже просто ездить на них. Так, к моему великому сожалению, я не поехал в этом году на YAC, который, по всем отзывам, получился просто отличным.</p>
+
+<p>Впрочем, привычка отправлять в фейворитс интересные ссылки никуда не делась, так что материал для поста как обычно есть. Более того, ссылок накопилось очень много, так что в этом посте пока только то, что попало мне в тви за лето (конец июля-август). Ссылки не самой первой, естественно, свежести, но, надеюсь, каждый найдёт для себя что-то интересное.</p>
+
+<!--more-->
+
+
+<ul>
+<li><p><a href="http://blog.alainmeier.com/post/27255145114/some-things-beginners-might-not-know-about-sublime-text">Очередная подборка</a> всяких штук, которые можно делать в Sublime Text 2. Правда, если вы, так же как и я, привязаны к дурацкой монструозной IDE, а ST используете максимум в качестве вспомогательного &#8220;блокнота&#8221;, запомнить и довести до автоматизма все эти вещи будет не очень просто (и не очень нужно).</p></li>
+<li><p>Аналогичная <a href="http://blog.joocode.com/browsers/12-things-about-the-webkit-inspector-i-didnt-know/">подборка</a> для WebKit inspector. А по ссылке в начале статьи — более подробное <a href="http://jtaby.com/2012/04/23/modern-web-development-part-1.html">руководство</a> по оному.</p></li>
+<li><p>Если вдруг кто-то интересуется альтернативными раскладками клавиатуры, то вот вам <a href="http://patorjk.com/keyboard-layout-analyzer/">анализатор</a> текста на предмет того, какую раскладку для его набора лучше использовать. Множество цифр, графиков и хитмэпов прилагается.</p></li>
+<li><p>Хорошая статья (внезапно, по-русски и не на хабре) про найм программистов: <a href="http://softwaremaniacs.org/blog/2012/07/19/hiring-wrong/">&#8220;Найм программистов: вы всё делаете не так.&#8221;</a></p></li>
+<li><p><a href="http://www.dadhacker.com/blog/?p=987">Donkey Kong and Me</a> — интересно о работе в геймдеве (конкретнее, в Atari) в ранние 80-е.</p></li>
+<li><p>Ещё из ретро-геймдева: увлекательнейшее чтиво про историю создания Warcraft из первых рук. <a href="http://www.codeofhonor.com/blog/the-making-of-warcraft-part-1">Часть 1</a>, <a href="http://www.codeofhonor.com/blog/the-making-of-warcraft-part-2">часть 2</a>.</p></li>
+<li><p><a href="http://rigaux.org/language-study/syntax-across-languages.html">Большое сравнение</a> того, как элементы синтаксиса выглядят в разных языках. По утверждению автора, может пригодиться как создателям новых языков, так и просто обычным разработчикам.</p></li>
+<li><p><a href="http://boundary.com/blog/2012/05/02/know-a-delay-nagles-algorithm-and-you/">Немного</a> о тюнинге TCP и параметре NODELAY.</p></li>
+<li><p>Интересная <a href="http://www.pcgamesn.com/article/steam-hardware-survey-suggests-average-gaming-pc-getting-slightly-slower">статистика</a> по геймерским машинам от Steam: они, как ни странно, в среднем становятся менее мощными.</p></li>
+<li><p><a href="http://blog.mongodb.org/post/28053108398/edda-a-log-visualizer-for-mongodb">Edda</a>: тул для визуализации схемы серверов MongoDB из логов. Результат выглядит довольно симпатично.</p></li>
+<li><p><a href="http://cpudb.stanford.edu/">Большая база данных по CPU</a> от Стэнфорда.</p></li>
+<li><p><a href="http://iobound.com/pareidoloop/">Генератор</a> случайных лиц на JavaScript (face-detection + генетические алгоритмы). Занятно, но результат выглядит довольно странно.</p></li>
+<li><p>Яндекс наконец-то (ещё в конце июля, вот что значит долго в блог не писать) выкатил в опецсорц свой <a href="https://github.com/yandex-load/yandex-tank">Танк</a>, многократно рекламировавшийся на конференциях инструмент для нагрузочного тестирования. Если кто-то пробовал, то интересно услышать отзыв.</p></li>
+<li><p><a href="https://github.com/blog/530-how-we-made-github-fast">Как мы сделали Github Быстрым</a>: заметка в блоге Гитхаба о том, какие технологии и архитектурные решания были выбраны при строительстве оного, и почему.</p></li>
+<li><p><a href="http://www.missionintegers.com/">Сервис</a>, выдающий целые числа ручной работы и высшей пробы. Есть API, усё как надо.</p></li>
+<li><p><a href="http://gridster.net/">gridster.js</a> - библиотека для создания сеток из блоков с поддержкой драг-н-дропа. По-русски формулируется довольно запутанно, но по демо на главной странице всё должно стать ясно. Может пригодиться при создании настраиваемых пользователем интерфейсов.</p></li>
+<li><p>Netflix <a href="http://techblog.netflix.com/2012/07/chaos-monkey-released-into-wild.html">открывает</a> код Chaos Monkey (точнее, целой <a href="http://techblog.netflix.com/2011/07/netflix-simian-army.html">армии &#8220;обезьян&#8221;</a> ) — набора инструментов для внесения рандомных неполадок в работающие сервисы с целью непрерывно тестировать их устойчивость к отказам. Вообще, очень крутая идея, правда.</p></li>
+<li><p><a href="http://cortesi.github.com/pathod/">pathod</a> — демон для тестирования и всяческих издевательств над HTTP-клиентами. Может выдавать разные ответы, имитируя разное некорректное поведение сервера типа внезапного дисконнекта или подвисания.</p></li>
+<li><p><a href="http://www.troyhunt.com/2012/07/lessons-in-website-security-anti.html">Подборка</a> антипаттернов в области безопасности в вебе.</p></li>
+<li><p><a href="http://devmag.org.za/2012/07/29/how-to-choose-colours-procedurally-algorithms/">Статья</a> про программный подбор сочетаний цветов. Даны теоретические основы и несколько алгоритмов на разные случаи жизни.</p></li>
+<li><p><a href="http://blog.echen.me/2012/07/31/edge-prediction-in-a-social-graph-my-solution-to-facebooks-user-recommendation-contest-on-kaggle/">Edge Prediction in a Social Graph</a> — подробное (с графами, картинками и кодом на scala) описание link prediction алгоритма (то что в соцсеточках называется &#8220;Who to follow&#8221; и &#8220;Similar to&#8221;). Интересно также взглянуть на приведённый в конце инструментарий: Scala, Python, Ruby, R, CoffeeScript+d3 — хороший аргумент в пользу polyglot programming. Прочитав статью, решил как следует углубиться в анализ данных (уже <a href="https://class.coursera.org/compdata-2012-001/">начал</a>) и macine learning (только планирую).</p></li>
+<li><p><a href="https://github.com/redroot/holmes">Holmes</a>: просто валидатор HTML. Интересен тем, что реализован в виде обычного CSS-файла, который при подключении подсвечивает ошибки HTML-разметки (недостающие атрибуты, etc).</p></li>
+<li><p><a href="http://www.noexcuselist.com/">No Excuse List</a>: просто подборка самых популярных ресурсов для самообучения самым разным вещам. Назван так понятно почему. Когда я такое вижу, мне начинает хотеться, чтобы в сутках было 48 часов (ну или хотя бы можно было обходиться без сна).</p></li>
+<li><p>Маленькая полуюмористическая <a href="http://www.anekdot.ru/id/585131/">подборка</a> фейлов при разработке военного ПО. На anekdot.ru, да.</p></li>
+<li><p><a href="http://mattgemmell.com/2012/08/05/managing-email-realistically/">Руководство</a> по управлению электронной почтой для ленивых и не склонных к GTD-сектантству людей. Впрочем, даже это для меня слишком сложно :(</p></li>
+<li><p><a href="http://tos-dr.info/">Попытка</a> кратко описать и классифицировать TOS (условия использования) популярных сервисов. Помогает понять, что и как сервис может делать с вашими данными, не читая -дцать страниц текста.</p></li>
+<li><p><a href="http://www.over-yonder.net/~fullermd/rants/bsd4linux/01">Большая</a> даже не статья, а почти книжка о коренных различиях Linux и BSD. Несмотря на то, что написано активным пользователем последней, сделано это взвешенно, глубоко, и читается с большим удовольствием.</p></li>
+<li><p>5-минутный (на самом деле, больше) <a href="http://denniskubes.com/2012/08/16/the-5-minute-guide-to-c-pointers/">гайд</a> по сишным поинтерам. Может пригодиться некоторым Obj-C программистам, не учившим C.</p></li>
+<li><p>Pure Java <a href="https://github.com/miniway/jeromq">реализация</a> библиотеки <a href="http://www.zeromq.org/">ØMQ</a>. Некоторые наверняка будут плеваться, но джавистам, которым приходится использовать враппер вокруг нативной либы (о боже, они нужны разные для разных платформ) должно понравиться.</p></li>
+<li><p><a href="http://newartisans.com/2012/08/monads-in-pictures/">Монады в картинках</a>, ну то есть совсем-совсем на пальцах, даже я понял.</p></li>
+<li><p><a href="http://programmers.blogoverflow.com/2012/08/20-controversial-programming-opinions/">20 противоречивых мнений</a> о программировании. По сути, набор выводов, к которым легко приходит почти любой разработчик после 5-10 лет разработки реальных продуктов с ограниченным бюджетом и сроками.</p></li>
+<li><p><a href="http://stephane.godbillon.com/2012/08/30/reactivemongo-for-scala-unleashing-mongodb-streaming-capabilities-for-realtime-web">ReactiveMongo</a> — то, чего очень хотелось года два назад, когда мы писали Goozy: неблокирующая scala-библиотека для работы с монгой.</p></li>
+</ul>
+
+
+<h2>iOS</h2>
+
+<ul>
+<li><p><a href="https://github.com/fjolnir/tranquil">Tranquil</a> очередной странный язык поверх LLVM и ObjC Runtime.</p></li>
+<li><p><a href="https://github.com/AFNetworking/AFIncrementalStore">AFNetworkingStore</a> — вроде бы как замена RestKit и инструмент для привязки доменных моделей к REST (и не очень) -сервисам поверх <a href="https://github.com/afnetworking/afnetworking">AFNetworking</a> и CoreData. Надо будет попробовать. OSX 10.6+, iOS 5.0+</p></li>
+<li><p>Комплементарное дополнение для сервер-сайда: <a href="https://github.com/mattt/rack-core-data">Rack::CoreData</a> для герерации REST API из моделей Core Data. С архитектурной точки зрения, клиент в виде белого ящика и вообще, разработка API исходя из клиентской модели данных — это явный такой антипаттерн, но очень интересно всё-таки узнать, насколько оно применимо в реальности.</p></li>
+<li><p>Очередной <a href="http://www.raywenderlich.com/14793/how-to-make-a-game-like-cut-the-rope-part-1">туториал</a> по игровому движку Cocos2D (на самом деле, ещё и по физическому Box2D), на примере игры типа Cut the Rope.</p></li>
+<li><p>Просто большая (примерно 700 шт) <a href="http://www.cocoacontrols.com/">библиотека</a> Cocoa- и CocoaTouch-контролов.</p></li>
+<li><p><a href="https://github.com/sebastienwindal/FRD3DBarChart">FRD3DBarChart</a> — iOS-библиотека для построения красивых трёхмерных OpenGL-чартов. <a href="http://windal.net/blog/?p=153">В блоге автора</a> - документация, демо и больше примеров.</p></li>
+<li><p><a href="http://0xc0.de/LibComponentLogging">LibComponentLogging</a> — попытка унифицировать зоопарк логгинг-фреймворков в Cocoa. Судя по всему, собирается стать местным аналогом log4j.</p></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Книги: Александр Прохоров, «Русская модель управления»]]></title>
@@ -1512,268 +1575,6 @@
 <p>Не знаю как вам, а мне безумно приятно видеть сервис, уважающий моё личное информационное пространство и максимально ненавязчиво предлагающий просто подписаться на твиттер, если уж мне так хочется читать относящиеся к нему новости. По-моему, это гораздо лучше обычной галочки &#8220;присылать/не присылать новости&#8221;: в случае с твиттером заранее знаешь, что отписаться при желании можно будет в любой момент и одной кнопкой. Я уже не говорю о случаях, когда пользователю вообще не оставляют никакого выбора.</p>
 
 <p>В общем, я кажется нашёл главный секрет хорошего UX: &#8220;Уважай своего пользователя&#8221;. Просто ведь, правда?</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Scala IRL. Часть 2: Готовим Домашнего Страуса]]></title>
-    <link href="http://digal.github.com/blog/2011/08/29/scala-irl-2-ostrich/"/>
-    <updated>2011-08-29T22:28:00+04:00</updated>
-    <id>http://digal.github.com/blog/2011/08/29/scala-irl-2-ostrich</id>
-    <content type="html"><![CDATA[<p>В предыдущем посте я мельком упомянул библиотеку ostrich в качестве инструмента для загрузки конфигов, в этом же постараюсь сделать более подробный обзор. Итак, <a href="github.com/twitter/ostrich">ostrich</a> - это внутренняя библиотека от разработчиков &#8220;твиттера&#8221;, используемая в его компонентах. Несмотря на фичастость и навороченность, местами довольно-таки заметен её стиль, как библиотеки написанной в первую очередь &#8220;для себя&#8221;.</p>
-
-<p>Оstrich выполняет следующие задачи:</p>
-
-<ul>
-<li>загрузка и парсинг typesafe-конфигов (проще, говоря, конфигов в виде scala-кода)</li>
-<li>сбор рантайм-статистики и разнообразных метрик</li>
-<li>управление сервисами внутри процесса (запуск/остановка)</li>
-<li>предоставление простенького, но расширяемого администраторского интерфейса через http/socket</li>
-</ul>
-
-
-<p>В этом посте я опишу работу с конфигами, а остальные возможности попробую раскрыть в последующих постах.</p>
-
-<h2>Страус и конфиги</h2>
-
-<p>Итак, ostrich предлагает использовать в качестве конфигов не просто структурированные текстовые файлы (json/xml/properties), а scala-код. Такой подход требует компиляции конфига при загрузке, но имеет ряд серьёзных преимуществ:</p>
-
-<ul>
-<li>типизация. Отпадает необходимость проверять и приводить значения из конфиг-файла к нужным типам</li>
-<li>возможность писать произвольный код в конфигах, помимо простых значений. Например, использовать текущую дату в произвольном формате в имени лог-файла, или получить значения каких-то параметров из базы или стороннего сервиса. По сути, конфиг-файл становится тем, что называется extension point.</li>
-<li>становятся ненужными отдельные классы, инкапсулирующие конфигурацию различных компонентов программы, или, по крайней мере, упрощается их создание.</li>
-</ul>
-
-
-<p>Для начала, нам нужно создать родительский класс для настроек. Чаще всего удобно сделать его же конфигом по умолчанию. Предположим, мы хотим сконфигурировать небольшое серверное приложение. Для этого ostrich предоставляет класс ServerConfig (являющийся наследником Config, предоставляющего базовые функции такие как компиляция, валидация и обязательные/необязательные поля).</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">import</span> <span class="nn">com.twitter.ostrich.admin._</span>
-</span><span class='line'><span class="k">import</span> <span class="nn">com.twitter.ostrich.admin.config._</span>
-</span><span class='line'><span class="k">import</span> <span class="nn">com.twitter.logging.config._</span>
-</span><span class='line'><span class="k">import</span> <span class="nn">com.twitter.logging.Level</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="k">class</span> <span class="nc">MyServerConfig</span> <span class="k">extends</span> <span class="nc">ServerConfig</span><span class="o">[</span><span class="kt">MyServer</span><span class="o">]</span> <span class="o">{</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c1">//ServerConfig, в отличие от просто Config, должен определить </span>
-</span><span class='line'>  <span class="c1">//метод Apply, для создания инстанса сервера</span>
-</span><span class='line'>  <span class="k">def</span> <span class="n">apply</span><span class="o">(</span><span class="n">runtime</span><span class="k">:</span> <span class="kt">RuntimeEnvironment</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span>
-</span><span class='line'>    <span class="k">new</span> <span class="nc">MyServer</span><span class="o">(</span><span class="k">this</span><span class="o">)</span>
-</span><span class='line'>  <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">var</span> <span class="n">port</span> <span class="k">=</span> <span class="mi">1234</span>
-</span><span class='line'>  <span class="k">var</span> <span class="n">workersNum</span> <span class="k">=</span> <span class="mi">10</span>
-</span><span class='line'>  <span class="k">var</span> <span class="n">baseUrl</span> <span class="k">=</span> <span class="s">&quot;http://localhost:%s&quot;</span> <span class="n">format</span> <span class="n">port</span>
-</span><span class='line'>  <span class="k">var</span> <span class="n">dbConfig</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">DBConfig</span>
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">case</span> <span class="k">class</span> <span class="nc">DBConfig</span><span class="o">(</span>
-</span><span class='line'>  <span class="k">var</span> <span class="n">driver</span> <span class="k">=</span> <span class="s">&quot;org.h2.Driver&quot;</span>
-</span><span class='line'>  <span class="k">var</span> <span class="n">uri</span> <span class="k">=</span> <span class="s">&quot;jdbc:h2:mem:&quot;</span>
-</span><span class='line'>  <span class="k">var</span> <span class="n">create</span> <span class="k">=</span> <span class="kc">true</span>
-</span><span class='line'><span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Надо заметить, что мы используем в этом конфиге изменяемые переменные (<code>var</code>). В Scala это зачастую является признаком недостаточно функционального (декларативного) стиля, однако в данном случае это позволит писать лаконичные конфиги, выставляя значение полей простым присваиванием. Кроме того, этот же стиль используется при объявлении уже имеющихся в ServerConfig значений.</p>
-
-<p>Итак, теперь наш конфиг для, например, тестового сервера, может выглядеть так:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">new</span> <span class="nc">MyServerConfig</span> <span class="o">{</span>
-</span><span class='line'>      <span class="n">port</span> <span class="k">=</span> <span class="mi">80</span>
-</span><span class='line'>      <span class="n">baseUrl</span> <span class="k">=</span> <span class="s">&quot;http://test.myserver.com&quot;</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="n">dbConfig</span><span class="o">.</span><span class="n">uri</span> <span class="k">=</span> <span class="s">&quot;jdbc:h2:/tmp/test.db;AUTO_SERVER=TRUE&quot;</span>
-</span><span class='line'>    <span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Вполне лаконично, и ничуть не хуже .properties и уж тем более XML-файла. Можем сохранить его под именем <code>test.scala</code>, тогда наш сервер мы сможем запускать как</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>    java -jar my-server.jar -f ./test.scala
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Загрузка</h2>
-
-<p>Теперь, наш файл настроек надо загрузить и использовать по назначению. Делать это логичнее всего поближе к точке входа, например в <code>main</code>. Путь к файлу можно передать с параметром <code>-f</code> при запуске приложения, а если его нет, то ostrich попытается найти его сам. Определение местоположения конфиг-файла - это то самое место, где становится видно, что проект делался для себя: ostrich ищет его в довольно специфических местах, пытаясь сначала выяснить имя jar-файла. Поэтому, проще всего всегда передавать путь к конфигу через <code>-f</code> плюс явно указать конфиг по умолчанию. Поскольку конфиг по умолчанию является обычным scala-классом, можно просто создать его инстанс в коде. Вот как выглядит загрузка и использование конфига у меня:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">object</span> <span class="nc">MyServer</span> <span class="o">{</span>
-</span><span class='line'>      <span class="k">def</span> <span class="n">main</span><span class="o">(</span><span class="n">args</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">String</span><span class="o">])</span> <span class="o">{</span>
-</span><span class='line'>        <span class="k">val</span> <span class="n">runtime</span> <span class="k">=</span> <span class="nc">RuntimeEnvironment</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">args</span><span class="o">)</span>
-</span><span class='line'>        <span class="k">val</span> <span class="n">server</span> <span class="k">=</span>
-</span><span class='line'>          <span class="k">if</span> <span class="o">(</span><span class="n">runtime</span><span class="o">.</span><span class="n">configFile</span><span class="o">.</span><span class="n">exists</span><span class="o">)</span> <span class="c1">//если ostrich нашёл конфиг-файл </span>
-</span><span class='line'>            <span class="n">runtime</span><span class="o">.</span><span class="n">loadRuntimeConfig</span><span class="o">[</span><span class="kt">Server</span><span class="o">]()</span>
-</span><span class='line'>          <span class="k">else</span> <span class="c1">//default</span>
-</span><span class='line'>            <span class="o">(</span><span class="k">new</span> <span class="nc">MyServerConfig</span><span class="o">)()(</span><span class="n">runtime</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="n">server</span><span class="o">.</span><span class="n">start</span><span class="o">()</span>
-</span><span class='line'>      <span class="o">}</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">class</span> <span class="nc">MyServer</span><span class="o">(</span><span class="k">val</span> <span class="n">config</span><span class="k">:</span> <span class="kt">MyServerConfig</span><span class="o">)</span>
-</span><span class='line'>    <span class="o">{</span>
-</span><span class='line'>      <span class="k">val</span> <span class="n">db</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">DB</span><span class="o">(</span><span class="n">config</span><span class="o">.</span><span class="n">dbConfig</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="k">def</span> <span class="n">start</span><span class="o">()</span> <span class="o">{</span>
-</span><span class='line'>        <span class="c1">//...</span>
-</span><span class='line'>      <span class="o">}</span>
-</span><span class='line'>    <span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Обратите внимание на строчку <code>(new MyServerConfig)()(runtime)</code>: сначала мы вызываем метод apply без параметров, а потом вызываем полученную функцию с параметром типа RuntimeEnvironment. При необходимости, этот способ можно расширить для загрузки различных конфигов по умолчанию, например в зависимости от <code>run.mode</code> в lift.</p>
-
-<p>Я не использовал возможность ostrich объявлять поля как обязательные/опциональные, но промолчать о ней будет, наверное, неправильно. В приведённой к классу Config документации всё довольно просто:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="c1">//необязательное поле</span>
-</span><span class='line'>    <span class="k">var</span> <span class="n">something</span> <span class="k">=</span> <span class="n">optional</span><span class="o">[</span><span class="kt">Duration</span><span class="o">]</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">//обязательное поле</span>
-</span><span class='line'>    <span class="k">var</span> <span class="n">level</span> <span class="k">=</span> <span class="n">required</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">//вычисляемое (lazily evaluated!) поле</span>
-</span><span class='line'>    <span class="k">var</span> <span class="n">nextLevel</span> <span class="k">=</span> <span class="n">computed</span><span class="o">(</span><span class="n">level</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Конфигурация компонентов</h2>
-
-<p>В вышеприведённом примере мы вынесли настройку базы данных в отдельный класс DBConfig. Иногда, со стороны приложения бывает удобно вынести конфигурацию в отдельный класс, но усложнять структуру конфиг-файла не хочется. Хорошим примером является случай, когда конфигурируемый компонент находится в другом (под)проекте. В этом случае, конфиг можно объявить трейтом и подмешать его в основной конфиг</p>
-
-<p>Представим, что мы хотим добавить в наш север небольшой внутренний почтовый сервис для отсылки писем пользователям.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">trait</span> <span class="nc">MailConfig</span> <span class="o">{</span>
-</span><span class='line'>  <span class="k">def</span> <span class="n">smtpServer</span><span class="k">:</span>  <span class="kt">String</span>
-</span><span class='line'>  <span class="k">def</span> <span class="n">smtpPort</span><span class="k">:</span>    <span class="kt">String</span>
-</span><span class='line'>  <span class="k">def</span> <span class="n">fromAddress</span><span class="k">:</span> <span class="kt">String</span>
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">class</span> <span class="nc">MailManager</span><span class="o">(</span><span class="k">val</span> <span class="n">config</span><span class="k">:</span> <span class="kt">MailConfig</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>  <span class="o">...</span>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p>Теперь мы просто подмешиваем трейт в наш основной конфиг, перегружая его методы нашими <code>var</code>ами:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">class</span> <span class="nc">MyServerConfig</span>
-</span><span class='line'>    <span class="k">extends</span> <span class="nc">ServerConfig</span><span class="o">[</span><span class="kt">MyServer</span><span class="o">]</span>
-</span><span class='line'>    <span class="k">with</span> <span class="nc">MailConfig</span>
-</span><span class='line'>    <span class="o">{</span>
-</span><span class='line'>      <span class="o">...</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="k">var</span> <span class="n">smtpServer</span> <span class="k">=</span> <span class="n">required</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span>
-</span><span class='line'>      <span class="k">var</span> <span class="n">smtpPort</span> <span class="k">=</span> <span class="mi">24</span>
-</span><span class='line'>      <span class="k">var</span> <span class="n">fromAddress</span> <span class="k">=</span> <span class="s">&quot;noreply@domain.com&quot;</span>
-</span><span class='line'>    <span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>В нашем конфиг-файле (<code>test.scala</code>) эти поля будут работать точно так же как и все остальные. При инстанциировании менеджера можно просто передать ему общий конфиг:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">class</span> <span class="nc">MyServer</span><span class="o">(</span><span class="k">val</span> <span class="n">config</span><span class="k">:</span> <span class="kt">MyServerConfig</span><span class="o">)</span>
-</span><span class='line'>    <span class="o">{</span>
-</span><span class='line'>      <span class="k">val</span> <span class="n">db</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">DB</span><span class="o">(</span><span class="n">config</span><span class="o">.</span><span class="n">dbConfig</span><span class="o">)</span>
-</span><span class='line'>      <span class="k">val</span> <span class="n">mailer</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">MailManager</span><span class="o">(</span><span class="n">config</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="o">...</span>
-</span><span class='line'>    <span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Также, в отдельный трейт можно вынести готовые значения для настроек если они представляют собой что-то более сложное чем простые значения.</p>
-
-<p>Вот собственно и всё что я хотел рассказать об использовании ostrich для конфигурирования. Я намеренно не стал рассматривать имеющиеся в ServerConfig поля для настройки логгинга, статистики и админки. Мы вернёмся к ним попозже, когда я буду рассказывать о соответствующих фичах &#8220;страуса&#8221;.</p>
 ]]></content>
   </entry>
   
