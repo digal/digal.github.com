@@ -81,7 +81,7 @@ published: true
 
 * [Tranquil](https://github.com/fjolnir/tranquil) очередной странный язык поверх LLVM и ObjC Runtime. 
 
-* [AFNetworkingStore](https://github.com/AFNetworking/AFIncrementalStore) — вроде бы как замена RestKit и инструмент для привязки доменных моделей к REST (и не очень) -сервисам поверх [AFNetworking](https://github.com/afnetworking/afnetworking) и CoreData. Надо будет попробовать. OSX 10.6+, iOS 5.0+
+* [AFIncrementalStore](https://github.com/AFNetworking/AFIncrementalStore) — вроде бы как замена RestKit и инструмент для привязки доменных моделей к REST (и не очень) -сервисам поверх [AFNetworking](https://github.com/afnetworking/afnetworking) и CoreData. Надо будет попробовать. OSX 10.6+, iOS 5.0+
 
 * Комплементарное дополнение для сервер-сайда: [Rack::CoreData](https://github.com/mattt/rack-core-data) для герерации REST API из моделей Core Data. С архитектурной точки зрения, клиент в виде белого ящика и вообще, разработка API исходя из клиентской модели данных — это явный такой антипаттерн, но очень интересно всё-таки узнать, насколько оно применимо в реальности.
 
