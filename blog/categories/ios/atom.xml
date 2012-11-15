@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ios | Лошоть и байты]]></title>
   <link href="http://digal.github.com/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://digal.github.com/"/>
-  <updated>2012-11-14T00:01:52+04:00</updated>
+  <updated>2012-11-15T13:03:13+04:00</updated>
   <id>http://digal.github.com/</id>
   <author>
     <name><![CDATA[Yuri Buyanov]]></name>
@@ -244,7 +244,7 @@ end
 
 <p>С другой стороны, сделана эта IDE очень приятно, и, положа руку на сердце, можно сказать, всё действительно нужное для разработки под iOS и OSX там есть. Есть куча готовых шаблонов для приложений, поддержка svn и git (с учётом упомянутых выше проблем со стабильностью), средства юнит-тестирования и ряд основных рефакторингов. Дизайнер интерфейсов очень неплох (после ада андроидовских XML-ек с лейаутами), многие вещи делаются перетаскиванием стрелочек из одной области окна в другую. А уж после того как я увидел визуализацию найденных <a href="http://clang-analyzer.llvm.org/">static analyzer</a>-ом утечек памяти, я практически влюбился в этот инструмент.</p>
 
-<p>{% img https://img.skitch.com/20111130-qknwak3rexswj8jk8snrjf4fh7.png %}</p>
+<p><img src="https://img.skitch.com/20111130-qknwak3rexswj8jk8snrjf4fh7.png"></p>
 
 <p>Впрочем, отталкиваясь от опыта работы с IDEA, RubyMine и WebStorm, очень хотелось бы взглянуть на альтернативу от <a href="http://www.jetbrains.com/">JetBrains</a>: <a href="http://www.jetbrains.com/objc/">AppCode</a>. Если будет время - обязательно попробую и опишу впечатления.</p>
 
