@@ -1,0 +1,51 @@
+---
+layout: post
+title: "Линкопост №11 (сентябрь)"
+date: 2012-11-25 14:50
+comments: true
+categories: links
+---
+
+Как и обещал, разгребаю накопившееся и пытаюсь выкладывать ссылки быстрее, чем их нахожу.
+
+Меня почему-то немного мучает совесть, когда я представляю себе, как некоторые фолловеры постят интересную ссылку, а через месяц видят её в моём посте. В качестве эксперимента решил указывать источники ссылок. 
+
+<!--more-->
+
+* Большая [подборка](http://nathanbarry.com/25-free-ios-design-resources/) ресурсов для дизайнеров iOS-приложений: PSD-шаблоны, кнопочки, иконочки, текстуры и всё такое. (via [@middlesizetit](https://twitter.com/middlesizetit))
+
+* [10 советов](http://www.mikedellanoce.com/2012/09/10-tips-for-getting-that-native-ios.html) по разработке нормальных интерфейов на PhoneGap. "Нормальных", в смысле "быстрых, отзывчивых и хоть как-то похожих на нативные". (via [@newsycombinator](https://twitter.com/newsycombinator))
+
+* [Pass](http://zx2c4.com/projects/password-store/) — консольный и юниксвейный менеджер паролей. (via [@newsycombinator](https://twitter.com/newsycombinator))
+
+* [Статья](http://felipec.wordpress.com/2012/05/26/no-mercurial-branches-are-still-not-better-than-git-ones-response-to-jhws-more-on-mercurial-vs-git-with-graphs/) с хорошим иллюстрированным сравнением поведения веток в Mercurial и Git. Является хорошим развёрнутым ответом на другую статью (ссылки есть в начале), где утверждается что ветки в hg реализованы лучше, нежели в git. (via [@mtreskin](https://twitter.com/mtreskin))
+
+* [CODialog](https://github.com/eaigner/CODialog) — более функциональная замена стандартному UIAlertView. Выглядит (по утверждению автора) практически идентично, но умеет гораздо больше. (via [@CocoaPodsOrg](https://twitter.com/CocoaPodsOrg))
+
+* [What developers think when you say "Rock Star"](http://blog.hirelite.com/what-developers-think-when-you-say-rock-star) — аргументированный наезд на HR-ов, любящих громкие формулировки в заголовках вакансий. Внутри очень хорошо всё объясняющие чарты. (via [@d1ffuz0r](https://twitter.com/d1ffuz0r))
+
+* [Kodiak](http://www.becomekodiak.com/) — пехапе-IDE для iPad, полезная тем, что её авторы выложили на гитхаб аж четыре полезных компонента: [расширение для клавиатуры](https://github.com/adamhoracek/KOKeyboard), [симпатичные табы](https://github.com/adamhoracek/KOTabs), [древовидный список](https://github.com/adamhoracek/KOTree) и [табличку для браузера файлов](https://github.com/adamhoracek/KOFiles) (via [@CocoaPodsOrg](https://twitter.com/CocoaPodsOrg))
+
+* Небольшой [скандал](http://www.ownedcore.com/forums/world-of-warcraft/world-of-warcraft-general/375573-looking-inside-your-screenshots.html), связанный с Blizzard, которая, как оказалось, добавляет к скриншотам в World of Warcraft невидимые глазу вотермарки (судя по всему, использует для этого младшие биты пикселей). (via [@newsycombinator](https://twitter.com/newsycombinator))
+
+* [KGNoise](https://github.com/kgn/KGNoise) — небольшая библиотека для добавления шума к контролам в iOS- и OSX-приложениях. (via [@TheChangelog](https://twitter.com/TheChangelog))
+
+* [Xiki](http://xiki.org/) — занятный комбайн из шелла и википодобного энвайронмента. (via [@stilkov](https://twitter.com/stilkov))
+
+* [Gow](https://github.com/bmatzelle/gow) — для тех несчатных, кому всё ещё приходится работать под Windows, лёгкая (18 MbB) замена Cygwin. (via [@middlesizetit](https://twitter.com/middlesizetit))
+
+* [Lost Type](http://losttype.com/browse/) — симпатичная коллекция шрифтов, распространяемая по принципу "дайте сколько не жалко". (via [@jboner](https://twitter.com/jboner))
+
+* [Подборка](http://www.netmagazine.com/features/top-20-data-visualisation-tools) 20-ти инструментов для визуализации данных, начиная экселем и заканчивая языком R. Мне, после беглого просмотра списка, приглянулись [http://square.github.com/crossfilter/](Crossfilter) и [http://cartodb.com/](CartoDB). (via [@remeniuk](https://twitter.com/remeniuk))
+
+* [mongoqp](https://github.com/jmikola/mongoqp) — симпатичный веб-фронтенд к профайлеру MongoDB. Много чего умеет (via [@jmikola](https://twitter.com/jmikola))
+
+* [mongo-hacker](https://github.com/TylerBrock/mongo-hacker) — улучшенный шелл для MongoDB, найденный в описании к предыдущему проекту. Добавляет цветной вывод, форматирование в виде таблицы и несколько прочих полезных вещей. Можно использовать в качестве основы для своего `~/.mongorc.js`.
+
+* [Genghis](https://github.com/bobthecow/genghis) — маленькая и совсем простая смотрелка MongoDB-баз. Устанавливается локально как рубигем, работает в браузере. Найдено там же.
+
+* [The TTY demystified](http://www.linusakesson.net/programming/tty/) — большая и хорошая статья про юниксовый терминал aka TTY. (via [@stevelosh](https://twitter.com/stevelosh))
+
+* Подробное [описание работы SSL](http://security.stackexchange.com/questions/20803/how-does-ssl-work/20833) на StackExchange. (via [@middlesizetit](https://twitter.com/middlesizetit))
+
+* [Список вещей](), которые больше дистрибутива турбопаскаля (39731 байт). Или, если дословно, "Вещи, которых турбопаскаль меньше". Например, картинка с айфоном на сайте apple (190157), или минифицированная версия jquery (90518). (via [@rickasaurus](https://twitter.com/rickasaurus))
