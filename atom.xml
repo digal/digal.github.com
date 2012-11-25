@@ -4,7 +4,7 @@
   <title><![CDATA[Лошоть и байты]]></title>
   <link href="http://digal.github.com/atom.xml" rel="self"/>
   <link href="http://digal.github.com/"/>
-  <updated>2012-11-15T13:03:13+04:00</updated>
+  <updated>2012-11-25T23:31:27+04:00</updated>
   <id>http://digal.github.com/</id>
   <author>
     <name><![CDATA[Yuri Buyanov]]></name>
@@ -12,6 +12,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Линкопост №11 (сентябрь)]]></title>
+    <link href="http://digal.github.com/blog/2012/11/25/links-11/"/>
+    <updated>2012-11-25T14:50:00+04:00</updated>
+    <id>http://digal.github.com/blog/2012/11/25/links-11</id>
+    <content type="html"><![CDATA[<p>Как и обещал, разгребаю накопившееся и пытаюсь выкладывать ссылки быстрее, чем их нахожу.</p>
+
+<p>Меня почему-то немного мучает совесть, когда я представляю себе, как некоторые фолловеры постят интересную ссылку, а через месяц видят её в моём посте. В качестве эксперимента решил указывать источники ссылок.</p>
+
+<!--more-->
+
+
+<ul>
+<li><p>Большая <a href="http://nathanbarry.com/25-free-ios-design-resources/">подборка</a> ресурсов для дизайнеров iOS-приложений: PSD-шаблоны, кнопочки, иконочки, текстуры и всё такое. (via <a href="https://twitter.com/middlesizetit">@middlesizetit</a>)</p></li>
+<li><p><a href="http://www.mikedellanoce.com/2012/09/10-tips-for-getting-that-native-ios.html">10 советов</a> по разработке нормальных интерфейов на PhoneGap. &#8220;Нормальных&#8221;, в смысле &#8220;быстрых, отзывчивых и хоть как-то похожих на нативные&#8221;. (via <a href="https://twitter.com/newsycombinator">@newsycombinator</a>)</p></li>
+<li><p><a href="http://zx2c4.com/projects/password-store/">Pass</a> — консольный и юниксвейный менеджер паролей. (via <a href="https://twitter.com/newsycombinator">@newsycombinator</a>)</p></li>
+<li><p><a href="http://felipec.wordpress.com/2012/05/26/no-mercurial-branches-are-still-not-better-than-git-ones-response-to-jhws-more-on-mercurial-vs-git-with-graphs/">Статья</a> с хорошим иллюстрированным сравнением поведения веток в Mercurial и Git. Является хорошим развёрнутым ответом на другую статью (ссылки есть в начале), где утверждается что ветки в hg реализованы лучше, нежели в git. (via <a href="https://twitter.com/mtreskin">@mtreskin</a>)</p></li>
+<li><p><a href="https://github.com/eaigner/CODialog">CODialog</a> — более функциональная замена стандартному UIAlertView. Выглядит (по утверждению автора) практически идентично, но умеет гораздо больше. (via <a href="https://twitter.com/CocoaPodsOrg">@CocoaPodsOrg</a>)</p></li>
+<li><p><a href="http://blog.hirelite.com/what-developers-think-when-you-say-rock-star">What developers think when you say &#8220;Rock Star&#8221;</a> — аргументированный наезд на HR-ов, любящих громкие формулировки в заголовках вакансий. Внутри очень хорошо всё объясняющие чарты. (via <a href="https://twitter.com/d1ffuz0r">@d1ffuz0r</a>)</p></li>
+<li><p><a href="http://www.becomekodiak.com/">Kodiak</a> — пехапе-IDE для iPad, полезная тем, что её авторы выложили на гитхаб аж четыре полезных компонента: <a href="https://github.com/adamhoracek/KOKeyboard">расширение для клавиатуры</a>, <a href="https://github.com/adamhoracek/KOTabs">симпатичные табы</a>, <a href="https://github.com/adamhoracek/KOTree">древовидный список</a> и <a href="https://github.com/adamhoracek/KOFiles">табличку для браузера файлов</a> (via <a href="https://twitter.com/CocoaPodsOrg">@CocoaPodsOrg</a>)</p></li>
+<li><p>Небольшой <a href="http://www.ownedcore.com/forums/world-of-warcraft/world-of-warcraft-general/375573-looking-inside-your-screenshots.html">скандал</a>, связанный с Blizzard, которая, как оказалось, добавляет к скриншотам в World of Warcraft невидимые глазу вотермарки (судя по всему, использует для этого младшие биты пикселей). (via <a href="https://twitter.com/newsycombinator">@newsycombinator</a>)</p></li>
+<li><p><a href="https://github.com/kgn/KGNoise">KGNoise</a> — небольшая библиотека для добавления шума к контролам в iOS- и OSX-приложениях. (via <a href="https://twitter.com/TheChangelog">@TheChangelog</a>)</p></li>
+<li><p><a href="http://xiki.org/">Xiki</a> — занятный комбайн из шелла и википодобного энвайронмента. (via <a href="https://twitter.com/stilkov">@stilkov</a>)</p></li>
+<li><p><a href="https://github.com/bmatzelle/gow">Gow</a> — для тех несчатных, кому всё ещё приходится работать под Windows, лёгкая (18 MbB) замена Cygwin. (via <a href="https://twitter.com/middlesizetit">@middlesizetit</a>)</p></li>
+<li><p><a href="http://losttype.com/browse/">Lost Type</a> — симпатичная коллекция шрифтов, распространяемая по принципу &#8220;дайте сколько не жалко&#8221;. (via <a href="https://twitter.com/jboner">@jboner</a>)</p></li>
+<li><p><a href="http://www.netmagazine.com/features/top-20-data-visualisation-tools">Подборка</a> 20-ти инструментов для визуализации данных, начиная экселем и заканчивая языком R. Мне, после беглого просмотра списка, приглянулись <a href="Crossfilter">http://square.github.com/crossfilter/</a> и <a href="CartoDB">http://cartodb.com/</a>. (via <a href="https://twitter.com/remeniuk">@remeniuk</a>)</p></li>
+<li><p><a href="https://github.com/jmikola/mongoqp">mongoqp</a> — симпатичный веб-фронтенд к профайлеру MongoDB. Много чего умеет (via <a href="https://twitter.com/jmikola">@jmikola</a>)</p></li>
+<li><p><a href="https://github.com/TylerBrock/mongo-hacker">mongo-hacker</a> — улучшенный шелл для MongoDB, найденный в описании к предыдущему проекту. Добавляет цветной вывод, форматирование в виде таблицы и несколько прочих полезных вещей. Можно использовать в качестве основы для своего <code>~/.mongorc.js</code>.</p></li>
+<li><p><a href="https://github.com/bobthecow/genghis">Genghis</a> — маленькая и совсем простая смотрелка MongoDB-баз. Устанавливается локально как рубигем, работает в браузере. Найдено там же.</p></li>
+<li><p><a href="http://www.linusakesson.net/programming/tty/">The TTY demystified</a> — большая и хорошая статья про юниксовый терминал aka TTY. (via <a href="https://twitter.com/stevelosh">@stevelosh</a>)</p></li>
+<li><p>Подробное <a href="http://security.stackexchange.com/questions/20803/how-does-ssl-work/20833">описание работы SSL</a> на StackExchange. (via <a href="https://twitter.com/middlesizetit">@middlesizetit</a>)</p></li>
+<li><p><a href="">Список вещей</a>, которые больше дистрибутива турбопаскаля (39731 байт). Или, если дословно, &#8220;Вещи, которых турбопаскаль меньше&#8221;. Например, картинка с айфоном на сайте apple (190157), или минифицированная версия jquery (90518). (via <a href="https://twitter.com/rickasaurus">@rickasaurus</a>)</p></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Линкопост номер 10 (июль-август)]]></title>
@@ -1561,22 +1598,6 @@
 <p>Вот, собственно, и всё: никаких самописных форматов для начальных данных, никаких SQL-файлов, которые нужно чинить при каждом изменении схемы. Мы описываем данные самым естественным для нас способом - в виде высокоуровневого кода, работающего с базой и использующего все возможности нашего приложения (и выбранного persistence-фреймворка). Более того, принцип используемый здесь можно легко применить не только к работе с базой, но и к любым другим частям приложения. Нужен тестовый файл в хитром формате, с которым работает наше приложение? Cоздаём его используя соответствующий API и он будет всегда актуален, даже если формат ещё не устаканился и разрабатывается параллельно с приложением.</p>
 
 <p>В общем, с ostrich гибкость настройки приложения ограничена только фантазией разработчика. Я практически уверен, что это не последний пост, посвящённый этой библиотеке.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Пример хорошего UX]]></title>
-    <link href="http://digal.github.com/blog/2011/09/05/no-newsletters/"/>
-    <updated>2011-09-05T12:15:00+04:00</updated>
-    <id>http://digal.github.com/blog/2011/09/05/no-newsletters</id>
-    <content type="html"><![CDATA[<p>Регистрируясь на <a href="http://coderwall.com/">coderwall</a> (по наводке <a href="http://twitter.com/shaman_sir">@shaman_sir</a>) увидел замечательный пример той самой области UX, не относящейся ни к дизайну ни к юзабилити. Ничего супер-пупер-грандиозного, просто под полем для ввода электропочты в форме регистрации - небольшое примечание.</p>
-
-<blockquote><p>No spam, always private. We respect the sanctity of your email and share your dislike for spam and unnecessarily frequent newsletters. If you&#8217;re interested in future coderwall news, we suggest you follow us on twitter.</p></blockquote>
-
-
-<p>Не знаю как вам, а мне безумно приятно видеть сервис, уважающий моё личное информационное пространство и максимально ненавязчиво предлагающий просто подписаться на твиттер, если уж мне так хочется читать относящиеся к нему новости. По-моему, это гораздо лучше обычной галочки &#8220;присылать/не присылать новости&#8221;: в случае с твиттером заранее знаешь, что отписаться при желании можно будет в любой момент и одной кнопкой. Я уже не говорю о случаях, когда пользователю вообще не оставляют никакого выбора.</p>
-
-<p>В общем, я кажется нашёл главный секрет хорошего UX: &#8220;Уважай своего пользователя&#8221;. Просто ведь, правда?</p>
 ]]></content>
   </entry>
   
