@@ -48,4 +48,4 @@ categories: links
 
 * Подробное [описание работы SSL](http://security.stackexchange.com/questions/20803/how-does-ssl-work/20833) на StackExchange. (via [@middlesizetit](https://twitter.com/middlesizetit))
 
-* [Список вещей](), которые больше дистрибутива турбопаскаля (39731 байт). Или, если дословно, "Вещи, которых турбопаскаль меньше". Например, картинка с айфоном на сайте apple (190157), или минифицированная версия jquery (90518). (via [@rickasaurus](https://twitter.com/rickasaurus))
+* [Список вещей](http://prog21.dadgum.com/116.html), которые больше дистрибутива турбопаскаля (39731 байт). Или, если дословно, "Вещи, которых турбопаскаль меньше". Например, картинка с айфоном на сайте apple (190157), или минифицированная версия jquery (90518). (via [@rickasaurus](https://twitter.com/rickasaurus))
