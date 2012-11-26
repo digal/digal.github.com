@@ -4,7 +4,7 @@
   <title><![CDATA[Лошоть и байты]]></title>
   <link href="http://digal.github.com/atom.xml" rel="self"/>
   <link href="http://digal.github.com/"/>
-  <updated>2012-11-25T23:31:27+04:00</updated>
+  <updated>2012-11-26T11:24:30+04:00</updated>
   <id>http://digal.github.com/</id>
   <author>
     <name><![CDATA[Yuri Buyanov]]></name>
@@ -44,7 +44,7 @@
 <li><p><a href="https://github.com/bobthecow/genghis">Genghis</a> — маленькая и совсем простая смотрелка MongoDB-баз. Устанавливается локально как рубигем, работает в браузере. Найдено там же.</p></li>
 <li><p><a href="http://www.linusakesson.net/programming/tty/">The TTY demystified</a> — большая и хорошая статья про юниксовый терминал aka TTY. (via <a href="https://twitter.com/stevelosh">@stevelosh</a>)</p></li>
 <li><p>Подробное <a href="http://security.stackexchange.com/questions/20803/how-does-ssl-work/20833">описание работы SSL</a> на StackExchange. (via <a href="https://twitter.com/middlesizetit">@middlesizetit</a>)</p></li>
-<li><p><a href="">Список вещей</a>, которые больше дистрибутива турбопаскаля (39731 байт). Или, если дословно, &#8220;Вещи, которых турбопаскаль меньше&#8221;. Например, картинка с айфоном на сайте apple (190157), или минифицированная версия jquery (90518). (via <a href="https://twitter.com/rickasaurus">@rickasaurus</a>)</p></li>
+<li><p><a href="http://prog21.dadgum.com/116.html">Список вещей</a>, которые больше дистрибутива турбопаскаля (39731 байт). Или, если дословно, &#8220;Вещи, которых турбопаскаль меньше&#8221;. Например, картинка с айфоном на сайте apple (190157), или минифицированная версия jquery (90518). (via <a href="https://twitter.com/rickasaurus">@rickasaurus</a>)</p></li>
 </ul>
 
 ]]></content>
