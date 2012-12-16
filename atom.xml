@@ -4,7 +4,7 @@
   <title><![CDATA[Лошоть и байты]]></title>
   <link href="http://digal.github.com/atom.xml" rel="self"/>
   <link href="http://digal.github.com/"/>
-  <updated>2012-11-26T11:24:30+04:00</updated>
+  <updated>2012-12-16T23:25:14+04:00</updated>
   <id>http://digal.github.com/</id>
   <author>
     <name><![CDATA[Yuri Buyanov]]></name>
@@ -12,6 +12,39 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Линкопост №12 (октябрь)]]></title>
+    <link href="http://digal.github.com/blog/2012/12/16/links-12/"/>
+    <updated>2012-12-16T21:59:00+04:00</updated>
+    <id>http://digal.github.com/blog/2012/12/16/links-12</id>
+    <content type="html"><![CDATA[<p>Итак, продолжаю по мере сил выкладывать накопившееся. Теперь на очереди октябрь.</p>
+
+<!--more-->
+
+
+<ul>
+<li><p><a href="http://taligarsiel.com/Projects/howbrowserswork1.htm">How browsers work</a> — большая подробная статья о том, как устроены браузеры. (via <a href="https://twitter.com/middlesizetit">@middlesizetit</a>)</p></li>
+<li><p><a href="http://www.sqlite.org/testing.html">How SQLite Is Tested</a> — хороший пример всеобъемлющего и параноидального подхода к автотестам. Отдельно понравился пассаж про опыт использования статического анализатора:</p></li>
+</ul>
+
+
+<blockquote><p>Static analysis has found a few bugs in SQLite, but those are the exceptions. More bugs have been introduced into SQLite while trying to get it to compile without warnings than have been found by static analysis.&#8221;</p></blockquote>
+
+<p>(via <a href="https://twitter.com/ceesaxp">@ceesaxp</a>)</p>
+
+<ul>
+<li><p><a href="http://www.norvig.com/21-days.html">Teach Yourself Programming in Ten Years</a> — про книжки &#8220;Выучи С++ за три дня&#8221; и становление Программиста (с большой буквы &#8220;П&#8221;). (via <a href="https://twitter.com/kerzol">@kerzol</a>)</p></li>
+<li><p><a href="http://vis.berkeley.edu/software/proton_multitouch_framework/proton/">Proton</a> — iOS-фреймворк для декларативного (в виде регекспов) описания мультитач-жестов. Не знаю зачем, но кому-то может пригодиться. (via <a href="https://twitter.com/CompSciFact">@CompSciFact</a>)</p></li>
+<li><p><a href="https://tech.dropbox.com/2012/10/caching-in-theory-and-practice/">Caching in theory and practice</a> — статья в бложике дропбокса про базовые алгоритмы кеширования. (via <a href="https://twitter.com/newsycombinator">@newsycombinator</a>)</p></li>
+<li><p><a href="http://stedolan.github.com/jq/">jq</a> — коммандлайновый JSON-процессор. &#8220;is like sed for JSON data&#8221;. (via <a href="https://twitter.com/newsycombinator">@newsycombinator</a>)</p></li>
+<li><p><a href="https://github.com/blog/1299-mantle-a-model-framework-for-objective-c">Mantle</a> — Cocoa-фреймворк для построения много чего умеющего model layer от GitHub. Сериализация/десериализация, обновление объектов, версионирование и много ещё чего. (via <a href="https://twitter.com/github">@github</a>)</p></li>
+<li><p><a href="http://fontello.com/">Fontello</a> — Генератор кастомных icon fonts на базе десятка существующих. На выходе выдаёт архив, содержащий шрифт в нескольких форматах, CSS, демонстрационную html-ку и ещё кое-чего по мелочи. (via <a href="https://twitter.com/guillaumebort">@guillaumebort</a>)</p></li>
+<li><p><a href="https://github.com/apenwarr/sshuttle">sshuttle</a> — простой в использовании как-бы-VPN поверх обычного SSH. Если хочется быстро сделать себе секьюрный тоннель, а заморачиваться с настройкой настоящего VPN — совсем не хочется. (via <a href="https://twitter.com/umputun">@umputun</a>)</p></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Линкопост №11 (сентябрь)]]></title>
@@ -1475,129 +1508,6 @@
 <h2>Продолжение следует</h2>
 
 <p>В следующем посте я постараюсь рассмотреть &#8220;продвинутые&#8221; функции squeryl: джойны, связи 1-to-many и many-to-many, составные запросы, итд. И ещё постараюсь не забыть пройтись с критикой по тем местам библиотеки, которые ещё требуют полировки. Критика и отзывы, как обычно приветствуются. До встречи.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Fixtures]]></title>
-    <link href="http://digal.github.com/blog/2011/09/07/fixtures/"/>
-    <updated>2011-09-07T09:46:00+04:00</updated>
-    <id>http://digal.github.com/blog/2011/09/07/fixtures</id>
-    <content type="html"><![CDATA[<p>В предыдущем посте я рассказывал об исполняемых конфигах ostrich и не упомянул особых их достоинств, кроме type safety и удобства работы с настройками со стороны приложения. На прошлой неделе я наткнулся на ещё один хороший юзкейс для таких конфигов.</p>
-
-<p>Предположим, мы развёртываем наше приложение в разных окружениях (dev, test, prod), и в некоторых из них было бы здорово иметь в базе некоторые начальные данные для упрощения, например, процесса тестирования. Есть несколько достаточно тривиальных, но не очень удобных способов решения этой проблемы, особенно если загрузка этих начальных данных - часть автоматического развёртывания через CI-сервер. В скриптовых языках, где исполняемые файлы настроек - норма, такие данные (называемые fixtures) часто делаются частью конфига.</p>
-
-<p>С ostrich реализация такой штуки становится делом буквально нескольких строк кода:</p>
-
-<!--more-->
-
-
-<p>Итак, для начала добавим соответствующее поле в наш базовый конфиг, он же конфиг по умолчанию. Мы воспользуемся тем, что scala - функциональный язык, а конфиг в свою очередь - это обычный scala-класс.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">class</span> <span class="nc">DBConfig</span> <span class="o">{</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="o">...</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="cm">/** Нужно ли сбросить и пересоздать базу? */</span>
-</span><span class='line'>      <span class="k">var</span> <span class="n">doReset</span> <span class="k">=</span> <span class="kc">false</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="cm">/** Код, который нужно исполнить, если doReset == true */</span>
-</span><span class='line'>      <span class="k">var</span> <span class="n">fixtures</span><span class="k">:</span> <span class="o">(</span><span class="kt">DB</span> <span class="o">=&gt;</span> <span class="kt">Unit</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span><span class="n">db</span> <span class="k">=&gt;</span> <span class="o">()}</span>
-</span><span class='line'>    <span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>По умолчанию, поле fixtures - это ничего не делающая функция. Теперь добавим в код, отвечающий за инициализацию базы, обработку новых полей:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>
-</span><span class='line'>    <span class="k">class</span> <span class="nc">DB</span><span class="o">(</span><span class="k">val</span> <span class="n">config</span><span class="k">:</span> <span class="kt">DBConfig</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="nc">Class</span><span class="o">.</span><span class="n">forName</span><span class="o">(</span><span class="n">config</span><span class="o">.</span><span class="n">driver</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="o">...</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="n">transaction</span> <span class="o">{</span>
-</span><span class='line'>        <span class="k">if</span> <span class="o">(</span><span class="n">config</span><span class="o">.</span><span class="n">doReset</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>          <span class="c1">//drop and create tables</span>
-</span><span class='line'>          <span class="nc">MySchema</span><span class="o">.</span><span class="n">drop</span>
-</span><span class='line'>          <span class="nc">MySchema</span><span class="o">.</span><span class="n">create</span>
-</span><span class='line'>
-</span><span class='line'>          <span class="c1">//Run fixtures</span>
-</span><span class='line'>          <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="o">(</span><span class="s">&quot;Running fixtures&quot;</span><span class="o">)</span>
-</span><span class='line'>          <span class="n">config</span><span class="o">.</span><span class="n">fixtures</span><span class="o">(</span><span class="k">this</span><span class="o">)</span>
-</span><span class='line'>        <span class="o">}</span>
-</span><span class='line'>      <span class="o">}</span>
-</span><span class='line'>    <span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Ну и наконец выставим необходимое значение в поле fixtures в нужных конфигах</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="c1">//myserver-test.scala</span>
-</span><span class='line'>    <span class="k">new</span> <span class="nc">MyServerConfig</span> <span class="o">{</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="o">...</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="n">dbConfig</span><span class="o">.</span><span class="n">doReset</span> <span class="k">=</span> <span class="kc">true</span>
-</span><span class='line'>      <span class="n">dbConfig</span><span class="o">.</span><span class="n">fixtures</span> <span class="k">=</span> <span class="o">{</span> <span class="n">db</span> <span class="k">=&gt;</span>
-</span><span class='line'>        <span class="c1">//create test user</span>
-</span><span class='line'>        <span class="k">val</span> <span class="n">usr</span> <span class="k">=</span> <span class="n">db</span><span class="o">.</span><span class="n">createUser</span><span class="o">(</span><span class="s">&quot;user@example.com&quot;</span><span class="o">,</span> <span class="s">&quot;password&quot;</span><span class="o">,</span> <span class="s">&quot;ru_RU&quot;</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="c1">//set user roles</span>
-</span><span class='line'>        <span class="n">db</span><span class="o">.</span><span class="n">assignRoleForUser</span><span class="o">(</span><span class="n">usr</span><span class="o">.</span><span class="n">id</span><span class="o">,</span> <span class="nc">Role</span><span class="o">.</span><span class="nc">ADMIN</span><span class="o">)</span>
-</span><span class='line'>        <span class="n">db</span><span class="o">.</span><span class="n">assignRoleForUser</span><span class="o">(</span><span class="n">usr</span><span class="o">.</span><span class="n">id</span><span class="o">,</span> <span class="nc">Role</span><span class="o">.</span><span class="nc">STAFF</span><span class="o">)</span>
-</span><span class='line'>      <span class="o">}</span>
-</span><span class='line'>    <span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Вот, собственно, и всё: никаких самописных форматов для начальных данных, никаких SQL-файлов, которые нужно чинить при каждом изменении схемы. Мы описываем данные самым естественным для нас способом - в виде высокоуровневого кода, работающего с базой и использующего все возможности нашего приложения (и выбранного persistence-фреймворка). Более того, принцип используемый здесь можно легко применить не только к работе с базой, но и к любым другим частям приложения. Нужен тестовый файл в хитром формате, с которым работает наше приложение? Cоздаём его используя соответствующий API и он будет всегда актуален, даже если формат ещё не устаканился и разрабатывается параллельно с приложением.</p>
-
-<p>В общем, с ostrich гибкость настройки приложения ограничена только фантазией разработчика. Я практически уверен, что это не последний пост, посвящённый этой библиотеке.</p>
 ]]></content>
   </entry>
   
