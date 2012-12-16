@@ -1,0 +1,34 @@
+---
+layout: post
+title: "Линкопост №12 (октябрь)"
+date: 2012-12-16 21:59
+comments: true
+categories: links
+---
+
+Итак, продолжаю по мере сил выкладывать накопившееся. Теперь на очереди октябрь.
+
+<!--more-->
+
+* [How browsers work](http://taligarsiel.com/Projects/howbrowserswork1.htm) — большая подробная статья о том, как устроены браузеры. (via [@middlesizetit](https://twitter.com/middlesizetit))
+
+* [How SQLite Is Tested](http://www.sqlite.org/testing.html) — хороший пример всеобъемлющего и параноидального подхода к автотестам. Отдельно понравился пассаж про опыт использования статического анализатора: 
+
+> Static analysis has found a few bugs in SQLite, but those are the exceptions. More bugs have been introduced into SQLite while trying to get it to compile without warnings than have been found by static analysis." 
+
+(via [@ceesaxp](https://twitter.com/ceesaxp))
+
+* [Teach Yourself Programming in Ten Years](http://www.norvig.com/21-days.html) — про книжки "Выучи С++ за три дня" и становление Программиста (с большой буквы "П"). (via [@kerzol](https://twitter.com/kerzol))
+
+* [Proton](http://vis.berkeley.edu/software/proton_multitouch_framework/proton/) — iOS-фреймворк для декларативного (в виде регекспов) описания мультитач-жестов. Не знаю зачем, но кому-то может пригодиться. (via [@CompSciFact](https://twitter.com/CompSciFact))
+
+* [Caching in theory and practice](https://tech.dropbox.com/2012/10/caching-in-theory-and-practice/) — статья в бложике дропбокса про базовые алгоритмы кеширования. (via [@newsycombinator](https://twitter.com/newsycombinator))
+
+* [jq](http://stedolan.github.com/jq/) — коммандлайновый JSON-процессор. "is like sed for JSON data". (via [@newsycombinator](https://twitter.com/newsycombinator))
+
+* [Mantle](https://github.com/blog/1299-mantle-a-model-framework-for-objective-c) — Cocoa-фреймворк для построения много чего умеющего model layer от GitHub. Сериализация/десериализация, обновление объектов, версионирование и много ещё чего. (via [@github](https://twitter.com/github))
+
+* [Fontello](http://fontello.com/) — Генератор кастомных icon fonts на базе десятка существующих. На выходе выдаёт архив, содержащий шрифт в нескольких форматах, CSS, демонстрационную html-ку и ещё кое-чего по мелочи. (via [@guillaumebort](https://twitter.com/guillaumebort))
+
+* [sshuttle](https://github.com/apenwarr/sshuttle) — простой в использовании как-бы-VPN поверх обычного SSH. Если хочется быстро сделать себе секьюрный тоннель, а заморачиваться с настройкой настоящего VPN — совсем не хочется. (via [@umputun](https://twitter.com/umputun))
+
