@@ -1,0 +1,86 @@
+---
+layout: post
+title: "Линкопост №13 (ноябрь)"
+date: 2012-12-20 23:57
+comments: true
+categories: links
+---
+
+Итак, я, кажется, почти догнал график выкладывания ссылок и добрался до ноября. Заодно я пришёл к идее сделать выпуски регулярными: один пост в месяц. Посмотрим, что получится.
+
+Ссылок за ноябрь ну очень много, что, видимо, связано с небольшим отпуском. Попробую немного структурировать всю эту груду, дабы облегчить ориентирование в ней вам и себе (поскольку сам пользуюсь этими постами как закладками).
+
+<!--more-->
+
+## Scala
+
+* [Spire](https://github.com/non/spire) — продвинутая scala-библиотека для работы с числами и всем, что с ними связано. (via [@mslinn](https://twitter.com/mslinn))
+
+* [ScalaMeter](http://axel22.github.com/scalameter/) — Scala-фреймворк для написания микробенчмарков и перформанс-тестов. Призван решить ряд проблем, возникающих при написании как бенчмарков вообще, так и на JVM в частности. Особо стоит отметить статью с [введением в тему](http://axel22.github.com/scalameter/home/gettingstarted/) в документации. (via [@__axel22](https://twitter.com/__axel22))
+
+## БД
+
+* [Бенчмарк](http://www.networkworld.com/cgi-bin/mailto/x.cgi?pagetosend=/news/tech/2012/102212-nosql-263595.html) популярных NoSQL-баз при разных сценариях использования. На беговой дорожке — MongoDB, Cassandra, Riak и HBase, плюс MySQL для сравнения. (via [@glorphindale](https://twitter.com/glorphindale))
+
+* [RethinkDB](http://www.rethinkdb.com/) — очередной NoSQL для JSON с прицелом на распределённость. Заявлена поддержка джойнов, адекватного мап-редьюса (в отличие от не будем говорить кого), вложенных запросов и агрегации. (via [@mordaha](https://twitter.com/mordaha))
+
+## Фронтенд
+
+* Довольно подробный [список](http://html5sec.org/) уязвимостей в современных браузерах. Каждую уязвимость можно проверить на своей версии оного. (via [@newsycombinator](https://twitter.com/newsycombinator))
+
+* [pickadate.js](http://amsul.github.com/pickadate.js/) — просто симпатичный выпадающий календарик для выбора даты на jQuery. (via [@newsycombinator](https://twitter.com/newsycombinator))
+
+* [Heyoffline.js](http://oskarkrawczyk.github.com/heyoffline.js/) — небольшая библиотечка для предупреждения пользователя о том, что у него пропало интернет-соединение. Пригодится для веб-приложений, которым нужен постоянный коннект. (via [@newsycombinator](https://twitter.com/newsycombinator))
+
+* [Введение](http://code.hazzens.com/d3tut/) в [d3](http://d3js.org/) — очень крутую библиотеку для интерактивной визуализации данных. (via [@newsycombinator](https://twitter.com/newsycombinator))
+
+* [Editable for Bootstrap](http://vitalets.github.com/bootstrap-editable/) — библиотека для добавления симпатичных редактируемых элементов на bootstrap-странички. (via [@newsycombinator](https://twitter.com/newsycombinator))
+
+* Большой [список](http://www.bootstraphero.com/the-big-badass-list-of-twitter-bootstrap-resources) ресурсов, посвящённых bootstrap. Очень большой. (via [@newsycombinator](https://twitter.com/newsycombinator))
+
+
+## iOS, Cocoa, ObjC
+
+* [NSHipster](http://nshipster.com/) — очень познавательный сайт про малоизвестные и малоисследованные уголки Cocoa. Мастрид для всех iOS- и OSX-разработчиков. (via [@corristo](https://twitter.com/corristo))
+
+* Относительно свежая [табличка](http://www.flickr.com/photos/89549358@N02/8147876571/lightbox/) с девайсами и версиями iOS. Распечатать, повесить на стенку. (via [@ksenks](https://twitter.com/ksenks))
+
+* [YRDropdownView](http://buildinternet.com/2012/02/yrdropdownview-a-polite-uialertview-alternative-for-ios/) — симпатичная и менее навязчивая замена UIAlertView в виде выезжающей сверху плашечки. (via [@CocoaPodsOrg](https://twitter.com/CocoaPodsOrg))
+
+* [OLImageView](https://github.com/ondalabs/OLImageView) — замена UIImage и UIImageView с поддержкой анимированных гифок. (via [@CocoaPodsOrg](https://twitter.com/CocoaPodsOrg))
+
+* [YBStatechart](https://github.com/ronaldmannak/YBStatechart) — фреймворк для разработки iOS-приложений с помощью statechart'ов (Lingvo предлагает перевести это как "диаграммы состояний"). Довольно интересный подход, который авторы противопостовляют MVC, подробнее об этом можно почитать, как обычно, по ссылкам в Readme, в частности в [бложике](http://blog.sproutcore.com/statecharts-in-sproutcore/) авторов. (via [@CocoaPodsOrg](https://twitter.com/CocoaPodsOrg))
+
+* [Nocilla](https://github.com/luisobo/Nocilla) — библиотека для написания стабов HTTP-реквестов в iOS/OSX тестах. Также, внизу Readme есть ссылки на пару альтернатив. (via [@CocoaPodsOrg](https://twitter.com/CocoaPodsOrg))
+
+* [NSURLConnectionVCR](https://bitbucket.org/martijnthe/nsurlconnectionvcr) — вариация на ту же тему: библиотека, позволяющая записывать и прогонять запросы и ответы через NSURLConnection. (via [@CocoaPodsOrg](https://twitter.com/CocoaPodsOrg))
+
+* [Objective-Cloud](http://objective-cloud.com/) — сервис для запуска Obj-C кода в облаке. Симпатичный сайт, удобный деплой через git, REST-обёртка... но всё-таки мучает вопрос: зачем? (via [@olebegemann](https://twitter.com/olebegemann))
+
+* [Parse](https://parse.com/) — облачная платформа для создания серверной части мобильных приложений. Имеет удобные SDK под несколько платформ, поддерживает push и может при необходимости исполнять серверсайдный код (на JS). Есть бесплатный план. Вполне может пригодиться как при создании прототипа, так и в "боевом" проекте.
+
+* Для тех, кто хочет угореть по хардкору: совсем нетривиальная [статья](http://eli.thegreenplace.net/2012/11/24/life-of-an-instruction-in-llvm/) о тайной жизни инструкций в LLVM. (via [@newsycombinator](https://twitter.com/newsycombinator))
+
+## Всё остальное
+
+* [world.db](https://github.com/geraldb/world.db) — база данных стран, городов, языков и попутных тегов (типа членства в организациях и расположения в частях света) в виде SQLite-файлика. Есть коммандлайн-тул для работы с этим всем хозяйством, веб-смотрелка и хороший список альтернатив в Readme. (via [@middlesizetit](https://twitter.com/middlesizetit))
+
+* [Статья](http://colin-scott.github.com/blog/2012/10/28/7-ways-to-deal-with-ordering-bugs-in-distributed-systems/) с обзором способов построения распределённых конкурентных (Или как это по-русски? "Параллельных"?) систем. (via [@mfiguiere](https://twitter.com/mfiguiere))
+
+* [apiary.io](http://apiary.io/) — симпатичный сервис для документирования REST API с довольно свежим подходом. На данный момент в стадии беты и бесплатен. (via [@ostronom](https://twitter.com/ostronom))
+
+* [Windows 95 Tips, Tricks, and Tweaks](http://windows95tips.tumblr.com/) — бложек со скриншотами творчески переосмысленных сообщений Windows 95. (via [@LidlBitchard](https://twitter.com/LidlBitchard))
+
+* Красивый интерактивный [фильм](http://thecarpandtheseagull.thecreatorsproject.com/) на WebGL. Не поленитесь посмотреть, он довольно короткий. (via [@middlesizetit](https://twitter.com/middlesizetit))
+
+* [Правила этикета](http://newyork.grubstreet.com/2012/11/smartphone-etiquette-at-restaurants.html), касающиеся использования смартфона за столом. Просто необходимая статья для многих из тех, кто читает этот блог, да и для меня тоже, чего уж тут. (via [@itolmach](https://twitter.com/itolmach))
+
+* Проникновенный [пост](http://www.richardrodger.com/2012/11/03/why-i-have-given-up-on-coding-standards/#.UNNYiNFmtOQ) о том, что coding standards не нужны. (via [@tuony](https://twitter.com/tuony))
+
+* Чувак написал скрипт, покупающий рандомные вещи на амазоне, выделил ему $50 в месяц и ведёт [блог](http://randomshopper.tumblr.com/) о вещах, которые он покупает. (via [@chrisimrie](https://twitter.com/chrisimrie))
+
+* [Пост](http://durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/) со множеством полезных алиасов для git. (via [@ethauvin](https://twitter.com/ethauvin))
+
+* [Почему SVN лучше чем Git: 10 причин](http://blog.cedarsoft.com/2010/01/top-10-why-subversion-is-better-than-git/). Тру стори. (via [@glorphindale](https://twitter.com/glorphindale))
+
+* [Dune 2 в браузере](http://play-dune.com/). */me Пустил слезу.* (via [@middlesizetit](https://twitter.com/middlesizetit))
