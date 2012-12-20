@@ -4,7 +4,7 @@
   <title><![CDATA[Лошоть и байты]]></title>
   <link href="http://digal.github.com/atom.xml" rel="self"/>
   <link href="http://digal.github.com/"/>
-  <updated>2012-12-16T23:25:14+04:00</updated>
+  <updated>2012-12-21T00:23:01+04:00</updated>
   <id>http://digal.github.com/</id>
   <author>
     <name><![CDATA[Yuri Buyanov]]></name>
@@ -12,6 +12,81 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Линкопост №13 (ноябрь)]]></title>
+    <link href="http://digal.github.com/blog/2012/12/20/links-13/"/>
+    <updated>2012-12-20T23:57:00+04:00</updated>
+    <id>http://digal.github.com/blog/2012/12/20/links-13</id>
+    <content type="html"><![CDATA[<p>Итак, я, кажется, почти догнал график выкладывания ссылок и добрался до ноября. Заодно я пришёл к идее сделать выпуски регулярными: один пост в месяц. Посмотрим, что получится.</p>
+
+<p>Ссылок за ноябрь ну очень много, что, видимо, связано с небольшим отпуском. Попробую немного структурировать всю эту груду, дабы облегчить ориентирование в ней вам и себе (поскольку сам пользуюсь этими постами как закладками).</p>
+
+<!--more-->
+
+
+<h2>Scala</h2>
+
+<ul>
+<li><p><a href="https://github.com/non/spire">Spire</a> — продвинутая scala-библиотека для работы с числами и всем, что с ними связано. (via <a href="https://twitter.com/mslinn">@mslinn</a>)</p></li>
+<li><p><a href="http://axel22.github.com/scalameter/">ScalaMeter</a> — Scala-фреймворк для написания микробенчмарков и перформанс-тестов. Призван решить ряд проблем, возникающих при написании как бенчмарков вообще, так и на JVM в частности. Особо стоит отметить статью с <a href="http://axel22.github.com/scalameter/home/gettingstarted/">введением в тему</a> в документации. (via <a href="https://twitter.com/__axel22">@__axel22</a>)</p></li>
+</ul>
+
+
+<h2>БД</h2>
+
+<ul>
+<li><p><a href="http://www.networkworld.com/cgi-bin/mailto/x.cgi?pagetosend=/news/tech/2012/102212-nosql-263595.html">Бенчмарк</a> популярных NoSQL-баз при разных сценариях использования. На беговой дорожке — MongoDB, Cassandra, Riak и HBase, плюс MySQL для сравнения. (via <a href="https://twitter.com/glorphindale">@glorphindale</a>)</p></li>
+<li><p><a href="http://www.rethinkdb.com/">RethinkDB</a> — очередной NoSQL для JSON с прицелом на распределённость. Заявлена поддержка джойнов, адекватного мап-редьюса (в отличие от не будем говорить кого), вложенных запросов и агрегации. (via <a href="https://twitter.com/mordaha">@mordaha</a>)</p></li>
+</ul>
+
+
+<h2>Фронтенд</h2>
+
+<ul>
+<li><p>Довольно подробный <a href="http://html5sec.org/">список</a> уязвимостей в современных браузерах. Каждую уязвимость можно проверить на своей версии оного. (via <a href="https://twitter.com/newsycombinator">@newsycombinator</a>)</p></li>
+<li><p><a href="http://amsul.github.com/pickadate.js/">pickadate.js</a> — просто симпатичный выпадающий календарик для выбора даты на jQuery. (via <a href="https://twitter.com/newsycombinator">@newsycombinator</a>)</p></li>
+<li><p><a href="http://oskarkrawczyk.github.com/heyoffline.js/">Heyoffline.js</a> — небольшая библиотечка для предупреждения пользователя о том, что у него пропало интернет-соединение. Пригодится для веб-приложений, которым нужен постоянный коннект. (via <a href="https://twitter.com/newsycombinator">@newsycombinator</a>)</p></li>
+<li><p><a href="http://code.hazzens.com/d3tut/">Введение</a> в <a href="http://d3js.org/">d3</a> — очень крутую библиотеку для интерактивной визуализации данных. (via <a href="https://twitter.com/newsycombinator">@newsycombinator</a>)</p></li>
+<li><p><a href="http://vitalets.github.com/bootstrap-editable/">Editable for Bootstrap</a> — библиотека для добавления симпатичных редактируемых элементов на bootstrap-странички. (via <a href="https://twitter.com/newsycombinator">@newsycombinator</a>)</p></li>
+<li><p>Большой <a href="http://www.bootstraphero.com/the-big-badass-list-of-twitter-bootstrap-resources">список</a> ресурсов, посвящённых bootstrap. Очень большой. (via <a href="https://twitter.com/newsycombinator">@newsycombinator</a>)</p></li>
+</ul>
+
+
+<h2>iOS, Cocoa, ObjC</h2>
+
+<ul>
+<li><p><a href="http://nshipster.com/">NSHipster</a> — очень познавательный сайт про малоизвестные и малоисследованные уголки Cocoa. Мастрид для всех iOS- и OSX-разработчиков. (via <a href="https://twitter.com/corristo">@corristo</a>)</p></li>
+<li><p>Относительно свежая <a href="http://www.flickr.com/photos/89549358@N02/8147876571/lightbox/">табличка</a> с девайсами и версиями iOS. Распечатать, повесить на стенку. (via <a href="https://twitter.com/ksenks">@ksenks</a>)</p></li>
+<li><p><a href="http://buildinternet.com/2012/02/yrdropdownview-a-polite-uialertview-alternative-for-ios/">YRDropdownView</a> — симпатичная и менее навязчивая замена UIAlertView в виде выезжающей сверху плашечки. (via <a href="https://twitter.com/CocoaPodsOrg">@CocoaPodsOrg</a>)</p></li>
+<li><p><a href="https://github.com/ondalabs/OLImageView">OLImageView</a> — замена UIImage и UIImageView с поддержкой анимированных гифок. (via <a href="https://twitter.com/CocoaPodsOrg">@CocoaPodsOrg</a>)</p></li>
+<li><p><a href="https://github.com/ronaldmannak/YBStatechart">YBStatechart</a> — фреймворк для разработки iOS-приложений с помощью statechart&#8217;ов (Lingvo предлагает перевести это как &#8220;диаграммы состояний&#8221;). Довольно интересный подход, который авторы противопостовляют MVC, подробнее об этом можно почитать, как обычно, по ссылкам в Readme, в частности в <a href="http://blog.sproutcore.com/statecharts-in-sproutcore/">бложике</a> авторов. (via <a href="https://twitter.com/CocoaPodsOrg">@CocoaPodsOrg</a>)</p></li>
+<li><p><a href="https://github.com/luisobo/Nocilla">Nocilla</a> — библиотека для написания стабов HTTP-реквестов в iOS/OSX тестах. Также, внизу Readme есть ссылки на пару альтернатив. (via <a href="https://twitter.com/CocoaPodsOrg">@CocoaPodsOrg</a>)</p></li>
+<li><p><a href="https://bitbucket.org/martijnthe/nsurlconnectionvcr">NSURLConnectionVCR</a> — вариация на ту же тему: библиотека, позволяющая записывать и прогонять запросы и ответы через NSURLConnection. (via <a href="https://twitter.com/CocoaPodsOrg">@CocoaPodsOrg</a>)</p></li>
+<li><p><a href="http://objective-cloud.com/">Objective-Cloud</a> — сервис для запуска Obj-C кода в облаке. Симпатичный сайт, удобный деплой через git, REST-обёртка&#8230; но всё-таки мучает вопрос: зачем? (via <a href="https://twitter.com/olebegemann">@olebegemann</a>)</p></li>
+<li><p><a href="https://parse.com/">Parse</a> — облачная платформа для создания серверной части мобильных приложений. Имеет удобные SDK под несколько платформ, поддерживает push и может при необходимости исполнять серверсайдный код (на JS). Есть бесплатный план. Вполне может пригодиться как при создании прототипа, так и в &#8220;боевом&#8221; проекте.</p></li>
+<li><p>Для тех, кто хочет угореть по хардкору: совсем нетривиальная <a href="http://eli.thegreenplace.net/2012/11/24/life-of-an-instruction-in-llvm/">статья</a> о тайной жизни инструкций в LLVM. (via <a href="https://twitter.com/newsycombinator">@newsycombinator</a>)</p></li>
+</ul>
+
+
+<h2>Всё остальное</h2>
+
+<ul>
+<li><p><a href="https://github.com/geraldb/world.db">world.db</a> — база данных стран, городов, языков и попутных тегов (типа членства в организациях и расположения в частях света) в виде SQLite-файлика. Есть коммандлайн-тул для работы с этим всем хозяйством, веб-смотрелка и хороший список альтернатив в Readme. (via <a href="https://twitter.com/middlesizetit">@middlesizetit</a>)</p></li>
+<li><p><a href="http://colin-scott.github.com/blog/2012/10/28/7-ways-to-deal-with-ordering-bugs-in-distributed-systems/">Статья</a> с обзором способов построения распределённых конкурентных (Или как это по-русски? &#8220;Параллельных&#8221;?) систем. (via <a href="https://twitter.com/mfiguiere">@mfiguiere</a>)</p></li>
+<li><p><a href="http://apiary.io/">apiary.io</a> — симпатичный сервис для документирования REST API с довольно свежим подходом. На данный момент в стадии беты и бесплатен. (via <a href="https://twitter.com/ostronom">@ostronom</a>)</p></li>
+<li><p><a href="http://windows95tips.tumblr.com/">Windows 95 Tips, Tricks, and Tweaks</a> — бложек со скриншотами творчески переосмысленных сообщений Windows 95. (via <a href="https://twitter.com/LidlBitchard">@LidlBitchard</a>)</p></li>
+<li><p>Красивый интерактивный <a href="http://thecarpandtheseagull.thecreatorsproject.com/">фильм</a> на WebGL. Не поленитесь посмотреть, он довольно короткий. (via <a href="https://twitter.com/middlesizetit">@middlesizetit</a>)</p></li>
+<li><p><a href="http://newyork.grubstreet.com/2012/11/smartphone-etiquette-at-restaurants.html">Правила этикета</a>, касающиеся использования смартфона за столом. Просто необходимая статья для многих из тех, кто читает этот блог, да и для меня тоже, чего уж тут. (via <a href="https://twitter.com/itolmach">@itolmach</a>)</p></li>
+<li><p>Проникновенный <a href="http://www.richardrodger.com/2012/11/03/why-i-have-given-up-on-coding-standards/#.UNNYiNFmtOQ">пост</a> о том, что coding standards не нужны. (via <a href="https://twitter.com/tuony">@tuony</a>)</p></li>
+<li><p>Чувак написал скрипт, покупающий рандомные вещи на амазоне, выделил ему $50 в месяц и ведёт <a href="http://randomshopper.tumblr.com/">блог</a> о вещах, которые он покупает. (via <a href="https://twitter.com/chrisimrie">@chrisimrie</a>)</p></li>
+<li><p><a href="http://durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/">Пост</a> со множеством полезных алиасов для git. (via <a href="https://twitter.com/ethauvin">@ethauvin</a>)</p></li>
+<li><p><a href="http://blog.cedarsoft.com/2010/01/top-10-why-subversion-is-better-than-git/">Почему SVN лучше чем Git: 10 причин</a>. Тру стори. (via <a href="https://twitter.com/glorphindale">@glorphindale</a>)</p></li>
+<li><p><a href="http://play-dune.com/">Dune 2 в браузере</a>. <em>/me Пустил слезу.</em> (via <a href="https://twitter.com/middlesizetit">@middlesizetit</a>)</p></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Линкопост №12 (октябрь)]]></title>
@@ -1240,274 +1315,6 @@
 <p>Несмотря на некоторые недостатки, умолчать о которых было бы просто нечестно, Squeryl - замечательная библиотека, позволяющая решить кучу типичных проблем при использовании реляционных БД, не увеличивая сложность и размер кода. Лично я буду использовать её и дальше, что и вам советую делать.</p>
 
 <p>Эти два поста, посвящённые squeryl были в некотором роде заготовкой для выступления на нашем Scala-евенте (хотя это ещё вопрос, что вышло полуфабрикатом, а что полноценным туториалом). Видео моего (и не только) выступления можно найти в небольшом <a href="http://habrahabr.ru/company/e-Legion/blog/130545/#comments">отчёте с него</a>, а слайды у меня на <a href="http://dl.dropbox.com/u/12823109/squeryl.pdf">дропбоксе</a> (кавайные белочки инсайде). Удачи и до встреч.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Squeryl: основы]]></title>
-    <link href="http://digal.github.com/blog/2011/09/25/squeryl/"/>
-    <updated>2011-09-25T21:46:00+04:00</updated>
-    <id>http://digal.github.com/blog/2011/09/25/squeryl</id>
-    <content type="html"><![CDATA[<p>Этим и следующим постом (который, надеюсь, будет вот совсем скоро) я хочу познакомить вас с замечательной ORM-библиотекой для scala, которую сейчас использую в одном из рабочих проектов. Не надо пугаться аббревиатуры ORM: возожности маппинга к объектам здесь принципиально реализованы на совсем базовом уровне, а вот симпатичный DSL для запросов стоит того, чтобы на него взглянуть.</p>
-
-<!--more-->
-
-
-<p>Каждый, кто когда-либо пытался использовать &#8220;традиционные&#8221; ORM типа Hibernate знает, что тот уровень абстракций, которые они предоставляют, хорошо работает только для простых запросов. Как только возникает потребность сделать выборку более или менее сложную либо по условию, либо по выдаваемому набору данных, разработчику приходится начинать сражение с высокоуровневым языком запросов (типа HQL), использование которого несёт в себе сразу ряд проблем. Во-первых, это ещё один язык запросов, похожий на SQL, но им не являющийся. Во-вторых, сразу теряются остатки type safety. В-третьих, при любом изменении схемы нужно проверять и править ручками <strong>все</strong> строки запросов в коде. Добавьте сюда сложную внутреннюю логику ORM, когда программисту довольно сложно сходу понять, когда и какие именно запросы будут сделаны к базе и частенько страдающую производительность.</p>
-
-<p><a href="http://squeryl.org/">Squeryl</a> - это scala-библиотека, призванная решить хотя бы часть этих проблем, и делает она это с широкомасштабным применением средств языка, а именно заточенностью под DSL и строгой типизацией всего что только можно. Таким образом, запросы имеют структуру, похожую на обычный SQL, являясь при этом scala-кодом. Scala-код, в отличие от SQL-запросов, тщательно проверяется компилятором, который сделает вам ататат, как только вы попытаетесь вписать строку в столбец типа Int или хотя бы сделать сравнение столбца типа Date с булевским значением.</p>
-
-<h2>Инициализация</h2>
-
-<p>Итак, для начала нужно инициализировать драйвер и реализовать фабрику сессий. Не надо пугаться названия, это всего лишь функция, возвращающая экземпляр класса Session:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">import</span> <span class="nn">org.squeryl.SessionFactory</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="nc">Class</span><span class="o">.</span><span class="n">forName</span><span class="o">(</span><span class="s">&quot;org.h2.Driver&quot;</span><span class="o">);</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="nc">SessionFactory</span><span class="o">.</span><span class="n">concreteFactory</span> <span class="k">=</span> <span class="nc">Some</span> <span class="o">{</span> <span class="o">()</span><span class="k">=&gt;</span>
-</span><span class='line'>        <span class="nc">Session</span><span class="o">.</span><span class="n">create</span><span class="o">(</span>
-</span><span class='line'>          <span class="n">java</span><span class="o">.</span><span class="n">sql</span><span class="o">.</span><span class="nc">DriverManager</span><span class="o">.</span><span class="n">getConnection</span><span class="o">(</span><span class="s">&quot;jdbc:h2:mem:&quot;</span><span class="o">),</span>
-</span><span class='line'>          <span class="k">new</span> <span class="n">H2Adapter</span>
-</span><span class='line'>        <span class="o">)</span>
-</span><span class='line'>      <span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p>Это довольно простая реализация, в реальном проекте скорее всего будет уместнее использовать connection pool, типа <a href="http://commons.apache.org/dbcp/">DBCP</a> или <a href="http://jolbox.com/">BoneCP</a>.</p>
-
-<h2>Транзакции</h2>
-
-<p>С транзакциями всё просто: транзакция осуществляется с помощью двух методов <code>transaction</code> и <code>inTransaction</code>, которые, принимая на вход функцию, оборачивают её выполнение в транзакцию.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">import</span> <span class="nn">org.squeryl.PrimitiveTypeMode._</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">transaction</span> <span class="o">{</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="c1">//операции с данными ...</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="o">}</span> <span class="c1">//коммит транзакции</span>
-</span><span class='line'>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Их отличие состоит в том, что <code>transaction</code> всегда открывает новую транзакцию перед началом выполнения блока и коммитит после завершения, a <code>inTransaction</code> делает это только в том случае, если не находится внутри другой транзакции.</p>
-
-<h2>Схема.</h2>
-
-<p>Следующим шагом, как и в других ORM, будет объявление схемы. Есть два режима работы со squeryl: использование примитивных типов (PrimitiveTypeMode) и типов-врапперов (CustomTypeMode), которые могут, например, включать в себя валидацию. Собственно для работы с DSL, необходим импорт членов одного из этих объектов (как это сделано в первой строчке предыдущего листинга).</p>
-
-<p>Классы схемы могут быть любыми скаловскими классами, поля, объявленные в конструкторе будут столбцами. Поля могут быть как mutable, так и immutable. Я предпочитаю для большей ясности использовать второй вариант в сочетании с case-классами и при необходимости просто вызывать метод copy. Однако, стоит заметить что этот способ имеет свои недостатки (например, не будет работать &#8220;из коробки&#8221; optimistic concurrency control, поскольку поле с версией не будет копироваться при вызове copy).</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">case</span> <span class="k">class</span> <span class="nc">User</span><span class="o">(</span>
-</span><span class='line'>      <span class="n">id</span><span class="k">:</span>     <span class="kt">Long</span> <span class="o">=</span> <span class="mi">0</span><span class="o">,</span>
-</span><span class='line'>      <span class="nd">@Column</span><span class="o">(</span><span class="n">length</span> <span class="k">=</span> <span class="mi">256</span><span class="o">)</span>
-</span><span class='line'>      <span class="n">email</span><span class="k">:</span>  <span class="kt">String</span><span class="o">,</span>
-</span><span class='line'>      <span class="n">name</span><span class="k">:</span>   <span class="kt">String</span><span class="o">,</span>
-</span><span class='line'>      <span class="n">rating</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="o">,</span>
-</span><span class='line'>    <span class="o">)</span> <span class="k">extends</span> <span class="nc">KeyedEntity</span><span class="o">[</span><span class="kt">Long</span><span class="o">]</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Трейт KeyedEntity просто говорит Squeryl что id является первичным ключом, позволяя, например, упростить поиск записи по id до вызова единственного метода <code>lookup(id)</code> над таблицей.</p>
-
-<p>Таблицы и связи между ними описываются в классе, отнаследованным от Schema, в большинстве случаев можно сделать его синглтоном:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">object</span> <span class="nc">MySchema</span> <span class="k">extends</span> <span class="nc">Schema</span> <span class="o">{</span>
-</span><span class='line'>      <span class="k">val</span> <span class="n">users</span> <span class="k">=</span> <span class="n">table</span><span class="o">[</span><span class="kt">User</span><span class="o">]</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="n">on</span><span class="o">(</span><span class="n">users</span><span class="o">)</span> <span class="o">{</span> <span class="n">u</span> <span class="k">=&gt;</span> <span class="n">declare</span><span class="o">(</span>
-</span><span class='line'>          <span class="n">u</span><span class="o">.</span><span class="n">id</span>    <span class="n">is</span> <span class="o">(</span><span class="n">autoIncremented</span><span class="o">),</span>
-</span><span class='line'>          <span class="n">u</span><span class="o">.</span><span class="n">email</span> <span class="n">is</span> <span class="o">(</span><span class="n">unique</span><span class="o">)</span>
-</span><span class='line'>        <span class="o">)</span>
-</span><span class='line'>      <span class="o">}</span>
-</span><span class='line'>    <span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Наличие схемы, как в любом приличном ORM избавляет необходимости писать тонны SQL CREATE ручками. Для создания схемы в базе можно воспользоваться методом <code>create</code>.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="n">transaction</span> <span class="o">{</span>
-</span><span class='line'>      <span class="nc">MySchema</span><span class="o">.</span><span class="n">create</span>
-</span><span class='line'>    <span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Аналогично, для импорта схемы в виде SQL, есть метод <code>printDdl</code>, а для очистки базы - <code>drop</code>.</p>
-
-<h2>Insert</h2>
-
-<p>Итак, мы объявили схему и можем приступить к тому, ради чего, собственно, всё и затевалось. Для начала создадим несколько пользователей:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">import</span> <span class="nn">MySchema._</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">val</span> <span class="n">vasya</span> <span class="k">=</span> <span class="n">users</span><span class="o">.</span><span class="n">insert</span><span class="o">(</span><span class="k">new</span> <span class="nc">User</span><span class="o">(</span><span class="s">&quot;vasya@example.com&quot;</span><span class="o">,</span> <span class="s">&quot;Vasya Poupkine&quot;</span><span class="o">))</span>
-</span><span class='line'>    <span class="k">val</span> <span class="n">masha</span> <span class="k">=</span> <span class="n">users</span><span class="o">.</span><span class="n">insert</span><span class="o">(</span><span class="k">new</span> <span class="nc">User</span><span class="o">(</span><span class="s">&quot;masha@example.com&quot;</span><span class="o">,</span> <span class="s">&quot;Masha Petrova&quot;</span><span class="o">))</span>
-</span><span class='line'>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Select</h2>
-
-<p>Select в squeryl является практически двойником оного в SQL за исключением того, написан на Scala со всеми вытекающими плюшками:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">import</span> <span class="nn">MySchema._</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">val</span> <span class="n">nullRated</span> <span class="k">=</span>
-</span><span class='line'>      <span class="n">from</span><span class="o">(</span><span class="n">users</span><span class="o">)</span> <span class="o">(</span> <span class="n">u</span> <span class="k">=&gt;</span>
-</span><span class='line'>        <span class="n">select</span><span class="o">(</span><span class="n">u</span><span class="o">)</span>
-</span><span class='line'>        <span class="n">where</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">rating</span> <span class="o">===</span> <span class="mi">0</span><span class="o">)</span> <span class="c1">//(1)</span>
-</span><span class='line'>      <span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">val</span> <span class="n">mails</span> <span class="k">=</span>
-</span><span class='line'>      <span class="n">from</span><span class="o">(</span><span class="n">users</span><span class="o">)</span> <span class="o">(</span> <span class="n">u</span> <span class="k">=&gt;</span>
-</span><span class='line'>        <span class="n">select</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">email</span><span class="o">)</span>
-</span><span class='line'>      <span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">val</span> <span class="n">idsWithMails</span> <span class="k">=</span>
-</span><span class='line'>      <span class="n">from</span><span class="o">(</span><span class="n">users</span><span class="o">)</span> <span class="o">(</span> <span class="n">u</span> <span class="k">=&gt;</span>
-</span><span class='line'>        <span class="n">select</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">id</span><span class="o">,</span> <span class="n">u</span><span class="o">.</span><span class="n">email</span><span class="o">)</span>
-</span><span class='line'>      <span class="o">)</span>
-</span><span class='line'>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Обратите внимание на тройное <code>===</code> (1). В отличие от обычного двойного <code>==</code>  - это не встроенный в scala оператор, а конструкция DSL Squeryl.
-Трейт <code>KeyedEntity</code> даёт нам возможность использовать упрощённый синтаксис для поиска записи по id:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">val</span> <span class="n">zeroUser</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">User</span><span class="o">]</span> <span class="k">=</span> <span class="n">users</span><span class="o">.</span><span class="n">lookup</span><span class="o">(</span><span class="n">id</span><span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Update</h2>
-
-<p>Операция обновления в squeryl поддерживает два вида синтаксиса: частичное и полное обновление. Полное обновление, как следует из названия, использует в качестве источника обновлённых данных объект целиком. Поскольку в нашем примере классы целиком иммутабельны, мы будем подсовывать в update объекты, созданные через метод copy.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">val</span> <span class="n">updatedVasya</span> <span class="k">=</span> <span class="n">vasya</span><span class="o">.</span><span class="n">copy</span><span class="o">(</span><span class="n">rating</span> <span class="k">=</span> <span class="n">vasya</span><span class="o">.</span><span class="n">rating</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span>
-</span><span class='line'>    <span class="n">users</span><span class="o">.</span><span class="n">update</span><span class="o">(</span><span class="n">updatedVasya</span><span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Полный update всегда обновляет только одну запись, поэтому ничего не возвращает.</p>
-
-<p>При частичном обновлении используется конструкция DSL, похожая на ту, которую мы использовали в select:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">val</span> <span class="n">updated</span> <span class="k">=</span>
-</span><span class='line'>      <span class="n">update</span><span class="o">(</span><span class="n">users</span><span class="o">)</span> <span class="o">(</span> <span class="n">u</span> <span class="k">=&gt;</span>
-</span><span class='line'>        <span class="n">set</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">rating</span> <span class="o">:=</span> <span class="n">u</span><span class="o">.</span><span class="n">rating</span><span class="o">.~</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span> <span class="c1">//(1)</span>
-</span><span class='line'>        <span class="n">where</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">name</span> <span class="n">like</span> <span class="s">&quot;%Vasya%&quot;</span><span class="o">)</span>    <span class="c1">//(2)</span>
-</span><span class='line'>      <span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">println</span><span class="o">(</span><span class="s">&quot;%s Vasyas rated&quot;</span> <span class="n">format</span> <span class="n">updated</span><span class="o">)</span>
-</span><span class='line'>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Как это принято в JDBC, update возвращает количество обновлённых записей.</p>
-
-<p>Опять обратим внимание (1) на использование DSL-оператора присваивания (<code>:=</code>) вместо &#8216;родного&#8217; <code>=</code> и на, конструкцию <code>.~</code>, применяющуюся в PrimitiveTypeMode для того, чтобы компилятор не путал оператор <code>+</code> у скаловского Int с таким же оператором в DSL. Вместо конструкци <code>field.~ + value</code> можно использовать <code>field plus value</code>, кому как нравится. Кроме того, мы использовали (2) ещё один оператор сравнения - SQL LIKE.</p>
-
-<h2>Delete</h2>
-
-<p>Удаление выполняется аналогично: либо по id (для классов, с примешанным KeyedEntity) либо по условию.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="n">users</span><span class="o">.</span><span class="n">deleted</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">val</span> <span class="n">deleted</span> <span class="k">=</span>
-</span><span class='line'>      <span class="n">users</span><span class="o">.</span><span class="n">deleteWhere</span><span class="o">(</span> <span class="n">u</span> <span class="k">=&gt;</span>
-</span><span class='line'>        <span class="n">u</span><span class="o">.</span><span class="n">rating</span><span class="o">.~</span> <span class="o">&lt;</span> <span class="mi">0</span>
-</span><span class='line'>      <span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">println</span><span class="o">(</span><span class="s">&quot;%s users deleted&quot;</span> <span class="n">format</span> <span class="n">deleted</span><span class="o">)</span>
-</span><span class='line'>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Продолжение следует</h2>
-
-<p>В следующем посте я постараюсь рассмотреть &#8220;продвинутые&#8221; функции squeryl: джойны, связи 1-to-many и many-to-many, составные запросы, итд. И ещё постараюсь не забыть пройтись с критикой по тем местам библиотеки, которые ещё требуют полировки. Критика и отзывы, как обычно приветствуются. До встречи.</p>
 ]]></content>
   </entry>
   

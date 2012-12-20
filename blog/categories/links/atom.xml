@@ -4,7 +4,7 @@
   <title><![CDATA[Category: links | Лошоть и байты]]></title>
   <link href="http://digal.github.com/blog/categories/links/atom.xml" rel="self"/>
   <link href="http://digal.github.com/"/>
-  <updated>2012-12-16T23:25:14+04:00</updated>
+  <updated>2012-12-21T00:23:01+04:00</updated>
   <id>http://digal.github.com/</id>
   <author>
     <name><![CDATA[Yuri Buyanov]]></name>
@@ -12,6 +12,81 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Линкопост №13 (ноябрь)]]></title>
+    <link href="http://digal.github.com/blog/2012/12/20/links-13/"/>
+    <updated>2012-12-20T23:57:00+04:00</updated>
+    <id>http://digal.github.com/blog/2012/12/20/links-13</id>
+    <content type="html"><![CDATA[<p>Итак, я, кажется, почти догнал график выкладывания ссылок и добрался до ноября. Заодно я пришёл к идее сделать выпуски регулярными: один пост в месяц. Посмотрим, что получится.</p>
+
+<p>Ссылок за ноябрь ну очень много, что, видимо, связано с небольшим отпуском. Попробую немного структурировать всю эту груду, дабы облегчить ориентирование в ней вам и себе (поскольку сам пользуюсь этими постами как закладками).</p>
+
+<!--more-->
+
+
+<h2>Scala</h2>
+
+<ul>
+<li><p><a href="https://github.com/non/spire">Spire</a> — продвинутая scala-библиотека для работы с числами и всем, что с ними связано. (via <a href="https://twitter.com/mslinn">@mslinn</a>)</p></li>
+<li><p><a href="http://axel22.github.com/scalameter/">ScalaMeter</a> — Scala-фреймворк для написания микробенчмарков и перформанс-тестов. Призван решить ряд проблем, возникающих при написании как бенчмарков вообще, так и на JVM в частности. Особо стоит отметить статью с <a href="http://axel22.github.com/scalameter/home/gettingstarted/">введением в тему</a> в документации. (via <a href="https://twitter.com/__axel22">@__axel22</a>)</p></li>
+</ul>
+
+
+<h2>БД</h2>
+
+<ul>
+<li><p><a href="http://www.networkworld.com/cgi-bin/mailto/x.cgi?pagetosend=/news/tech/2012/102212-nosql-263595.html">Бенчмарк</a> популярных NoSQL-баз при разных сценариях использования. На беговой дорожке — MongoDB, Cassandra, Riak и HBase, плюс MySQL для сравнения. (via <a href="https://twitter.com/glorphindale">@glorphindale</a>)</p></li>
+<li><p><a href="http://www.rethinkdb.com/">RethinkDB</a> — очередной NoSQL для JSON с прицелом на распределённость. Заявлена поддержка джойнов, адекватного мап-редьюса (в отличие от не будем говорить кого), вложенных запросов и агрегации. (via <a href="https://twitter.com/mordaha">@mordaha</a>)</p></li>
+</ul>
+
+
+<h2>Фронтенд</h2>
+
+<ul>
+<li><p>Довольно подробный <a href="http://html5sec.org/">список</a> уязвимостей в современных браузерах. Каждую уязвимость можно проверить на своей версии оного. (via <a href="https://twitter.com/newsycombinator">@newsycombinator</a>)</p></li>
+<li><p><a href="http://amsul.github.com/pickadate.js/">pickadate.js</a> — просто симпатичный выпадающий календарик для выбора даты на jQuery. (via <a href="https://twitter.com/newsycombinator">@newsycombinator</a>)</p></li>
+<li><p><a href="http://oskarkrawczyk.github.com/heyoffline.js/">Heyoffline.js</a> — небольшая библиотечка для предупреждения пользователя о том, что у него пропало интернет-соединение. Пригодится для веб-приложений, которым нужен постоянный коннект. (via <a href="https://twitter.com/newsycombinator">@newsycombinator</a>)</p></li>
+<li><p><a href="http://code.hazzens.com/d3tut/">Введение</a> в <a href="http://d3js.org/">d3</a> — очень крутую библиотеку для интерактивной визуализации данных. (via <a href="https://twitter.com/newsycombinator">@newsycombinator</a>)</p></li>
+<li><p><a href="http://vitalets.github.com/bootstrap-editable/">Editable for Bootstrap</a> — библиотека для добавления симпатичных редактируемых элементов на bootstrap-странички. (via <a href="https://twitter.com/newsycombinator">@newsycombinator</a>)</p></li>
+<li><p>Большой <a href="http://www.bootstraphero.com/the-big-badass-list-of-twitter-bootstrap-resources">список</a> ресурсов, посвящённых bootstrap. Очень большой. (via <a href="https://twitter.com/newsycombinator">@newsycombinator</a>)</p></li>
+</ul>
+
+
+<h2>iOS, Cocoa, ObjC</h2>
+
+<ul>
+<li><p><a href="http://nshipster.com/">NSHipster</a> — очень познавательный сайт про малоизвестные и малоисследованные уголки Cocoa. Мастрид для всех iOS- и OSX-разработчиков. (via <a href="https://twitter.com/corristo">@corristo</a>)</p></li>
+<li><p>Относительно свежая <a href="http://www.flickr.com/photos/89549358@N02/8147876571/lightbox/">табличка</a> с девайсами и версиями iOS. Распечатать, повесить на стенку. (via <a href="https://twitter.com/ksenks">@ksenks</a>)</p></li>
+<li><p><a href="http://buildinternet.com/2012/02/yrdropdownview-a-polite-uialertview-alternative-for-ios/">YRDropdownView</a> — симпатичная и менее навязчивая замена UIAlertView в виде выезжающей сверху плашечки. (via <a href="https://twitter.com/CocoaPodsOrg">@CocoaPodsOrg</a>)</p></li>
+<li><p><a href="https://github.com/ondalabs/OLImageView">OLImageView</a> — замена UIImage и UIImageView с поддержкой анимированных гифок. (via <a href="https://twitter.com/CocoaPodsOrg">@CocoaPodsOrg</a>)</p></li>
+<li><p><a href="https://github.com/ronaldmannak/YBStatechart">YBStatechart</a> — фреймворк для разработки iOS-приложений с помощью statechart'ов (Lingvo предлагает перевести это как "диаграммы состояний"). Довольно интересный подход, который авторы противопостовляют MVC, подробнее об этом можно почитать, как обычно, по ссылкам в Readme, в частности в <a href="http://blog.sproutcore.com/statecharts-in-sproutcore/">бложике</a> авторов. (via <a href="https://twitter.com/CocoaPodsOrg">@CocoaPodsOrg</a>)</p></li>
+<li><p><a href="https://github.com/luisobo/Nocilla">Nocilla</a> — библиотека для написания стабов HTTP-реквестов в iOS/OSX тестах. Также, внизу Readme есть ссылки на пару альтернатив. (via <a href="https://twitter.com/CocoaPodsOrg">@CocoaPodsOrg</a>)</p></li>
+<li><p><a href="https://bitbucket.org/martijnthe/nsurlconnectionvcr">NSURLConnectionVCR</a> — вариация на ту же тему: библиотека, позволяющая записывать и прогонять запросы и ответы через NSURLConnection. (via <a href="https://twitter.com/CocoaPodsOrg">@CocoaPodsOrg</a>)</p></li>
+<li><p><a href="http://objective-cloud.com/">Objective-Cloud</a> — сервис для запуска Obj-C кода в облаке. Симпатичный сайт, удобный деплой через git, REST-обёртка... но всё-таки мучает вопрос: зачем? (via <a href="https://twitter.com/olebegemann">@olebegemann</a>)</p></li>
+<li><p><a href="https://parse.com/">Parse</a> — облачная платформа для создания серверной части мобильных приложений. Имеет удобные SDK под несколько платформ, поддерживает push и может при необходимости исполнять серверсайдный код (на JS). Есть бесплатный план. Вполне может пригодиться как при создании прототипа, так и в "боевом" проекте.</p></li>
+<li><p>Для тех, кто хочет угореть по хардкору: совсем нетривиальная <a href="http://eli.thegreenplace.net/2012/11/24/life-of-an-instruction-in-llvm/">статья</a> о тайной жизни инструкций в LLVM. (via <a href="https://twitter.com/newsycombinator">@newsycombinator</a>)</p></li>
+</ul>
+
+
+<h2>Всё остальное</h2>
+
+<ul>
+<li><p><a href="https://github.com/geraldb/world.db">world.db</a> — база данных стран, городов, языков и попутных тегов (типа членства в организациях и расположения в частях света) в виде SQLite-файлика. Есть коммандлайн-тул для работы с этим всем хозяйством, веб-смотрелка и хороший список альтернатив в Readme. (via <a href="https://twitter.com/middlesizetit">@middlesizetit</a>)</p></li>
+<li><p><a href="http://colin-scott.github.com/blog/2012/10/28/7-ways-to-deal-with-ordering-bugs-in-distributed-systems/">Статья</a> с обзором способов построения распределённых конкурентных (Или как это по-русски? "Параллельных"?) систем. (via <a href="https://twitter.com/mfiguiere">@mfiguiere</a>)</p></li>
+<li><p><a href="http://apiary.io/">apiary.io</a> — симпатичный сервис для документирования REST API с довольно свежим подходом. На данный момент в стадии беты и бесплатен. (via <a href="https://twitter.com/ostronom">@ostronom</a>)</p></li>
+<li><p><a href="http://windows95tips.tumblr.com/">Windows 95 Tips, Tricks, and Tweaks</a> — бложек со скриншотами творчески переосмысленных сообщений Windows 95. (via <a href="https://twitter.com/LidlBitchard">@LidlBitchard</a>)</p></li>
+<li><p>Красивый интерактивный <a href="http://thecarpandtheseagull.thecreatorsproject.com/">фильм</a> на WebGL. Не поленитесь посмотреть, он довольно короткий. (via <a href="https://twitter.com/middlesizetit">@middlesizetit</a>)</p></li>
+<li><p><a href="http://newyork.grubstreet.com/2012/11/smartphone-etiquette-at-restaurants.html">Правила этикета</a>, касающиеся использования смартфона за столом. Просто необходимая статья для многих из тех, кто читает этот блог, да и для меня тоже, чего уж тут. (via <a href="https://twitter.com/itolmach">@itolmach</a>)</p></li>
+<li><p>Проникновенный <a href="http://www.richardrodger.com/2012/11/03/why-i-have-given-up-on-coding-standards/#.UNNYiNFmtOQ">пост</a> о том, что coding standards не нужны. (via <a href="https://twitter.com/tuony">@tuony</a>)</p></li>
+<li><p>Чувак написал скрипт, покупающий рандомные вещи на амазоне, выделил ему $50 в месяц и ведёт <a href="http://randomshopper.tumblr.com/">блог</a> о вещах, которые он покупает. (via <a href="https://twitter.com/chrisimrie">@chrisimrie</a>)</p></li>
+<li><p><a href="http://durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/">Пост</a> со множеством полезных алиасов для git. (via <a href="https://twitter.com/ethauvin">@ethauvin</a>)</p></li>
+<li><p><a href="http://blog.cedarsoft.com/2010/01/top-10-why-subversion-is-better-than-git/">Почему SVN лучше чем Git: 10 причин</a>. Тру стори. (via <a href="https://twitter.com/glorphindale">@glorphindale</a>)</p></li>
+<li><p><a href="http://play-dune.com/">Dune 2 в браузере</a>. <em>/me Пустил слезу.</em> (via <a href="https://twitter.com/middlesizetit">@middlesizetit</a>)</p></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Линкопост №12 (октябрь)]]></title>
@@ -204,87 +279,6 @@
 
 
 <p>На этом всем пока и до следующего поста.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Линкопост номер 7, дачный.]]></title>
-    <link href="http://digal.github.com/blog/2012/05/31/links-7/"/>
-    <updated>2012-05-31T21:39:00+04:00</updated>
-    <id>http://digal.github.com/blog/2012/05/31/links-7</id>
-    <content type="html"><![CDATA[<p>Очередной выпуск с аж десятидневной задержкой, вызванной поездкой на дачу и, как обычно, кучей работы. В этом году дачный сезон скрашивается практически нормальным 3G от Мегафона и айфоновским хотспотом, так что поток ссылок не иссякает.</p>
-
-<!--more-->
-
-
-<p>Накопилось их просто адовое количество, сейчас попробуем всё разобрать и разложить по разделам.</p>
-
-<h2>Языки программирования</h2>
-
-<ul>
-<li><p><a href="http://looplang.org/">Loop</a> — очередной же функциональный язык для JVM. Уже в который раз все scala-девелоперы вздыхают и спрашивают: "зачем". <em>троллейбусизбуханки.jpg</em></p></li>
-<li><p><a href="http://jsx.github.com/">JSX</a> — очередная замена для JS со статически типизированным ООП. Очень похоже на Яву. ОСТАНОВИТЕСЬ УЖЕ!!</p></li>
-<li><p><a href="http://quasimal.com/posts/2012-05-21-funsh.html">fun.sh</a> — функциональное программирование в sh (точнее, zsh). Месье, как говорится, знает толк.</p></li>
-</ul>
-
-
-<h2>Просто вебдев</h2>
-
-<ul>
-<li><p>Чуваки <a href="http://www.raywenderlich.com/12139/introduction-to-cocoapods">собирают</a> деньги на открытие домена верхнего уровня <code>.js</code>, предназначенного, как понятно, для всяких жаваскриптовых сайтов. Правда, пока сбор денег остановлен из-за небольшой проблемы: двухбуквенные домены зарезервированы для стран и не продаются. Лол.</p></li>
-<li><p>Очередная бесполезная JS-библиотека: <a href="http://www.smore.com/clippy-js">clippy.js</a>. <em>Любимый</em> персонаж из продуктов MS снова с вами, теперь на любом сайте.</p></li>
-<li><p>Пара WYSIWYG-редакторов на JS: <a href="http://redactorjs.com/">Redactor</a> — небольшой, шустрый и фичастый, на jQuery. <a href="http://xing.github.com/wysihtml5/">WYSIHTML5</a> — тоже небольшой и симпатичный, без зависимостей, с прицелом на секьюрность и чистый HTML5-маркап на выходе.</p></li>
-<li><p>Полезная и познавательная <a href="http://zero.milosz.ca/">таблица</a> результатов контринтуитивных операций в JS. JavaScript-девелоперам — распечатать и повесить на стенку, остальным можно просто поржать.</p></li>
-</ul>
-
-
-<h2>Мобильный веб</h2>
-
-<ul>
-<li><p><a href="https://github.com/eightmedia/hammer.js">hammer.js</a> — JS-библиотека для распознавания мультитач-жестов. Тоже пригодится, если вам приходится заниматься мобильным вебом.</p></li>
-<li><p><a href="http://maxogden.com/fast-webview-applications">Хорошая статья</a>, описывающая всякие подводные камни мобильных веб-приложений (и, в частности, PhoneGap aka Cordova) и методы борьбы с ними. Очень стоит почитать и тем, кто уже использует Cordova, так и тем, кто ещё обдумывает такую возможность. Предложение про "painful world of static typing" смешное, да.</p></li>
-</ul>
-
-
-<h2>iOS</h2>
-
-<ul>
-<li><p><a href="http://www.mobileinc.co.uk/2012/05/the-art-of-the-ios-icon/">Набор</a> крутых iOS-иконок. Обязательно покажите своему дизайнеру.</p></li>
-<li><p><a href="https://github.com/mpospese/MPFoldTransition">MPFoldTransition</a> — переходы свёртки/развёртки (fold) и переворачивания страницы для iOS5. Судя по ридми, библиотека много чего умеет, положу в копилочку.</p></li>
-<li><p><a href="https://github.com/gotosleep/JASidePanels">JASidePanels</a> — UIViewController со сдвижными панельками по типу приложений Path и Facebook (как заявлено авторами). Ну, мало ли, тоже кому-то пригодится.</p></li>
-<li><p><a href="https://github.com/BradLarson/GPUImage">GPUImage</a> — ещё одна библиотека (точнее, целый фреймворк) для обработки изображений с помощью OpenGL ES. В отличие от предыдущей, включает в себя очень солидный набор готовых фильтров.</p></li>
-<li><p><a href="https://github.com/fphilipe/PHFDelegateChain">PHFDelegateChain</a> — библиотека для построения, как следует из называния, цепочек делегирования. Может быть полезной, например, для "размазывания" делегата по нескольким классам.</p></li>
-<li><p><a href="https://github.com/sobri909/MGBox">MGBox</a> — фичастая и симпатичная замена UITableView. Присмотрюсь к ней обязательно, поскольку реализует ряд вещей, которые часто приходится писать заново, например, ресайз ячеек под размер текста.</p></li>
-</ul>
-
-
-<h2>Полезное</h2>
-
-<ul>
-<li><p>Для тех, кто интересуется геймдевом: <a href="http://devmag.org.za/2011/02/02/video-game-user-interface-design-diegesis-theory/">большая статья</a>, посвящённая созданию UI в играх.</p></li>
-<li><p><a href="https://www.shortcutfoo.com/">Тренажёр</a> для заучивания шорткатов. Если кому-то не жаль времени на такое занятие.</p></li>
-<li><p><a href="https://github.com/foursquare/fongo">Fongo</a> - in-memory реализация MongoDB (для Java). Очень не хватало такого для тестов, в то время как для SQL всегда была куча решений. Теперь вот есть.</p></li>
-<li><p><a href="http://blog.ninlabs.com/2012/05/crowd-documentation/">Попытка</a> создания коллективной (чуть не добавил: "бессознательной") документации из тредов на StackOverflow. Выглядит довольно интересно, и есть занимательная статистика.</p></li>
-<li><p><a href="https://gist.github.com/2841832">Список</a> типовых задержек, которые должен знать каждый программер. От обращения к кэшу 1-го уровня (0.5 нс), до отправки пакета из Калифорнии в Нидерланды и обратно (150 мс). Тем, кого хотя бы изредка беспокоит производительность и быстродействие, стоит выучить наизусть.</p></li>
-<li><p>Полезный <a href="http://whiletruecode.com/post/stop-hand-coding-start-zen-coding">плагин</a> для кучи редакторов, в том числе и для Sublime Text 2. Пригодится тем, кто пишет руками много ХТМЛя.</p></li>
-</ul>
-
-
-<h2>Всё остальное</h2>
-
-<ul>
-<li><p>Забавная подборка гифок с git-related зверушками: <a href="http://git-animals.tumblr.com/">git-animals</a>.</p></li>
-<li><p>Интересное <a href="http://osvita.mediasapiens.ua/material/6746">интервью</a> с создателями самого интересного русскоязычного новостного твитора - <a href="http://twitter.com/lentaruofficial">@lentaruofficial</a>. Рецепт, как всегда, прост — делать for fun и для себя, а не осваивать выбитый на SMM бюджет.</p></li>
-<li><p>Вице-президент SAP <a href="http://moskalyuk.name/4130">арестован</a> за мошенничество с наборами Lego. Переклеивал ярлыки в магазине и перепродавал на ебее. Волшебный мир ентерпрайза...</p></li>
-<li><p>Нужно ли идти или бежать под дождём, чтобы меньше промокнуть? Математическое <a href="http://www.johndcook.com/blog/2012/05/23/walk-or-run-in-the-rain/">решение</a>.</p></li>
-<li><p><a href="http://www.thegoodness.com/matt-and-asias-minecraft-wedding/">Свадьба</a> фанатов Minecraft. Много фоточек, пикселей и кубиков.</p></li>
-<li><p><a href="http://mashable.com/2012/05/26/gadget-storage-trucks/">Интересный бизнес</a>, порождённый запретом на гаджеты в школах. Просто платная камера хранения в фургончике.</p></li>
-<li><p>Очередное революционное <a href="http://www.leapmotion.com/">устройство ввода</a>, распознающее жесты в воздухе. Видео впечатляет, уже есть предзаказ.</p></li>
-<li><p><a href="http://habrahabr.ru/post/144612/">Аналоговый CRT-фильтр</a> для фотографий в айфоне. Всё по-честному: изображение отправляется в Швецию, где показывается на старом телевизоре, с экрана которого делается фотография, которая отсылается обратно пользователю. Чотко и лампово.</p></li>
-</ul>
-
-
-<p>Уф, вроде всё. Надеюсь, следующий выпуск выйдет не с такой большой задержкой. Пока.</p>
 ]]></content>
   </entry>
   
