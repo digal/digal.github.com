@@ -4,7 +4,7 @@
   <title><![CDATA[Category: links | Лошоть и байты]]></title>
   <link href="http://digal.github.com/blog/categories/links/atom.xml" rel="self"/>
   <link href="http://digal.github.com/"/>
-  <updated>2012-12-21T00:23:01+04:00</updated>
+  <updated>2012-12-21T11:57:58+04:00</updated>
   <id>http://digal.github.com/</id>
   <author>
     <name><![CDATA[Yuri Buyanov]]></name>
@@ -37,7 +37,7 @@
 
 <ul>
 <li><p><a href="http://www.networkworld.com/cgi-bin/mailto/x.cgi?pagetosend=/news/tech/2012/102212-nosql-263595.html">Бенчмарк</a> популярных NoSQL-баз при разных сценариях использования. На беговой дорожке — MongoDB, Cassandra, Riak и HBase, плюс MySQL для сравнения. (via <a href="https://twitter.com/glorphindale">@glorphindale</a>)</p></li>
-<li><p><a href="http://www.rethinkdb.com/">RethinkDB</a> — очередной NoSQL для JSON с прицелом на распределённость. Заявлена поддержка джойнов, адекватного мап-редьюса (в отличие от не будем говорить кого), вложенных запросов и агрегации. (via <a href="https://twitter.com/mordaha">@mordaha</a>)</p></li>
+<li><p><a href="http://www.rethinkdb.com/">RethinkDB</a> — очередной NoSQL для JSON с прицелом на распределённость. Заявлена поддержка джойнов, адекватного мап-редьюса (в отличие от не будем говорить кого), вложенных запросов и агрегации.</p></li>
 </ul>
 
 
