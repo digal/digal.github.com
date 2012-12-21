@@ -22,7 +22,7 @@ categories: links
 
 * [Бенчмарк](http://www.networkworld.com/cgi-bin/mailto/x.cgi?pagetosend=/news/tech/2012/102212-nosql-263595.html) популярных NoSQL-баз при разных сценариях использования. На беговой дорожке — MongoDB, Cassandra, Riak и HBase, плюс MySQL для сравнения. (via [@glorphindale](https://twitter.com/glorphindale))
 
-* [RethinkDB](http://www.rethinkdb.com/) — очередной NoSQL для JSON с прицелом на распределённость. Заявлена поддержка джойнов, адекватного мап-редьюса (в отличие от не будем говорить кого), вложенных запросов и агрегации. (via [@mordaha](https://twitter.com/mordaha))
+* [RethinkDB](http://www.rethinkdb.com/) — очередной NoSQL для JSON с прицелом на распределённость. Заявлена поддержка джойнов, адекватного мап-редьюса (в отличие от не будем говорить кого), вложенных запросов и агрегации. 
 
 ## Фронтенд
 
