@@ -1,0 +1,71 @@
+---
+layout: post
+title: "Ссылкопост №14, новогодний."
+date: 2013-01-04 01:08
+comments: true
+categories: links
+---
+
+Прошёл декабрь, который оказался также богат на ссылки и, пользуясь новогодними каникулами, оперативно выкладываю пост. В этот раз довольно много ссылок на всякие обучалки и курсы, и тут я, конечно, слажал: надо было сделать этот пост на недельку раньше, чтобы вы могли заполнить длинные новогодние каникулы чем-нибудь познавательным. 
+
+<!--more-->
+
+## Обучалки
+
+* [Interactive SICP](http://xuanji.appspot.com/isicp/) — просто классический SICP, дополненный возможностью изменять и выполнять код прямо в тексте книги или в отдельном скретчпаде, а также проверкой упражнений. (via [@newsycombinator](https://twitter.com/newsycombinator))
+
+* Другой интерактивный [курс](http://tryr.codeschool.com/), по языку R. Задержал выход этого поста как минимум на день :) (via [@newsycombinator](https://twitter.com/newsycombinator))
+
+* [Learn Linux The Hard Way](http://nixsrv.com/llthw) — ещё один интерактивный гайд, на этот раз по линуксу. (via [@newsycombinator](https://twitter.com/newsycombinator))
+
+* [School of Data](http://schoolofdata.org/) — обучающий сайт, посвящённый, как следует из названия, работе с данными. (via [@newsycombinator](https://twitter.com/newsycombinator))
+
+## Mobile
+
+* [SiriProxy](https://github.com/plamoni/SiriProxy) — небольшой прокси для протокола Siri, позволяющий расширять её функциональность при помощи очень простых плагинов на Ruby. Работает только в локальной сети (либо через VPN), должен быть очень интересен, в частности, для Home Automation.
+
+* [OCTotallyLazy](https://github.com/stuartervine/OCTotallyLazy) — очередной функциональный улучшатель коллекций Cocoa. Содержит 35 полезных функций, ленивые коллекции (sequence), options и, вообще, явно родственен Scala Collections API и этим мне очень нравится. (via [@CocoaPods](https://twitter.com/CocoaPods))
+
+* [sqlite3-objc](https://github.com/youknowone/sqlite3-objc) — небольшой враппер вокруг sqlite3 для случаев когда Core Data — оверкилл, а городить страницы сишного кода для работы с БД не хочется. (via [@CocoaPods](https://twitter.com/CocoaPods))
+
+* [Взгляд](http://www.jonmsterling.com/posts/2012-02-05-typed-collections-with-self-types-in-objective-c.html) на то, как могут выглядеть будущие дженерики в Objective-C. Всё как обычно шиворот-навыворот (так, например, коллекция строк будет подклассом NSString, а вовсе не каким-нибудь NSArray), да и вообще не факт, что всё будет именно так, но почитать интересно.  (via [@corristo](https://twitter.com/corristo))
+
+* [Slash](https://github.com/chrisdevereux/Slash) — библиотека для генерации NSAttributedString из HTML-подобного языка разметки. Стиль для каждого тега (можно использовать любые кастомные) удобно настраивается через NSDictionary. (via [@newsycombinator](https://twitter.com/newsycombinator))
+
+* [Пост](http://engineering.linkedin.com/testing/continuous-integration-mobile) на очень животрепещущую для меня в последний год тему: организация CI и автоматизированного тестирования для мобильных приложений в LinkedIn. (via [@yvasileuski](https://twitter.com/yvasileuski))
+
+* Интересный [документ](http://www.sesameworkshop.org/assets/1191/src/Best%20Practices%20Document%2011-26-12.pdf) (pdf) от "Улицы Сезам" про юзабилити планшетных приложений для детей. Многие вещи также справедливы для взрослых. (via [@sesamestreet](https://twitter.com/sesamestreet))
+
+## Прочее
+
+* Интересная [статья](http://www.codinghorror.com/blog/2012/12/the-organism-will-do-what-it-damn-well-pleases.html) от Джеффа Атвуда о том, как важно ориентироваться на поведение пользователей при развитии продукта. (via [@codinghorror](https://twitter.com/codinghorror))
+
+* Ссылка из предыдущей статьи, которую я решил вынести отдельно: [рассказ](http://www.fudco.com/chip/lessons.html) о многопользовательской игре Habitat от LucasFilm Games. Это прадедушка всех современных MMORPG из аж 80-х. Очень познавательно, почитайте.
+
+* В ту же тему: подробнейшая [статья](http://www.mine-control.com/zack/uoecon/uoecon.html) об игровой экономике Ultima Online. (via [@newsycombinator](https://twitter.com/newsycombinator))
+
+* [Тред](http://stackoverflow.com/questions/218123/what-was-the-strangest-coding-standard-rule-that-you-were-forced-to-follow) на Stackoverflow с самыми дурацкими правилами кодстайла. Местами просто эпично.
+
+* [xCharts](http://tenxer.github.com/xcharts/) — очередная библиотека для построения динамических графиков на базе d3. (via [@newsycombinator](https://twitter.com/newsycombinator))
+
+* Интересный [пост](http://www.quora.com/Stripe-company/Does-Stripe-have-product-managers-or-do-engineers-manage-the-products-themselves/answer/Patrick-Collison), точнее ответ на вопрос о том, почему компании Stripe не нужны отдельные продукт-менеджеры. (via [@patrickc](https://twitter.com/patrickc))
+
+* Интересное [исследование](http://www.spinellis.gr/blog/20121205/) на устойчивость различных языков программирования к случайным ошбикам в коде. Результат немного предсказуем: система типов имеет первоочередное значение. (via [@mariofusco](https://twitter.com/mariofusco))
+
+* Занятный [пост](http://branchandbound.net/blog/scala/2012/12/scala-is-like-git/), автор которого сравнивает Scala с Git. Не напрямую, конечно, а описывая общие принципы дизайна, баланс между простотой и сложностью, и восприятие сообществом. (via [@odersky](https://twitter.com/odersky))
+
+* [Интерактивное руководство](http://kaikkonendesign.fi/typography/) по улучшению типографики блога. Всё очень просто и наглядно. (via [@newsycombinator](https://twitter.com/newsycombinator))
+
+* Только совсем недавно радовался томе, что за тот год, что я занимался исключительно телефончиками, в MongoDB добавили ["протухание" записей](http://docs.mongodb.org/manual/tutorial/expire-data/), как авторы выкатывают очередную полезную фичу: [полнотекстовый поиск](https://jira.mongodb.org/browse/SERVER-380?page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel&focusedCommentId=224020#comment-224020). Если будет работать как надо — минус ещё один компонент (например, elasticsearch) как минимум, в несложных проектах. (via [@newsycombinator](https://twitter.com/newsycombinator))
+
+* Небольшой [обзор](http://tersesystems.com/2012/12/27/error-handling-in-scala) способов обработки ошибок в Scala. (via [@sourcedelica](https://twitter.com/sourcedelica))
+
+* [Статья](http://www.3scale.net/2012/12/api-economics-create-more-value-than-you-capture/) про экономику API, или, если проще, о том, как сделать API, приносящий пользу компании. (via [@njyx](https://twitter.com/njyx))
+
+* [Gitrep](http://gitrep.com/) — аналог делишеса для девелоперов: сервис закладок для репозиториев с тегами (как публичными, так и приватными). (via [@newsycombinator](https://twitter.com/newsycombinator))
+
+* [TimelineJS](http://timeline.verite.co/) — навороченная JS-библиотека для построения таймлайнов, умеющая тянуть данные из JSON и Google Docs.
+
+* Просто интересный [пост](http://www.reddit.com/r/programming/comments/9x15g/programming_thought_experiment_stuck_in_a_room/) на реддите. Как написать ОС и набор игр, если вас заперли в комнате с компьютером без интернета и софта и одной дискетой. [Вот](http://www.reddit.com/r/programming/comments/9x15g/programming_thought_experiment_stuck_in_a_room/c0ewj2c) один из интересных развёрнутых ответов.
+
+В ходе написания также стандартный пост "итоги-2012/планы-2013", который, надеюсь, выложу в ближайшие пару дней.
