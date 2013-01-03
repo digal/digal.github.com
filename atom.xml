@@ -4,7 +4,7 @@
   <title><![CDATA[Лошоть и байты]]></title>
   <link href="http://digal.github.com/atom.xml" rel="self"/>
   <link href="http://digal.github.com/"/>
-  <updated>2012-12-21T11:57:58+04:00</updated>
+  <updated>2013-01-04T01:33:12+04:00</updated>
   <id>http://digal.github.com/</id>
   <author>
     <name><![CDATA[Yuri Buyanov]]></name>
@@ -12,6 +12,64 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ссылкопост №14, новогодний.]]></title>
+    <link href="http://digal.github.com/blog/2013/01/04/links-14/"/>
+    <updated>2013-01-04T01:08:00+04:00</updated>
+    <id>http://digal.github.com/blog/2013/01/04/links-14</id>
+    <content type="html"><![CDATA[<p>Прошёл декабрь, который оказался также богат на ссылки и, пользуясь новогодними каникулами, оперативно выкладываю пост. В этот раз довольно много ссылок на всякие обучалки и курсы, и тут я, конечно, слажал: надо было сделать этот пост на недельку раньше, чтобы вы могли заполнить длинные новогодние каникулы чем-нибудь познавательным.</p>
+
+<!--more-->
+
+
+<h2>Обучалки</h2>
+
+<ul>
+<li><p><a href="http://xuanji.appspot.com/isicp/">Interactive SICP</a> — просто классический SICP, дополненный возможностью изменять и выполнять код прямо в тексте книги или в отдельном скретчпаде, а также проверкой упражнений. (via <a href="https://twitter.com/newsycombinator">@newsycombinator</a>)</p></li>
+<li><p>Другой интерактивный <a href="http://tryr.codeschool.com/">курс</a>, по языку R. Задержал выход этого поста как минимум на день :) (via <a href="https://twitter.com/newsycombinator">@newsycombinator</a>)</p></li>
+<li><p><a href="http://nixsrv.com/llthw">Learn Linux The Hard Way</a> — ещё один интерактивный гайд, на этот раз по линуксу. (via <a href="https://twitter.com/newsycombinator">@newsycombinator</a>)</p></li>
+<li><p><a href="http://schoolofdata.org/">School of Data</a> — обучающий сайт, посвящённый, как следует из названия, работе с данными. (via <a href="https://twitter.com/newsycombinator">@newsycombinator</a>)</p></li>
+</ul>
+
+
+<h2>Mobile</h2>
+
+<ul>
+<li><p><a href="https://github.com/plamoni/SiriProxy">SiriProxy</a> — небольшой прокси для протокола Siri, позволяющий расширять её функциональность при помощи очень простых плагинов на Ruby. Работает только в локальной сети (либо через VPN), должен быть очень интересен, в частности, для Home Automation.</p></li>
+<li><p><a href="https://github.com/stuartervine/OCTotallyLazy">OCTotallyLazy</a> — очередной функциональный улучшатель коллекций Cocoa. Содержит 35 полезных функций, ленивые коллекции (sequence), options и, вообще, явно родственен Scala Collections API и этим мне очень нравится. (via <a href="https://twitter.com/CocoaPods">@CocoaPods</a>)</p></li>
+<li><p><a href="https://github.com/youknowone/sqlite3-objc">sqlite3-objc</a> — небольшой враппер вокруг sqlite3 для случаев когда Core Data — оверкилл, а городить страницы сишного кода для работы с БД не хочется. (via <a href="https://twitter.com/CocoaPods">@CocoaPods</a>)</p></li>
+<li><p><a href="http://www.jonmsterling.com/posts/2012-02-05-typed-collections-with-self-types-in-objective-c.html">Взгляд</a> на то, как могут выглядеть будущие дженерики в Objective-C. Всё как обычно шиворот-навыворот (так, например, коллекция строк будет подклассом NSString, а вовсе не каким-нибудь NSArray), да и вообще не факт, что всё будет именно так, но почитать интересно.  (via <a href="https://twitter.com/corristo">@corristo</a>)</p></li>
+<li><p><a href="https://github.com/chrisdevereux/Slash">Slash</a> — библиотека для генерации NSAttributedString из HTML-подобного языка разметки. Стиль для каждого тега (можно использовать любые кастомные) удобно настраивается через NSDictionary. (via <a href="https://twitter.com/newsycombinator">@newsycombinator</a>)</p></li>
+<li><p><a href="http://engineering.linkedin.com/testing/continuous-integration-mobile">Пост</a> на очень животрепещущую для меня в последний год тему: организация CI и автоматизированного тестирования для мобильных приложений в LinkedIn. (via <a href="https://twitter.com/yvasileuski">@yvasileuski</a>)</p></li>
+<li><p>Интересный <a href="http://www.sesameworkshop.org/assets/1191/src/Best%20Practices%20Document%2011-26-12.pdf">документ</a> (pdf) от &#8220;Улицы Сезам&#8221; про юзабилити планшетных приложений для детей. Многие вещи также справедливы для взрослых. (via <a href="https://twitter.com/sesamestreet">@sesamestreet</a>)</p></li>
+</ul>
+
+
+<h2>Прочее</h2>
+
+<ul>
+<li><p>Интересная <a href="http://www.codinghorror.com/blog/2012/12/the-organism-will-do-what-it-damn-well-pleases.html">статья</a> от Джеффа Атвуда о том, как важно ориентироваться на поведение пользователей при развитии продукта. (via <a href="https://twitter.com/codinghorror">@codinghorror</a>)</p></li>
+<li><p>Ссылка из предыдущей статьи, которую я решил вынести отдельно: <a href="http://www.fudco.com/chip/lessons.html">рассказ</a> о многопользовательской игре Habitat от LucasFilm Games. Это прадедушка всех современных MMORPG из аж 80-х. Очень познавательно, почитайте.</p></li>
+<li><p>В ту же тему: подробнейшая <a href="http://www.mine-control.com/zack/uoecon/uoecon.html">статья</a> об игровой экономике Ultima Online. (via <a href="https://twitter.com/newsycombinator">@newsycombinator</a>)</p></li>
+<li><p><a href="http://stackoverflow.com/questions/218123/what-was-the-strangest-coding-standard-rule-that-you-were-forced-to-follow">Тред</a> на Stackoverflow с самыми дурацкими правилами кодстайла. Местами просто эпично.</p></li>
+<li><p><a href="http://tenxer.github.com/xcharts/">xCharts</a> — очередная библиотека для построения динамических графиков на базе d3. (via <a href="https://twitter.com/newsycombinator">@newsycombinator</a>)</p></li>
+<li><p>Интересный <a href="http://www.quora.com/Stripe-company/Does-Stripe-have-product-managers-or-do-engineers-manage-the-products-themselves/answer/Patrick-Collison">пост</a>, точнее ответ на вопрос о том, почему компании Stripe не нужны отдельные продукт-менеджеры. (via <a href="https://twitter.com/patrickc">@patrickc</a>)</p></li>
+<li><p>Интересное <a href="http://www.spinellis.gr/blog/20121205/">исследование</a> на устойчивость различных языков программирования к случайным ошбикам в коде. Результат немного предсказуем: система типов имеет первоочередное значение. (via <a href="https://twitter.com/mariofusco">@mariofusco</a>)</p></li>
+<li><p>Занятный <a href="http://branchandbound.net/blog/scala/2012/12/scala-is-like-git/">пост</a>, автор которого сравнивает Scala с Git. Не напрямую, конечно, а описывая общие принципы дизайна, баланс между простотой и сложностью, и восприятие сообществом. (via <a href="https://twitter.com/odersky">@odersky</a>)</p></li>
+<li><p><a href="http://kaikkonendesign.fi/typography/">Интерактивное руководство</a> по улучшению типографики блога. Всё очень просто и наглядно. (via <a href="https://twitter.com/newsycombinator">@newsycombinator</a>)</p></li>
+<li><p>Только совсем недавно радовался томе, что за тот год, что я занимался исключительно телефончиками, в MongoDB добавили <a href="http://docs.mongodb.org/manual/tutorial/expire-data/">&#8220;протухание&#8221; записей</a>, как авторы выкатывают очередную полезную фичу: <a href="https://jira.mongodb.org/browse/SERVER-380?page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel&amp;focusedCommentId=224020#comment-224020">полнотекстовый поиск</a>. Если будет работать как надо — минус ещё один компонент (например, elasticsearch) как минимум, в несложных проектах. (via <a href="https://twitter.com/newsycombinator">@newsycombinator</a>)</p></li>
+<li><p>Небольшой <a href="http://tersesystems.com/2012/12/27/error-handling-in-scala">обзор</a> способов обработки ошибок в Scala. (via <a href="https://twitter.com/sourcedelica">@sourcedelica</a>)</p></li>
+<li><p><a href="http://www.3scale.net/2012/12/api-economics-create-more-value-than-you-capture/">Статья</a> про экономику API, или, если проще, о том, как сделать API, приносящий пользу компании. (via <a href="https://twitter.com/njyx">@njyx</a>)</p></li>
+<li><p><a href="http://gitrep.com/">Gitrep</a> — аналог делишеса для девелоперов: сервис закладок для репозиториев с тегами (как публичными, так и приватными). (via <a href="https://twitter.com/newsycombinator">@newsycombinator</a>)</p></li>
+<li><p><a href="http://timeline.verite.co/">TimelineJS</a> — навороченная JS-библиотека для построения таймлайнов, умеющая тянуть данные из JSON и Google Docs.</p></li>
+<li><p>Просто интересный <a href="http://www.reddit.com/r/programming/comments/9x15g/programming_thought_experiment_stuck_in_a_room/">пост</a> на реддите. Как написать ОС и набор игр, если вас заперли в комнате с компьютером без интернета и софта и одной дискетой. <a href="http://www.reddit.com/r/programming/comments/9x15g/programming_thought_experiment_stuck_in_a_room/c0ewj2c">Вот</a> один из интересных развёрнутых ответов.</p></li>
+</ul>
+
+
+<p>В ходе написания также стандартный пост &#8220;итоги-2012/планы-2013&#8221;, который, надеюсь, выложу в ближайшие пару дней.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Линкопост №13 (ноябрь)]]></title>
@@ -1015,306 +1073,6 @@
 <p>С остальными вещами всё более-менее понятно: это протоколы (читай интерфейсы), категории (иногда их ошибочно <a href="http://stackoverflow.com/questions/1244748/objective-c-category-compared-to-mixins">считают</a> миксинами, хотя они скорее являются формой манки-патчинга) и полуавтоматический менеджмент указателей. Последнее, наверное, пугает java- и других &#8220;высокоуровневых&#8221; девелоперов больше всего, однако на практике здесь всё просто. Хотя не к месту всунутый autorelease может доставить немало приятных минут в дебаггере, а устроить себе утечку памяти - вообще как нефиг делать. Всё это хорошо описано и давно используется в повседневной разработке.</p>
 
 <p>Это пожалуй всё, что я хотел сказать об Objective-C. В следующем посте (или постах) я постараюсь рассказать об инструментах разработки и экосистеме этой платформы в целом.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Squeryl: Двигаемся дальше]]></title>
-    <link href="http://digal.github.com/blog/2011/10/03/squeryl-advanced/"/>
-    <updated>2011-10-03T22:38:00+04:00</updated>
-    <id>http://digal.github.com/blog/2011/10/03/squeryl-advanced</id>
-    <content type="html"><![CDATA[<p>Итак, продолжаем наше знакомство со <a href="http://squeryl.org/">Sueryl</a> (начало <a href="https://digal.github.com/blog/2011/09/25/squeryl/">тут</a>). Для начала, вернёмся к селектам и рассмотрим одну из интереснейших фич Squeryl.</p>
-
-<!--more-->
-
-
-<h2>Составные селекты</h2>
-
-<p>Итак, <code>select</code> в любой его форме возвращает нам объект класса <code>Query</code> (кроме <code>lookup</code>, возвращающего <code>Option</code>). Этот класс играет сразу две роли. Во-первых, из него можно просто получить результат выборки, используя его в качестве обычной коллекции (он расширяет трейт <code>Iterable</code>). А во-вторых (и это самое интересное) - его можно использовать для построения более сложных запросов к базе. Например, подсунуть его в <code>from</code> вместо таблицы:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>
-</span><span class='line'>    <span class="k">val</span> <span class="n">rated</span> <span class="k">=</span>
-</span><span class='line'>      <span class="n">users</span><span class="o">.</span><span class="n">where</span><span class="o">(</span> <span class="n">_</span><span class="o">.</span><span class="n">rating</span><span class="o">.~</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">val</span> <span class="n">vasyasRated</span> <span class="k">=</span>
-</span><span class='line'>      <span class="n">from</span><span class="o">(</span><span class="n">rated</span><span class="o">)</span> <span class="o">(</span> <span class="n">u</span> <span class="k">=&gt;</span>
-</span><span class='line'>        <span class="n">select</span><span class="o">(</span><span class="n">u</span><span class="o">)</span>
-</span><span class='line'>        <span class="n">where</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">name</span> <span class="n">like</span> <span class="s">&quot;%Vasya%&quot;</span><span class="o">)</span>
-</span><span class='line'>      <span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>В этом примере мы использовали запрос <code>rated</code> для построения второго запроса. (Кстати, в первом посте я не упомянул о маленьком но полезном кусочке синтаксического сахара: упрощённом синтаксисе для <code>select</code>. Пример его использования можно увидеть в первом запросе.)</p>
-
-<p>Можно и использовать результат одного селекта внутри блока <code>where</code> второго:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">val</span> <span class="n">vasyasRated</span> <span class="k">=</span>
-</span><span class='line'>      <span class="n">from</span><span class="o">(</span><span class="n">users</span><span class="o">)</span> <span class="o">(</span> <span class="n">u</span> <span class="k">=&gt;</span>
-</span><span class='line'>        <span class="n">select</span><span class="o">(</span><span class="n">u</span><span class="o">)</span>
-</span><span class='line'>        <span class="n">where</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">id</span> <span class="n">in</span>
-</span><span class='line'>          <span class="n">from</span><span class="o">(</span><span class="n">rated</span><span class="o">)</span> <span class="o">(</span><span class="n">r</span> <span class="k">=&gt;</span> <span class="n">select</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="n">id</span><span class="o">))</span>
-</span><span class='line'>        <span class="o">)</span>
-</span><span class='line'>    <span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Ну и, в конце концов можно добавить к <code>Query</code> разные полезные модификаторы. Для постраничной выборки:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="n">from</span><span class="o">(</span><span class="n">users</span><span class="o">)</span> <span class="o">(</span> <span class="n">u</span> <span class="k">=&gt;</span> <span class="o">...</span> <span class="o">).</span><span class="n">page</span><span class="o">(</span><span class="n">offset</span><span class="o">,</span> <span class="n">pageLength</span><span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>для выборки уникальных строк:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="n">from</span><span class="o">(</span><span class="n">users</span><span class="o">)</span> <span class="o">(</span> <span class="n">u</span> <span class="k">=&gt;</span> <span class="o">...</span> <span class="o">).</span><span class="n">distinct</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>или для выборки элементов для обновления (директива FOR UPDATE в SQL):</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="n">from</span><span class="o">(</span><span class="n">users</span><span class="o">)</span> <span class="o">(</span> <span class="n">u</span> <span class="k">=&gt;</span> <span class="o">...</span> <span class="o">).</span><span class="n">forUpdate</span>
-</span><span class='line'>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Всё это, при желании, даёт возможность писать код максимально соответствующий принципу DRY (&#8220;don&#8217;t repeat yourself&#8221;, если вдруг кто не знает).</p>
-
-<h2>Агрегация</h2>
-
-<p>Агрегация - это, наверное, единственная часть DSL, где Squeryl отходит от SQL: вместо использования <code>select</code>, агрегирующие функции описываются в конструкии <code>compute</code>.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">val</span> <span class="n">ratingDistribution</span> <span class="k">=</span>
-</span><span class='line'>      <span class="n">from</span><span class="o">(</span><span class="n">users</span><span class="o">)</span> <span class="o">(</span> <span class="n">u</span> <span class="k">=&gt;</span>
-</span><span class='line'>        <span class="n">groupBy</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">rating</span><span class="o">)</span>
-</span><span class='line'>        <span class="n">compute</span><span class="o">(</span><span class="n">count</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">id</span><span class="o">))</span>
-</span><span class='line'>      <span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">ratingDistribution</span> <span class="n">foreach</span> <span class="o">{</span> <span class="n">r</span><span class="k">=&gt;</span>
-</span><span class='line'>      <span class="n">println</span><span class="o">(</span><span class="s">&quot;%s: %s&quot;</span> <span class="n">format</span> <span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="n">key</span><span class="o">,</span> <span class="n">r</span><span class="o">.</span><span class="n">measures</span><span class="o">))</span>
-</span><span class='line'>    <span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Результатом такого кода становится объект вида <code>Query[ GroupWithMeasures[Int, Int] ]</code>, который можно использовать явно, обращаясь к полям <code>key</code> и <code>measures</code>, либо приведя его к коллекции типа <code>Map</code>, вызовом метода <code>toMap</code>.</p>
-
-<h2>Join</h2>
-
-<p>С джойнами тоже всё довольно просто. Обычный INNER JOIN так же как и в SQL можно делать неявно, просто сделав <code>select</code> из двух таблиц и добавив условие в <code>where</code>:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="n">from</span><span class="o">(</span><span class="n">users</span><span class="o">,</span> <span class="n">posts</span><span class="o">)</span> <span class="o">(</span> <span class="o">(</span><span class="n">u</span><span class="o">,</span><span class="n">p</span><span class="o">)</span> <span class="k">=&gt;</span>
-</span><span class='line'>      <span class="n">select</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">name</span><span class="o">,</span> <span class="n">p</span><span class="o">)</span>
-</span><span class='line'>      <span class="n">where</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">id</span> <span class="o">===</span> <span class="n">p</span><span class="o">.</span><span class="n">userId</span><span class="o">)</span>
-</span><span class='line'>    <span class="o">)</span>
-</span><span class='line'>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Можно использовать OUTER JOIN и всё, к чему вы привыкли в SQL:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="n">from</span><span class="o">(</span><span class="n">users</span><span class="o">,</span> <span class="n">avatars</span><span class="o">.</span><span class="n">leftOuter</span><span class="o">)</span> <span class="o">(</span> <span class="o">(</span><span class="n">u</span><span class="o">,</span><span class="n">a</span><span class="o">)</span> <span class="k">=&gt;</span>
-</span><span class='line'>      <span class="n">select</span><span class="o">(</span><span class="n">u</span><span class="o">,</span> <span class="n">a</span><span class="o">.</span><span class="n">url</span><span class="o">)</span>
-</span><span class='line'>      <span class="n">on</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">id</span> <span class="o">===</span> <span class="n">a</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="n">_</span><span class="o">.</span><span class="n">userId</span><span class="o">))</span>
-</span><span class='line'>    <span class="o">)</span>
-</span><span class='line'>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>В случае использования внешнего джойна, для юзера не всегда находится соответствующая аватарка, поэтому <code>a</code> в этом примере имеет тип Option.</p>
-
-<h2>Relations</h2>
-
-<p>Зачастую, одна из самых сложных для понимания и использования вещей в обычных ORM - отношения one-to-many и many-to-many между таблицами. Именно там кроется большая часть граблей, на которые наступают неопытные разработчики.</p>
-
-<p>Подобно scala collections, имеющим две ипостаси: immutable и mutable, отношения в Squeryl делятся на <strong>stateless</strong>, являющиеся, по-сути, заранее подготовленными запросами (<code>Query</code>) и <strong>stateful</strong> хранящими все связанные записи в памяти в виде коллекции (<code>Iterable</code>).</p>
-
-<p>Для использования любого из этих вариантов, мы должны описать связь между таблицами в нашей схеме.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>
-</span><span class='line'>    <span class="k">object</span> <span class="nc">MySchema</span> <span class="k">extends</span> <span class="nc">Schema</span> <span class="o">{</span>
-</span><span class='line'>      <span class="k">val</span> <span class="n">users</span> <span class="k">=</span> <span class="n">table</span><span class="o">[</span><span class="kt">User</span><span class="o">]</span>
-</span><span class='line'>      <span class="k">val</span> <span class="n">posts</span> <span class="k">=</span> <span class="n">table</span><span class="o">[</span><span class="kt">Post</span><span class="o">]</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="k">val</span> <span class="n">userPosts</span> <span class="k">=</span>
-</span><span class='line'>        <span class="n">oneToManyRelation</span><span class="o">(</span><span class="n">users</span><span class="o">,</span> <span class="n">posts</span><span class="o">)</span> <span class="n">via</span> <span class="o">(</span> <span class="o">(</span><span class="n">u</span><span class="o">,</span><span class="n">p</span><span class="o">)</span> <span class="k">=&gt;</span>
-</span><span class='line'>          <span class="n">u</span><span class="o">.</span><span class="n">id</span> <span class="o">===</span> <span class="n">p</span><span class="o">.</span><span class="n">userId</span>
-</span><span class='line'>        <span class="o">)</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>В этом посте я возьму для примера отношения one-to-many. DSL для описания many-to-many не сильно от него отличается и хорошо описан в <a href="http://squeryl.org/relations.html">документации</a>.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">case</span> <span class="k">class</span> <span class="nc">User</span> <span class="o">(....)</span> <span class="k">extends</span> <span class="nc">KeyedEntity</span><span class="o">[</span><span class="kt">Long</span><span class="o">]</span> <span class="o">{</span>
-</span><span class='line'>      <span class="c1">//OneToMany[Post] &lt; Query</span>
-</span><span class='line'>      <span class="k">lazy</span> <span class="k">val</span> <span class="n">posts</span> <span class="k">=</span> <span class="nc">MySchema</span><span class="o">.</span><span class="n">userPosts</span><span class="o">.</span><span class="n">left</span><span class="o">(</span><span class="k">this</span><span class="o">)</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">case</span> <span class="k">class</span> <span class="nc">User</span> <span class="o">(....)</span> <span class="k">extends</span> <span class="nc">KeyedEntity</span><span class="o">[</span><span class="kt">Long</span><span class="o">]</span> <span class="o">{</span>
-</span><span class='line'>      <span class="c1">//ManyToOne[User] &lt; Query</span>
-</span><span class='line'>      <span class="k">lazy</span> <span class="k">val</span> <span class="n">user</span> <span class="k">=</span> <span class="nc">MySchema</span><span class="o">.</span><span class="n">userPosts</span><span class="o">.</span><span class="n">right</span><span class="o">(</span><span class="k">this</span><span class="o">)</span>
-</span><span class='line'>    <span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p>Теперь мы можем использовать наш релейшен так же как и обычный <code>select</code>.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">for</span> <span class="o">(</span><span class="n">p</span> <span class="k">&lt;-</span> <span class="n">user</span><span class="o">.</span><span class="n">posts</span><span class="o">)</span>
-</span><span class='line'>      <span class="n">println</span><span class="o">(</span><span class="n">p</span><span class="o">.</span><span class="n">title</span><span class="o">)</span>
-</span><span class='line'>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Кроме этого, stateless relations имеют несколько полезных методов для манипулирования дочерними элементами:</p>
-
-<ul>
-<li><code>assign</code> - привязывает дочерний элемент родительскому, выставляя значение foreign key (имеет смысл только если foreign key - изменяемое поле)</li>
-<li><code>associate</code> - делает <code>assign</code> + сохраняет эту связь в базе</li>
-<li><code>deleteAll</code> - удаляет все дочерние элементы из базы</li>
-</ul>
-
-
-<p>Объявление stateful relation не сильно сложнее:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="k">case</span> <span class="k">class</span> <span class="nc">User</span> <span class="o">(....)</span> <span class="k">extends</span> <span class="nc">KeyedEntity</span><span class="o">[</span><span class="kt">Long</span><span class="o">]</span> <span class="o">{</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="c1">//StatefulOneToMany[Post] &lt; Iterable[Post]</span>
-</span><span class='line'>      <span class="k">lazy</span> <span class="k">val</span> <span class="n">posts</span> <span class="k">=</span> <span class="nc">MySchema</span><span class="o">.</span><span class="n">userPosts</span><span class="o">.</span><span class="n">leftStateful</span><span class="o">(</span><span class="k">this</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">case</span> <span class="nc">User</span> <span class="o">(....)</span> <span class="k">extends</span> <span class="nc">KeyedEntity</span><span class="o">[</span><span class="kt">Long</span><span class="o">]</span> <span class="o">{</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="c1">//StetefulManyToOne[User]</span>
-</span><span class='line'>      <span class="k">lazy</span> <span class="k">val</span> <span class="n">user</span> <span class="k">=</span> <span class="nc">MySchema</span><span class="o">.</span><span class="n">userPosts</span><span class="o">.</span><span class="n">rightStateful</span><span class="o">(</span><span class="k">this</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>По сути, stateful relations являются простыми врапперами вокруг stateless, добавляющими кеширование данных в памяти, что избавляет Squeryl от необходимость делать запрос к базе при каждом обращении к коллекции.</p>
-
-<h2>Недостатки</h2>
-
-<p>Трудно сказать, является это недостатком Squeryl или моим, однако не все механизмы работы этого DSL мне до конца ясны. В частности, я так и не понял, с применением какой магии обычные поля классов модели конвертируются в метаданные столбцов в базе. Ведь это делается не только при создании таблицы, но и во время компиляции (или уже в рантайме) замыканий внутри запросов (например, <code>where</code>).</p>
-
-<p>Один раз, когда мне надо было вынести один из часто используемых паттернов для апдейтов в отдельный метод, магия DSL отказалась работать и мне пришлось расковырять библиотеку и извлечь на свет страннейший артефакт чёрной магии под названием (осторожно): <code>createEqualityExpressionWithLastAccessedFieldReferenceAndConstant</code>. Вам страшно? Мне тоже. Хорошо что такой случай был пока один, и у вас есть все шансы не напороться даже на него (уж больно он специфический).</p>
-
-<p>А вот с казалось бы элементарными, но не всегда работающими implicit conversions, являющимися неотъемлемой частью любого скаловского DSL, дело обстоит хуже. Приведу один только пример. В этом кусочке условия в <code>where</code> я пытаюсь использовать ещё одну замечательную фичу - динамический запрос (то есть запрос, части которого включаются по условию, обычно при заполнении <code>Option</code>, подробнее <a href="http://squeryl.org/dynamic-queries.html">тут</a>):</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="n">where</span> <span class="o">(</span> <span class="n">u</span><span class="o">.</span><span class="n">flag</span> <span class="o">===</span> <span class="n">boolOpt</span><span class="o">.?</span> <span class="o">)</span>
-</span><span class='line'>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Очевидно, здесь DSL вступает в конфликт с синтаксическим сахаром для булевских условий (поскольку для строковых полей всё работает). Перепробовав несколько вариантов, я пришёл к вот такому вот монструозному решению:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="n">not</span><span class="o">(</span><span class="n">not</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">flag</span><span class="o">)).</span><span class="n">inhibitWhen</span><span class="o">(</span><span class="n">boolOpt</span> <span class="o">!=</span> <span class="nc">Some</span><span class="o">(</span><span class="kc">true</span><span class="o">))</span> <span class="err"> </span>
-</span><span class='line'>    <span class="n">and</span><span class="err"> </span>
-</span><span class='line'>    <span class="n">not</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="n">flag</span><span class="o">).</span><span class="n">inhibitWhen</span><span class="o">(</span><span class="n">boolOpt</span> <span class="o">!=</span> <span class="nc">Some</span><span class="o">(</span><span class="kc">false</span><span class="o">))</span>
-</span><span class='line'>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Обратите внимание на изящный двойной <code>not</code>, который пришлось использовать в качестве подсказки компилятору. Судя по всему, я оказался не единственным, кто столкнулся с этой проблемой: на StackOveflow мне <a href="http://stackoverflow.com/questions/7607449/booleans-in-squeryl-dynamic-queries/7640585#7640585">сообщили</a> что в следующей версии этот сахар будет выключен и посоветовали более изящное решение с применением уже знакомого нам оператора <code>~</code>:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'>    <span class="n">where</span> <span class="o">(</span> <span class="n">u</span><span class="o">.</span><span class="n">flag</span> <span class="o">===</span> <span class="n">boolOpt</span><span class="o">.~.?</span> <span class="o">)</span>
-</span><span class='line'>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Заключение</h2>
-
-<p>Несмотря на некоторые недостатки, умолчать о которых было бы просто нечестно, Squeryl - замечательная библиотека, позволяющая решить кучу типичных проблем при использовании реляционных БД, не увеличивая сложность и размер кода. Лично я буду использовать её и дальше, что и вам советую делать.</p>
-
-<p>Эти два поста, посвящённые squeryl были в некотором роде заготовкой для выступления на нашем Scala-евенте (хотя это ещё вопрос, что вышло полуфабрикатом, а что полноценным туториалом). Видео моего (и не только) выступления можно найти в небольшом <a href="http://habrahabr.ru/company/e-Legion/blog/130545/#comments">отчёте с него</a>, а слайды у меня на <a href="http://dl.dropbox.com/u/12823109/squeryl.pdf">дропбоксе</a> (кавайные белочки инсайде). Удачи и до встреч.</p>
 ]]></content>
   </entry>
   
